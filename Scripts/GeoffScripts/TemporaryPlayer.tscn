@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bftyfi2yhwtd3"]
+
+[ext_resource type="Texture2D" uid="uid://d11ybt7sny5xx" path="res://Assets/GeoffAssets/big_trash.png" id="1_an1g0"]
+[ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlsld"]
+size = Vector2(128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5clye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_an1g0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("2_y3ftq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlsld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5clye")
