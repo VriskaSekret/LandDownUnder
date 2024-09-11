@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://du2uj2pyd5ptc"]
+
+[ext_resource type="PackedScene" uid="uid://bftyfi2yhwtd3" path="res://Scripts/GeoffScripts/TemporaryPlayer.tscn" id="1_l6hrd"]
+[ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="2_0jv6o"]
+
+[node name="PrototypeScene" type="Node2D"]
+
+[node name="Player1" parent="." instance=ExtResource("1_l6hrd")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(206, 228)
+texture = ExtResource("2_0jv6o")
+
+[node name="Camera2D" type="Camera2D" parent="Icon"]
+position = Vector2(-206, -228)
