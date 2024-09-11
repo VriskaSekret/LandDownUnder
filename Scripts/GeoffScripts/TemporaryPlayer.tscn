@@ -1,27 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=9 format=3 uid="uid://bftyfi2yhwtd3"]
 
-[ext_resource type="Texture2D" uid="uid://d11ybt7sny5xx" path="res://Assets/GeoffAssets/big_trash.png" id="1_an1g0"]
+[ext_resource type="Texture2D" uid="uid://b1d8h2jfh6pkx" path="res://STOLENSHITFORPROTOTYPING/knight.png" id="2_vvfu7"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlsld"]
-size = Vector2(128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_blmeo"]
+atlas = ExtResource("2_vvfu7")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5clye"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaijq"]
+atlas = ExtResource("2_vvfu7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4jpu"]
+atlas = ExtResource("2_vvfu7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdhw0"]
+atlas = ExtResource("2_vvfu7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csddj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_an1g0")
+"texture": SubResource("AtlasTexture_blmeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaijq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4jpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdhw0")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
-[node name="Player1" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhr6d"]
+radius = 4.0
+height = 14.0
+
+[node name="Player1" type="CharacterBody2D" groups=["Player"]]
+motion_mode = 1
 script = ExtResource("2_y3ftq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_nlsld")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_5clye")
+sprite_frames = SubResource("SpriteFrames_csddj")
+animation = &"idle"
+flip_v = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_mhr6d")
