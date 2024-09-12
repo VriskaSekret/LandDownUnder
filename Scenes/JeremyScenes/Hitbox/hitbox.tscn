@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b21tvrmp22pwx"]
+
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Hitbox/hitbox.gd" id="1_85tph"]
+
+[node name="Hitbox" type="Area2D" groups=["Attack"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_85tph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="DisableHitboxTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="DisableHitboxTimer" to="." method="_on_disable_hitbox_timer_timeout"]

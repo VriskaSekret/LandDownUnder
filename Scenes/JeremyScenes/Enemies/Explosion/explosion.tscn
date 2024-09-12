@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bptw3fhx7cfgl"]
+
+[ext_resource type="Texture2D" uid="uid://ccfjeunhh1w8w" path="res://Assets/JeremyAssets/StolenAssets/explosion_pixelfied.png" id="1_u3u4f"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Explosion/explosion.gd" id="2_xueds"]
+[ext_resource type="AudioStream" uid="uid://bgetqkd8vjpoe" path="res://Assets/JeremyAssets/StolenAssets/enemy_death.ogg" id="3_iplfs"]
+
+[sub_resource type="Animation" id="Animation_xfdrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rj5xp"]
+resource_name = "explosion"
+length = 0.32
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjjne"]
+_data = {
+"RESET": SubResource("Animation_xfdrb"),
+"explosion": SubResource("Animation_rj5xp")
+}
+
+[node name="Explosion" type="Sprite2D"]
+texture = ExtResource("1_u3u4f")
+hframes = 4
+vframes = 4
+script = ExtResource("2_xueds")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iplfs")
+pitch_scale = 0.5
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qjjne")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

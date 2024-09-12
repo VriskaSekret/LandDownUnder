@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxnk8onwtdit7"]
+
+[ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="1_8r6on"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/BasicStrong/basic_strong_enemy.gd" id="1_hs4h6"]
+[ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="2_ivc5k"]
+[ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="3_v6cy4"]
+[ext_resource type="AudioStream" uid="uid://d2xixwuty2teu" path="res://Assets/JeremyAssets/StolenAssets/enemy_hit.ogg" id="5_g04t4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfr1o"]
+radius = 6.0
+height = 26.0173
+
+[node name="Basic Strong Enemy" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_hs4h6")
+
+[node name="Hitbox" parent="." instance=ExtResource("1_8r6on")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+rotation = -0.499164
+shape = SubResource("CapsuleShape2D_lfr1o")
+
+[node name="Hurtbox" parent="." instance=ExtResource("2_ivc5k")]
+collision_layer = 4
+collision_mask = 4
+HurtBoxType = 1
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+rotation = -0.499164
+shape = SubResource("CapsuleShape2D_lfr1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = -0.499164
+shape = SubResource("CapsuleShape2D_lfr1o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_v6cy4")
+flip_v = true
+
+[node name="Sound Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g04t4")
+volume_db = -20.0
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]
