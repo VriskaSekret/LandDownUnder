@@ -18,6 +18,8 @@ radius = 5.0
 height = 16.0
 
 [node name="Basic Weak Enemy" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_l40du")
 
