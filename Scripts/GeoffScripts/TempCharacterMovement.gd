@@ -7,16 +7,11 @@ var hp := 80
 var dir
 var movement_speed := 100.0
 
-
-# attacking shit
-var fire_direction := 0.0
-@onready var didgeridoo: Node2D = $Didgeridoo
-
 # skewer
 var skewer = preload("res://Scenes/JeremyScenes/Attacks/Skewer/skewer.tscn")
 @onready var skewer_base: Node2D = %SkewerBase
 var skewer_ammo := 3
-var skewer_level := 1
+var skewer_level := 0
 
 # Enemy Related (temporary)
 var enemy_close = []
@@ -46,10 +41,7 @@ func _process(delta) -> void:
 	else:
 		anim_spr.play("idle")
 	
-	
-	# Attack shit FIX THIS 
-	fire_direction = (get_angle_to(get_global_mouse_position())/3.15) * 180
-	didgeridoo.rotation = fire_direction
+
 
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 	hp -= damage

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqtvxpjx8p4vn"]
+
+[ext_resource type="Texture2D" uid="uid://cap7s12v6eiea" path="res://Assets/JeremyAssets/didgeridoo2.png" id="1_1p68b"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Attacks/Didgeridoo/didgeridoo.gd" id="1_g7rgj"]
+
+[node name="Didgeridoo" type="Node2D"]
+script = ExtResource("1_g7rgj")
+
+[node name="PivotPoint" type="Marker2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PivotPoint"]
+position = Vector2(35, 0)
+rotation = -0.785398
+texture = ExtResource("1_1p68b")
+
+[node name="ShootingPoint" type="Marker2D" parent="PivotPoint/Sprite2D"]
+position = Vector2(9.8995, 9.8995)

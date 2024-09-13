@@ -1,6 +1,6 @@
 extends Area2D
 
-var level = 1
+var level = 0
 var hp = 99999
 var speed = 200.0
 var damage = 10
