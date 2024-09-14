@@ -1,6 +1,9 @@
 extends Node
 
 var number_players = -1
+
+var experience = 0
+
 var player1_character = -1
 var player2_character = -1
 var player3_character = -1
