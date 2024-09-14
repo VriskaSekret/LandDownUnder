@@ -36,20 +36,22 @@ func get_input() -> void:
 	velocity = input_direction * movement_speed
 
 func _physics_process(delta) -> void:
-	get_input()
-	if dir[0] < 0:
-		anim_spr.flip_h = true
-	elif dir[0] > 0:
-		anim_spr.flip_h = false
-	move_and_slide()
+	if !Global.game_paused:
+		get_input()
+		if dir[0] < 0:
+			anim_spr.flip_h = true
+		elif dir[0] > 0:
+			anim_spr.flip_h = false
+		move_and_slide()
 
 
 func _process(delta) -> void:
 	# Animation shit, doesn't relate to physics
-	if velocity:
-		anim_spr.play("walk")
-	else:
-		anim_spr.play("idle")
+	if !Global.game_paused:
+		if velocity:
+			anim_spr.play("walk")
+		else:
+			anim_spr.play("idle")
 	
 
 

@@ -55,9 +55,6 @@ size = Vector2(1500, 20)
 
 [node name="PrototypeScene" type="Node2D"]
 
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("10_kh3fb")
-
 [node name="Floor" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_6iohn")
@@ -66,6 +63,9 @@ region_rect = Rect2(0, 0, 4000, 4000)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
 spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_b0klr")])
+
+[node name="Coin" parent="EnemySpawner" instance=ExtResource("9_ar65b")]
+position = Vector2(85, -1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -109,11 +109,12 @@ collision_mask = 259
 position = Vector2(16, 630)
 shape = SubResource("RectangleShape2D_58btn")
 
-[node name="Coin" parent="." instance=ExtResource("9_ar65b")]
-position = Vector2(85, -1)
-
 [node name="InGameUI" parent="." instance=ExtResource("10_vypcr")]
+z_index = 69
 offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0
 offset_bottom = 360.0
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("10_kh3fb")

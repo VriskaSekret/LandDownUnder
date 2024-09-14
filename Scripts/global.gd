@@ -2,6 +2,7 @@ extends Node
 
 var number_players = -1
 
+var game_paused = false
 var experience = 0
 var total_level = 1
 var experience_needed = 10.0 * (total_level * 1.2)

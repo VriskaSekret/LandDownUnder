@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://de12g5sywnmb7"]
+[gd_scene load_steps=6 format=3 uid="uid://de12g5sywnmb7"]
 
+[ext_resource type="Script" path="res://Scenes/GeoffScenes/in_game_ui_controller.gd" id="1_jdv0l"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_xk8la"]
 [ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="2_mos1q"]
 [ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="3_5o87m"]
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/xp_bar.gd" id="3_05yks"]
 
 [node name="InGameUI" type="Control"]
+z_index = 69
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jdv0l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
