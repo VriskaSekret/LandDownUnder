@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=14 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Texture2D" uid="uid://082bp8ypfqov" path="res://Assets/JeremyAssets/StolenAssets/grass.png" id="1_6iohn"]
-[ext_resource type="PackedScene" uid="uid://bftyfi2yhwtd3" path="res://Scripts/GeoffScripts/TemporaryPlayer.tscn" id="2_rwjue"]
 [ext_resource type="PackedScene" uid="uid://n5onsju4xm8c" path="res://Scenes/JeremyScenes/Enemies/Spawner/enemy_spawner.tscn" id="3_r4swq"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Spawner/spawn_info.gd" id="4_7a5xy"]
 [ext_resource type="PackedScene" uid="uid://cn6wfouj0v1p3" path="res://Scenes/JeremyScenes/Enemies/BasicWeak/basic_weak_enemy.tscn" id="5_myy36"]
 [ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="7_d6iib"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
-[ext_resource type="PackedScene" uid="uid://bnhitqs7y3q40" path="res://Scenes/JeremyScenes/Player2/TemporaryPlayer2.tscn" id="10_5rcxh"]
+[ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
 
 [sub_resource type="Resource" id="Resource_b0klr"]
 script = ExtResource("4_7a5xy")
@@ -60,11 +59,6 @@ texture = ExtResource("1_6iohn")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Player1" parent="." instance=ExtResource("2_rwjue")]
-
-[node name="Player2" parent="." instance=ExtResource("10_5rcxh")]
-position = Vector2(204, 4)
-
 [node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
 spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_b0klr")])
 
@@ -76,20 +70,20 @@ tile_set = SubResource("TileSet_5m4f6")
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("p1", "p2")]
 zoom = Vector2(2, 2)
 script = ExtResource("9_pld26")
-p1 = NodePath("../Player1")
-p2 = NodePath("../Player2")
+p1 = NodePath("")
+p2 = NodePath("")
 
 [node name="Area2D" type="StaticBody2D" parent="Camera2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 259
+collision_mask = 259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D"]
 position = Vector2(0, 350)
 shape = SubResource("RectangleShape2D_58btn")
 
 [node name="Area2D2" type="StaticBody2D" parent="Camera2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 259
+collision_mask = 259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D2"]
 position = Vector2(16, -350)
@@ -97,8 +91,8 @@ shape = SubResource("RectangleShape2D_58btn")
 
 [node name="Area2D3" type="StaticBody2D" parent="Camera2D"]
 rotation = 1.5708
-collision_layer = 3
-collision_mask = 3
+collision_layer = 259
+collision_mask = 259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D3"]
 position = Vector2(16, -630)
@@ -106,9 +100,12 @@ shape = SubResource("RectangleShape2D_58btn")
 
 [node name="Area2D4" type="StaticBody2D" parent="Camera2D"]
 rotation = 1.5708
-collision_layer = 3
-collision_mask = 3
+collision_layer = 259
+collision_mask = 259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D4"]
 position = Vector2(16, 630)
 shape = SubResource("RectangleShape2D_58btn")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("10_kh3fb")

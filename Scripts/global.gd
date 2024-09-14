@@ -1,9 +1,11 @@
 extends Node
 
+var number_players = -1
 var player1_character = -1
 var player2_character = -1
 var player3_character = -1
 var player4_character = -1
+
 
 
 # Called when the node enters the scene tree for the first time.
