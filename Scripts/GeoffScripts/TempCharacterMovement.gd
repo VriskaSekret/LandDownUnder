@@ -26,7 +26,6 @@ func get_input() -> void:
 	dir = input_direction.normalized()
 	if (dir != Vector2(0, 0)):
 		last_dir = dir
-		print(last_dir)
 	velocity = input_direction * movement_speed
 
 func _physics_process(delta) -> void:

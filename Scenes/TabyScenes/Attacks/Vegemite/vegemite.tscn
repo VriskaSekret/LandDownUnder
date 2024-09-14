@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://clssc7dbv5slp"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Vegemite/vegemite.gd" id="1_pr800"]
+[ext_resource type="Texture2D" uid="uid://cs4mr1c1baq4y" path="res://Assets/TabyAssets/vmburst.png" id="1_ust7q"]
+[ext_resource type="Texture2D" uid="uid://bk7c5hjjnsexo" path="res://Assets/TabyAssets/vmbottle.png" id="2_xei8x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnhq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ust7q")
+}],
+"loop": true,
+"name": &"burst",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xei8x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bw5cm"]
+radius = 14.0
+
+[node name="Vegemite" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_pr800")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vnhq5")
+autoplay = "default"
+
+[node name="VegemiteAOE" type="Area2D" parent="."]
+
+[node name="VegeCollider" type="CollisionShape2D" parent="VegemiteAOE"]
+shape = SubResource("CircleShape2D_bw5cm")
+disabled = true
