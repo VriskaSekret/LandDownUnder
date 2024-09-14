@@ -8,16 +8,16 @@ extends CharacterBody2D
 @export var enemy_damage = 1
 var knockback = Vector2.ZERO
 
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player = get_tree().get_first_node_in_group("Player")
 @onready var loot_base = get_tree().get_first_node_in_group("loot")
 @onready var sprite = $Sprite2D
 @onready var anim = $AnimationPlayer
-@onready var snd_hit = $snd_hit
-@onready var hitBox = $HitBox
+#@onready var snd_hit = $snd_hit
+@onready var hitBox = $Hitbox
 
 # CHANGE THE DEATH ANIMATION
 var death_anim = preload("res://Scenes/JeremyScenes/Enemies/Explosion/explosion.tscn")
-var exp_gem = preload("res://Scenes/GeoffScenes/coin.tscn")
+var coin_drop = preload("res://Scenes/GeoffScenes/coin.tscn")
 
 signal remove_from_array(object)
 
@@ -39,21 +39,23 @@ func _physics_process(_delta):
 		sprite.flip_h = false
 
 func death():
-	emit_signal("remove_from_array",self)
+	# wtf does this signal do
+	#emit_signal("remove_from_arr", self)
+	var coin = coin_drop.instantiate()
 	var enemy_death = death_anim.instantiate()
 	enemy_death.scale = sprite.scale
+	coin.scale = sprite.scale
 	enemy_death.global_position = global_position
-	get_parent().call_deferred("add_child",enemy_death)
-	var new_gem = exp_gem.instantiate()
-	new_gem.global_position = global_position
-	new_gem.experience = experience
-	loot_base.call_deferred("add_child",new_gem)
+	coin.global_position = global_position
+	get_parent().call_deferred("add_child", enemy_death)
+	get_parent().call_deferred("add_child", coin)
 	queue_free()
 
-func _on_hurt_box_hurt(damage, angle, knockback_amount):
+func _on_hurtbox_hurt(damage, angle, knockback_amount):
 	hp -= damage
 	knockback = angle * knockback_amount
 	if hp <= 0:
 		death()
 	else:
-		snd_hit.play()
+		#snd_hit.play()
+		pass

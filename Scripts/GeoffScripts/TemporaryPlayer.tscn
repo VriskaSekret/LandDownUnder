@@ -187,16 +187,11 @@ flip_v = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_5xlg4")]
 collision_layer = 2
-collision_mask = 512
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_srnsr")
-
-[node name="Attack" type="Node2D" parent="."]
-
-[node name="SkewerBase" type="Node2D" parent="Attack"]
-unique_name_in_owner = true
 
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
 collision_layer = 4

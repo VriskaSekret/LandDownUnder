@@ -1,22 +1,31 @@
-[gd_scene load_steps=16 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=18 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Texture2D" uid="uid://082bp8ypfqov" path="res://Assets/JeremyAssets/StolenAssets/grass.png" id="1_6iohn"]
 [ext_resource type="PackedScene" uid="uid://n5onsju4xm8c" path="res://Scenes/JeremyScenes/Enemies/Spawner/enemy_spawner.tscn" id="3_r4swq"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Spawner/spawn_info.gd" id="4_7a5xy"]
-[ext_resource type="PackedScene" uid="uid://cn6wfouj0v1p3" path="res://Scenes/JeremyScenes/Enemies/BasicWeak/basic_weak_enemy.tscn" id="5_myy36"]
+[ext_resource type="PackedScene" uid="uid://b4gcmlhyg7tmb" path="res://Scenes/JeremyScenes/Enemies/kanga_weak.tscn" id="4_fsdnv"]
+[ext_resource type="PackedScene" uid="uid://djf3fup248sxt" path="res://Scenes/JeremyScenes/Enemies/kanga_strong.tscn" id="5_o2qws"]
 [ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="7_d6iib"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
-[ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
+[ext_resource type="PackedScene" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
-[ext_resource type="PackedScene" uid="uid://de12g5sywnmb7" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
+[ext_resource type="PackedScene" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
 
 [sub_resource type="Resource" id="Resource_b0klr"]
 script = ExtResource("4_7a5xy")
 time_start = 0
 time_end = 10
-enemy = ExtResource("5_myy36")
-enemy_num = 5
+enemy = ExtResource("4_fsdnv")
+enemy_num = 20
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_1rr21"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 20
+enemy = ExtResource("5_o2qws")
+enemy_num = 1
 enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
@@ -62,7 +71,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_b0klr")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_b0klr"), SubResource("Resource_1rr21")])
 
 [node name="Coin" parent="EnemySpawner" instance=ExtResource("9_ar65b")]
 position = Vector2(85, -1)

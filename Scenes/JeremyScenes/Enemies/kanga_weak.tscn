@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t6cariu8nf2r"]
+[gd_scene load_steps=9 format=3 uid="uid://b4gcmlhyg7tmb"]
 
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_53iqn"]
 [ext_resource type="Texture2D" uid="uid://cy3dw70ckmnxp" path="res://Scenes/JeremyScenes/Enemies/kanga.png" id="2_yr7n5"]
@@ -25,8 +25,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_tvdsx"]
 resource_name = "walk"
-length = 0.1
+length = 0.3
 loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,7 +35,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"times": PackedFloat32Array(0, 0.15, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -47,6 +48,10 @@ _data = {
 }
 
 [node name="kanga_weak" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+collision_layer = 128
+collision_mask = 128
+motion_mode = 1
 script = ExtResource("1_53iqn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -64,7 +69,22 @@ libraries = {
 }
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_s2of5")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="Hitbox" parent="." instance=ExtResource("4_k7rht")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
