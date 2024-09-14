@@ -21,7 +21,7 @@ func _ready():
 
 
 func get_input() -> void:
-	var input_direction = Input.get_vector("p1left", "p1right", "p1up", "p1down")
+	var input_direction = Input.get_vector("p2left", "p2right", "p2up", "p2down")
 	dir = input_direction.normalized()
 	velocity = input_direction * movement_speed
 
