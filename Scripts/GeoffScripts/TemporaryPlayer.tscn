@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=32 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dr3elfwjv40q" path="res://Assets/JeremyAssets/StolenAssets/knight.png" id="2_pvbi5"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqtvxpjx8p4vn" path="res://Scenes/JeremyScenes/Attacks/Didgeridoo/didgeridoo.tscn" id="4_w20g5"]
 [ext_resource type="PackedScene" uid="uid://dnatc1ouhsjv6" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_shooter.tscn" id="5_m3thl"]
 [ext_resource type="PackedScene" uid="uid://pl11g1lgvi2j" path="res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn" id="6_yhlfm"]
+[ext_resource type="PackedScene" uid="uid://bqbx7n1ny6axb" path="res://Scenes/TabyScenes/Attacks/Thongs/thong_shooter.tscn" id="7_ji4g5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ymxa"]
 radius = 5.0
@@ -213,6 +214,8 @@ shape = SubResource("CircleShape2D_0bspj")
 [node name="BoomerangShooter" parent="." instance=ExtResource("5_m3thl")]
 
 [node name="VegemiteShooter" parent="." instance=ExtResource("6_yhlfm")]
+
+[node name="ThongShooter" parent="." instance=ExtResource("7_ji4g5")]
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
