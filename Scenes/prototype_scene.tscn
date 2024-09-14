@@ -1,15 +1,11 @@
-[gd_scene load_steps=28 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=19 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Texture2D" uid="uid://082bp8ypfqov" path="res://Assets/JeremyAssets/StolenAssets/grass.png" id="1_6iohn"]
 [ext_resource type="PackedScene" uid="uid://n5onsju4xm8c" path="res://Scenes/JeremyScenes/Enemies/Spawner/enemy_spawner.tscn" id="3_r4swq"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Spawner/spawn_info.gd" id="4_7a5xy"]
 [ext_resource type="PackedScene" uid="uid://cn6wfouj0v1p3" path="res://Scenes/JeremyScenes/Enemies/BasicWeak/basic_weak_enemy.tscn" id="5_myy36"]
 [ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="7_d6iib"]
-[ext_resource type="PackedScene" uid="uid://csq1ord65opce" path="res://Scenes/AlexisScenes/Crate/CrateStuff/CrateSpawner/crate_spawner.tscn" id="7_fcvo6"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
-[ext_resource type="Script" path="res://Scenes/AlexisScenes/Crate/CrateStuff/CrateSpawner/crate_spawner.gd" id="8_uawxj"]
-[ext_resource type="Script" path="res://Scenes/AlexisScenes/Crate/CrateStuff/CrateSpawner/crate_spawn_info.gd" id="9_h6glc"]
-[ext_resource type="PackedScene" uid="uid://cqul0nic5qt22" path="res://Scenes/AlexisScenes/Crate/CrateStuff/TheCrate/crates.tscn" id="10_k86el"]
 [ext_resource type="Texture2D" uid="uid://ua2abibt7s5u" path="res://Assets/AlexisAssets/rock.png" id="13_lvqd8"]
 [ext_resource type="Texture2D" uid="uid://bjn0ius2pud6d" path="res://Assets/AlexisAssets/shrub1.png" id="14_i4sfp"]
 [ext_resource type="Texture2D" uid="uid://cefoiulwvbbf6" path="res://Assets/AlexisAssets/shrub2.png" id="15_2aypp"]
@@ -20,14 +16,6 @@ time_start = 0
 time_end = 10
 enemy = ExtResource("5_myy36")
 enemy_num = 5
-enemy_spawn_delay = 0
-
-[sub_resource type="Resource" id="Resource_cyj80"]
-script = ExtResource("9_h6glc")
-time_start = 0
-time_end = 30
-enemy = ExtResource("10_k86el")
-enemy_num = 1
 enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
@@ -116,9 +104,6 @@ sources/0 = SubResource("TileSetAtlasSource_s5vc8")
 sources/1 = SubResource("TileSetAtlasSource_b4xms")
 sources/3 = SubResource("TileSetAtlasSource_7iyaf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_58btn"]
-size = Vector2(1500, 20)
-
 [node name="PrototypeScene" type="Node2D"]
 
 [node name="Floor" type="Sprite2D" parent="."]
@@ -129,10 +114,6 @@ region_rect = Rect2(0, 0, 4000, 4000)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
 spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_b0klr")])
-
-[node name="CrateSpawner" parent="." instance=ExtResource("7_fcvo6")]
-script = ExtResource("8_uawxj")
-spawns = Array[ExtResource("9_h6glc")]([SubResource("Resource_cyj80")])
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
