@@ -12,7 +12,6 @@ var knockback := Vector2.ZERO
 
 var death_anim = preload("res://Scenes/JeremyScenes/Enemies/Explosion/explosion.tscn")
 
-
 signal remove_from_arr(obj)
 
 func _physics_process(delta):

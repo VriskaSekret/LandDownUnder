@@ -4,14 +4,9 @@ extends CharacterBody2D
 
 var hp := 80
 
-var character_player_number
 var dir
-var has_assigned_keys = false
 var movement_speed := 100.0
-var left_button
-var right_button
-var up_button
-var down_button
+
 # skewer
 var skewer = preload("res://Scenes/JeremyScenes/Attacks/Skewer/skewer.tscn")
 @onready var skewer_base: Node2D = %SkewerBase
@@ -26,12 +21,7 @@ func _ready():
 
 
 func get_input() -> void:
-	if not has_assigned_keys:
-		left_button = "p%dleft" % character_player_number
-		right_button = "p%dright" % character_player_number
-		up_button = "p%dup" % character_player_number
-		down_button = "p%ddown" % character_player_number
-	var input_direction = Input.get_vector(left_button, right_button, up_button, down_button)
+	var input_direction = Input.get_vector("p2left", "p2right", "p2up", "p2down")
 	dir = input_direction.normalized()
 	velocity = input_direction * movement_speed
 

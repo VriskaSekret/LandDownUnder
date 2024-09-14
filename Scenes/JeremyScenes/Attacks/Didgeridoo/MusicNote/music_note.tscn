@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0ub1fu2v4mrx"]
+
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Attacks/Didgeridoo/MusicNote/music_note.gd" id="1_0oniq"]
+[ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="1_w2a0j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5re8d"]
+size = Vector2(13, 13)
+
+[node name="MusicNote" type="Area2D" groups=["Attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_0oniq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_w2a0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5re8d")
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="QueueFreeTimer" to="." method="_on_queue_free_timer_timeout"]

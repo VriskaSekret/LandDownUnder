@@ -13,9 +13,8 @@ radius = 6.08276
 radius = 6.0
 height = 16.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jvtg"]
-radius = 5.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q475t"]
+size = Vector2(11, 14)
 
 [node name="Basic Weak Enemy" type="CharacterBody2D"]
 collision_layer = 128
@@ -42,9 +41,9 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_hhyk6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(1.19209e-07, -2.5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_6jvtg")
+shape = SubResource("RectangleShape2D_q475t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bjwb4")

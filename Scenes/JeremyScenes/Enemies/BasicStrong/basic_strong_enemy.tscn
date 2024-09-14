@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxnk8onwtdit7"]
+[gd_scene load_steps=8 format=3 uid="uid://dxnk8onwtdit7"]
 
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="1_8r6on"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/BasicStrong/basic_strong_enemy.gd" id="1_hs4h6"]
@@ -9,6 +9,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfr1o"]
 radius = 6.0
 height = 26.0173
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uopd"]
+size = Vector2(10.2953, 25.1393)
 
 [node name="Basic Strong Enemy" type="CharacterBody2D"]
 collision_layer = 128
@@ -34,9 +37,9 @@ rotation = -0.499164
 shape = SubResource("CapsuleShape2D_lfr1o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(-0.0348555, -0.480996)
 rotation = -0.499164
-shape = SubResource("CapsuleShape2D_lfr1o")
+shape = SubResource("RectangleShape2D_1uopd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_v6cy4")
