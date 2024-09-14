@@ -35,6 +35,7 @@ func _on_quit_button_pressed() -> void:
 
 func _on_1p_button_pressed() -> void:
 	players = 1
+	Global.number_players = 1
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
@@ -42,6 +43,7 @@ func _on_1p_button_pressed() -> void:
 
 func _on_2p_button_pressed() -> void:
 	players = 2
+	Global.number_players = 2
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
@@ -49,6 +51,7 @@ func _on_2p_button_pressed() -> void:
 
 func _on_3p_button_pressed() -> void:
 	players = 3
+	Global.number_players = 3
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
@@ -56,6 +59,7 @@ func _on_3p_button_pressed() -> void:
 
 func _on_4p_button_pressed() -> void:
 	players = 4
+	Global.number_players = 4
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
