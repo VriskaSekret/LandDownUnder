@@ -3,7 +3,13 @@ extends Node2D
 @export var orbit_radius: float = 50.0
 @export var orbit_speed: float = 3.0 # Speed of orbit in radians per second
 
+var level: int = 1
+@onready var thong_aoe: Area2D = $ThongAOE
+
 var angle: float = 0.0
+
+func _ready() -> void:
+	thong_aoe.level = level
 
 func _process(delta: float) -> void:
 	# Update the angle based on the orbit speed

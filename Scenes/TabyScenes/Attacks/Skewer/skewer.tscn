@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxk66lrtp7sms"]
+[gd_scene load_steps=7 format=3 uid="uid://dxk66lrtp7sms"]
 
 [ext_resource type="Texture2D" uid="uid://d2qujxxxhy025" path="res://Assets/JeremyAssets/skewer_atk.png" id="1_i1ndw"]
 [ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer.gd" id="1_uo6ah"]
 [ext_resource type="Texture2D" uid="uid://dopmgcvn3mjo8" path="res://Assets/JeremyAssets/skewer_normal.png" id="2_qheks"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer_area.gd" id="4_74iwl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bs7jo"]
 animations = [{
@@ -42,6 +43,7 @@ autoplay = "default"
 [node name="SkewerArea" type="Area2D" parent="." groups=["Attack"]]
 collision_layer = 4
 collision_mask = 4
+script = ExtResource("4_74iwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkewerArea"]
 rotation = -0.767945

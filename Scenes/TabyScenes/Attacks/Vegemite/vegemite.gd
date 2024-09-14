@@ -5,8 +5,11 @@ extends RigidBody2D
 @onready var aoe_timer: Timer = $AOETimer
 @onready var vegemite_aoe: Area2D = $VegemiteAOE
 
+var level: int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	vegemite_aoe.level = level
 	animated_sprite.animation = "default"
 	fall_timer.start()
 	vegemite_aoe.monitorable = false

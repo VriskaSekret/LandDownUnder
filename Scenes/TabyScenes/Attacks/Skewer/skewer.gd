@@ -5,10 +5,15 @@ var player
 @export var move_time: float = 1.0 # Time to move to the new point on the circle
 @export var wait_time: float = 3.0 # Time between each movement
 
+var level: int = 1
+@onready var skewer_area: Area2D = $SkewerArea
+
 var timer: Timer
 
 # Connect the signal directly in the _ready() function
 func _ready() -> void:
+	skewer_area.level = level
+	
 	# Set up Timer
 	timer = Timer.new()
 	timer.wait_time = wait_time
