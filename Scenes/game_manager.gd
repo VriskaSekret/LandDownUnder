@@ -28,6 +28,27 @@ func pause_for_item():
 	paused_for_item = true
 	Global.game_paused = true
 
+func randomise_item_select(playerNumber: int) -> void:
+	# ITEMS ARE AS FOLLOWS:
+	# 0 - tradie default wep - stop sign or cone idk
+	# 1 - raygun default wep - vegemite
+	# 2 - abo default wep - didgeridoo
+	# 3 - bush default wep - boomerang
+	# 4 - stop sign or cone depending on tradie default wep
+	# 5 - shrimp from the barbie
+	# 6 - thongs
+	# 7 - TONGS (not the slipper)
+	# 8 - surfboard
+	# IF ALL WEAPON SLOTS ARE FULL, START GIVING PASSIVE BUFFS
+	# 9 - walk speed buff
+	# 10 - attack speed buff
+	# 11 - hp buff
+	# 12 - attack damage buff
+	
+	
+	##### CHECK PLAYER ITEMS THEN RANDOMISE #####
+	pass
+
 func check_level():
 	if last_level < Global.total_level:
 		last_level = Global.total_level

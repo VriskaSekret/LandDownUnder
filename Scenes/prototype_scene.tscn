@@ -110,7 +110,6 @@ position = Vector2(16, 630)
 shape = SubResource("RectangleShape2D_58btn")
 
 [node name="InGameUI" parent="." instance=ExtResource("10_vypcr")]
-z_index = 69
 offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0

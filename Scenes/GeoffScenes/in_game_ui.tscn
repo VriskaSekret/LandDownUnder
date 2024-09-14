@@ -45,7 +45,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="Item1" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+[node name="Item1Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
@@ -57,7 +57,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Item2" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+[node name="Item2Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
@@ -69,7 +69,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Item3" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+[node name="Item3Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0

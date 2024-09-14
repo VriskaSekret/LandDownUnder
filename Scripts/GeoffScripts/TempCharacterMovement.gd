@@ -12,6 +12,9 @@ var left_button
 var right_button
 var up_button
 var down_button
+
+var player_type
+
 # skewer
 var skewer = preload("res://Scenes/JeremyScenes/Attacks/Skewer/skewer.tscn")
 @onready var skewer_base: Node2D = %SkewerBase
@@ -22,6 +25,12 @@ var skewer_level := 0
 var enemy_close = []
 
 func _ready():
+	player_type = Global.player_characters[character_player_number-1]
+	Global.player_weapons[character_player_number-1] = [player_type, -1, -1]
+	Global.player_weapon_levels[character_player_number-1] = [1,-1,-1]
+	print("Player " + str(character_player_number))
+	print("Weapons " + str(Global.player_weapons[character_player_number-1]))
+	print("Weapon Levels " + str(Global.player_weapon_levels[character_player_number-1]))
 	attack()
 
 

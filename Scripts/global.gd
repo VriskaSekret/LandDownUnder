@@ -7,11 +7,13 @@ var experience = 0
 var total_level = 1
 var experience_needed = 10.0 * (total_level * 1.2)
 
-var player1_character = -1
-var player2_character = -1
-var player3_character = -1
-var player4_character = -1
 
+# player_characters [player1, player2, player3, player4]
+# FOR FINDING WHAT CHARACTER EACH PLAYER IS USING
+# -1 MEANS NO SELECTION
+var player_characters = [-1,-1,-1,-1]
+var player_weapons = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]
+var player_weapon_levels = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]
 
 
 # Called when the node enters the scene tree for the first time.
