@@ -7,6 +7,7 @@ func _ready() -> void:
 	for i in range(Global.number_players):
 		var player_instance = player_character.instantiate()
 		player_instance.character_player_number = i + 1
+		player_instance.name = "Player%d" % (i + 1)
 		print (player_instance.character_player_number)
 		add_child(player_instance)
 

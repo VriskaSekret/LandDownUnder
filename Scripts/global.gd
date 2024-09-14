@@ -3,6 +3,8 @@ extends Node
 var number_players = -1
 
 var experience = 0
+var total_level = 1
+var experience_needed = 10.0 * (total_level * 1.2)
 
 var player1_character = -1
 var player2_character = -1
@@ -19,3 +21,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		get_tree().change_scene_to_file("res://Scenes/GeoffScenes/main_menu.tscn")
+
+func add_xp(xp_added: int) -> void:
+	experience += xp_added
+	if experience >= experience_needed:
+		total_level += 1

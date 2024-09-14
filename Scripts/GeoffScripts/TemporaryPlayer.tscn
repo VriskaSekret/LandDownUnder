@@ -170,6 +170,7 @@ height = 14.0
 radius = 125.0
 
 [node name="Player1" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 16777217
 collision_mask = 256
 motion_mode = 1
 script = ExtResource("2_y3ftq")
