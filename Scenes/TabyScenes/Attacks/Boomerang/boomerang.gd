@@ -29,15 +29,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_switch_timer_timeout() -> void:
 	phase = 1
-	print(phase)
 	normal_dir = (player.position - position).normalized()
 	tan_dir = normal_dir.orthogonal()
 	apply_impulse(-tan_dir * arc_speed)
 
 func _on_death_timeout() -> void:
-	print("die")
 	queue_free()
 
 func _on_reverse_timer_timeout() -> void:
 	phase = 2
-	print(phase)

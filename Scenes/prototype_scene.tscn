@@ -74,6 +74,7 @@ tile_map_data = PackedByteArray("AAD///7/AQABAAEAAAD+//7/AQABAAEAAAD9//7/AQABAAE
 tile_set = SubResource("TileSet_5m4f6")
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("p1", "p2")]
+zoom = Vector2(2, 2)
 script = ExtResource("9_pld26")
 p1 = NodePath("../Player1")
 p2 = NodePath("../Player2")
