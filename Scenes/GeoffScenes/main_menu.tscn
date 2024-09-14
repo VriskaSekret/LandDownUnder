@@ -61,7 +61,6 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="StartingMenu" type="HBoxContainer" parent="MarginContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 5
 
@@ -210,6 +209,7 @@ theme_override_font_sizes/font_size = 72
 text = "4"
 
 [node name="CharacterSelect" type="VBoxContainer" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1

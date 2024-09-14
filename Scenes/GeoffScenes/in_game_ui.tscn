@@ -1,0 +1,395 @@
+[gd_scene load_steps=6 format=3 uid="uid://de12g5sywnmb7"]
+
+[ext_resource type="Script" path="res://Scenes/GeoffScenes/in_game_ui_controller.gd" id="1_jdv0l"]
+[ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_xk8la"]
+[ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="2_mos1q"]
+[ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="3_5o87m"]
+[ext_resource type="Script" path="res://Scenes/GeoffScenes/xp_bar.gd" id="3_05yks"]
+
+[node name="InGameUI" type="Control"]
+z_index = 69
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jdv0l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ItemSelect" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SelectItemLabel" type="Label" parent="MarginContainer/ItemSelect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 64
+text = "Player X
+Select your item"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ItemSelect"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Item1Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 64
+text = "Item 1"
+icon = ExtResource("2_mos1q")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Item2Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 64
+text = "Item 1"
+icon = ExtResource("2_mos1q")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Item3Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 64
+text = "Item 1"
+icon = ExtResource("2_mos1q")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="XPBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 32
+script = ExtResource("3_05yks")
+
+[node name="PlayerItems" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="ItemsPlayer1" type="HBoxContainer" parent="PlayerItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Item1" type="MarginContainer" parent="PlayerItems/ItemsPlayer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item1"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer1/Item1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item2" type="MarginContainer" parent="PlayerItems/ItemsPlayer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item2"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer1/Item2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item3" type="MarginContainer" parent="PlayerItems/ItemsPlayer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item3"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer1/Item3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemsPlayer2" type="HBoxContainer" parent="PlayerItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Item1" type="MarginContainer" parent="PlayerItems/ItemsPlayer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item1"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer2/Item1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item2" type="MarginContainer" parent="PlayerItems/ItemsPlayer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item2"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer2/Item2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item3" type="MarginContainer" parent="PlayerItems/ItemsPlayer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item3"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer2/Item3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemsPlayer3" type="HBoxContainer" parent="PlayerItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Item1" type="MarginContainer" parent="PlayerItems/ItemsPlayer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item1"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer3/Item1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item2" type="MarginContainer" parent="PlayerItems/ItemsPlayer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item2"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer3/Item2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item3" type="MarginContainer" parent="PlayerItems/ItemsPlayer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item3"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer3/Item3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ItemsPlayer4" type="HBoxContainer" parent="PlayerItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Item1" type="MarginContainer" parent="PlayerItems/ItemsPlayer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item1"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer4/Item1"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item2" type="MarginContainer" parent="PlayerItems/ItemsPlayer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item2"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer4/Item2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Item3" type="MarginContainer" parent="PlayerItems/ItemsPlayer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item3"]
+layout_mode = 2
+texture = ExtResource("3_5o87m")
+expand_mode = 5
+
+[node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer4/Item3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 16
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 2
