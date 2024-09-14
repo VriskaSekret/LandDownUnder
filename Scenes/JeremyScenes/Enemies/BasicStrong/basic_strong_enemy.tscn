@@ -13,11 +13,13 @@ height = 26.0173
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1uopd"]
 size = Vector2(10.2953, 25.1393)
 
-[node name="Basic Strong Enemy" type="CharacterBody2D"]
+[node name="Basic Strong Enemy" type="RigidBody2D"]
 collision_layer = 128
 collision_mask = 128
-motion_mode = 1
 script = ExtResource("1_hs4h6")
+speed = null
+hp = null
+knockback_recovery = null
 
 [node name="Hitbox" parent="." instance=ExtResource("1_8r6on")]
 collision_layer = 2

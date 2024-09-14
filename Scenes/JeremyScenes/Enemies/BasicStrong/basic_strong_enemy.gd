@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 @export var speed := 60.0
 @export var hp := 20
