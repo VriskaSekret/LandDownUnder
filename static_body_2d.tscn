@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://kdowqdun74h0"]
+
+[ext_resource type="Texture2D" uid="uid://ua2abibt7s5u" path="res://Assets/AlexisAssets/rock.png" id="1_0eb06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5g6g"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l5g6g")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+texture = ExtResource("1_0eb06")
