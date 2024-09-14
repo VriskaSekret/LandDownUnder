@@ -60,11 +60,21 @@ func _physics_process(delta) -> void:
 func _process(delta) -> void:
 	# Animation shit, doesn't relate to physics
 	if !Global.game_paused:
-		if velocity:
+		if velocity != Vector2(0, 0):
+			#anim_spr.play(get_char_name() + "_walk")
 			anim_spr.play("walk")
 		else:
-			anim_spr.play("idle")
-	
+			anim_spr.play(get_char_name() + "_idle")
+
+func get_char_name() -> String:
+	if character_player_number == 1:
+		return "tradie"
+	elif character_player_number == 2:
+		return "raygun"
+	elif character_player_number == 3:
+		return "abo"
+	else:
+		return "bush"
 
 
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:

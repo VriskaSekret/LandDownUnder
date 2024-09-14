@@ -8,10 +8,15 @@ var player
 var level: int = 1
 @onready var skewer_area: Area2D = $SkewerArea
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var move: Timer = $Move
+
 var timer: Timer
 
 # Connect the signal directly in the _ready() function
 func _ready() -> void:
+	move.wait_time = move_time
+	animated_sprite_2d.animation = "default"
 	skewer_area.level = level
 	
 	# Set up Timer
@@ -25,6 +30,7 @@ func _ready() -> void:
 	timer.start()
 
 func _on_timer_timeout() -> void:
+	animated_sprite_2d.animation = "attack"
 	rotation = get_angle_to(player.position)
 	var random_angle = randf() * 2.0 * PI
 	
@@ -38,3 +44,8 @@ func _on_timer_timeout() -> void:
 	
 	# Use Tween to move the node smoothly to the new position
 	tween.tween_property(self, "position", new_position, move_time)
+	move.start()
+
+
+func _on_move_timeout() -> void:
+	animated_sprite_2d.animation = "default"

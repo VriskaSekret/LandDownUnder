@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=36 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dr3elfwjv40q" path="res://Assets/JeremyAssets/StolenAssets/knight.png" id="2_pvbi5"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_5xlg4"]
+[ext_resource type="Texture2D" uid="uid://d1dis6supl6ra" path="res://Assets/TabyAssets/aussie_shuffle.png" id="3_j7ka5"]
 [ext_resource type="PackedScene" uid="uid://bqtvxpjx8p4vn" path="res://Scenes/JeremyScenes/Attacks/Didgeridoo/didgeridoo.tscn" id="4_w20g5"]
 [ext_resource type="PackedScene" uid="uid://dnatc1ouhsjv6" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_shooter.tscn" id="5_m3thl"]
 [ext_resource type="PackedScene" uid="uid://pl11g1lgvi2j" path="res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn" id="6_yhlfm"]
@@ -28,6 +29,14 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pvhg"]
 atlas = ExtResource("2_pvbi5")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ior4x"]
+atlas = ExtResource("3_j7ka5")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qi48"]
+atlas = ExtResource("3_j7ka5")
+region = Rect2(64, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuh17"]
 atlas = ExtResource("2_pvbi5")
@@ -95,6 +104,26 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5clye"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"abo_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"abo_walk",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"bush_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"bush_walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4580")
@@ -110,6 +139,32 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"raygun_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"raygun_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ior4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qi48")
+}],
+"loop": true,
+"name": &"tradie_idle",
+"speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"tradie_walk",
 "speed": 5.0
 }, {
 "frames": [{
@@ -185,8 +240,7 @@ shape = SubResource("CapsuleShape2D_7ymxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5clye")
-animation = &"walk"
-frame_progress = 0.00151284
+animation = &"bush_idle"
 flip_v = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_5xlg4")]

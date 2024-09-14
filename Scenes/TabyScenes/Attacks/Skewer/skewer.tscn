@@ -48,3 +48,8 @@ script = ExtResource("4_74iwl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkewerArea"]
 rotation = -0.767945
 shape = SubResource("CapsuleShape2D_ymtem")
+
+[node name="Move" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Move" to="." method="_on_move_timeout"]
