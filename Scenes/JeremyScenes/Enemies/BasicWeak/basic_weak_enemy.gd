@@ -11,7 +11,7 @@ var knockback := Vector2.ZERO
 @onready var snd_hit: AudioStreamPlayer2D = $"Sound Hit"
 
 var death_anim = preload("res://Scenes/JeremyScenes/Enemies/Explosion/explosion.tscn")
-
+var coin_drop = preload("res://Scenes/GeoffScenes/coin.tscn")
 
 signal remove_from_arr(obj)
 
@@ -40,8 +40,12 @@ func _on_hurtbox_hurt(damage, angle, knockback_amount):
 
 func death():
 	emit_signal("remove_from_arr", self)
+	var coin = coin_drop.instantiate()
 	var enemy_death = death_anim.instantiate()
 	enemy_death.scale = sprite.scale
+	coin.scale = sprite.scale
 	enemy_death.global_position = global_position
+	coin.global_position = global_position
 	get_parent().call_deferred("add_child", enemy_death)
+	get_parent().call_deferred("add_child", coin)
 	queue_free()

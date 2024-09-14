@@ -55,6 +55,9 @@ size = Vector2(1500, 20)
 
 [node name="PrototypeScene" type="Node2D"]
 
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("10_kh3fb")
+
 [node name="Floor" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_6iohn")
@@ -105,9 +108,6 @@ collision_mask = 259
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D4"]
 position = Vector2(16, 630)
 shape = SubResource("RectangleShape2D_58btn")
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("10_kh3fb")
 
 [node name="Coin" parent="." instance=ExtResource("9_ar65b")]
 position = Vector2(85, -1)

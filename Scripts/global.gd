@@ -26,3 +26,4 @@ func add_xp(xp_added: int) -> void:
 	experience += xp_added
 	if experience >= experience_needed:
 		total_level += 1
+		experience = 0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://de12g5sywnmb7"]
+[gd_scene load_steps=5 format=3 uid="uid://de12g5sywnmb7"]
 
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_xk8la"]
 [ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="2_mos1q"]
 [ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="3_5o87m"]
+[ext_resource type="Script" path="res://Scenes/GeoffScenes/xp_bar.gd" id="3_05yks"]
 
 [node name="InGameUI" type="Control"]
 layout_mode = 3
@@ -77,7 +78,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="XPBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -85,6 +86,7 @@ offset_bottom = 27.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 32
+script = ExtResource("3_05yks")
 
 [node name="PlayerItems" type="HBoxContainer" parent="."]
 layout_mode = 1
