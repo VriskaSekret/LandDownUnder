@@ -5,6 +5,7 @@ extends CharacterBody2D
 var hp := 80
 
 var dir
+var last_dir = Vector2(1, 1)
 var movement_speed := 100.0
 
 # skewer
@@ -23,6 +24,9 @@ func _ready():
 func get_input() -> void:
 	var input_direction = Input.get_vector("p1left", "p1right", "p1up", "p1down")
 	dir = input_direction.normalized()
+	if (dir != Vector2(0, 0)):
+		last_dir = dir
+		print(last_dir)
 	velocity = input_direction * movement_speed
 
 func _physics_process(delta) -> void:
