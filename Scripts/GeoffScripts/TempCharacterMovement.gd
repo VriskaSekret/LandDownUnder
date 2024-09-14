@@ -13,6 +13,9 @@ var left_button
 var right_button
 var up_button
 var down_button
+
+var player_type
+
 # skewer
 var skewer = preload("res://Scenes/JeremyScenes/Attacks/Skewer/skewer.tscn")
 @onready var skewer_base: Node2D = %SkewerBase
@@ -23,6 +26,12 @@ var skewer_level := 0
 var enemy_close = []
 
 func _ready():
+	player_type = Global.player_characters[character_player_number-1]
+	Global.player_weapons[character_player_number-1] = [player_type, -1, -1]
+	Global.player_weapon_levels[character_player_number-1] = [1,-1,-1]
+	print("Player " + str(character_player_number))
+	print("Weapons " + str(Global.player_weapons[character_player_number-1]))
+	print("Weapon Levels " + str(Global.player_weapon_levels[character_player_number-1]))
 	attack()
 
 
@@ -39,20 +48,22 @@ func get_input() -> void:
 	velocity = input_direction * movement_speed
 
 func _physics_process(delta) -> void:
-	get_input()
-	if dir[0] < 0:
-		anim_spr.flip_h = true
-	elif dir[0] > 0:
-		anim_spr.flip_h = false
-	move_and_slide()
+	if !Global.game_paused:
+		get_input()
+		if dir[0] < 0:
+			anim_spr.flip_h = true
+		elif dir[0] > 0:
+			anim_spr.flip_h = false
+		move_and_slide()
 
 
 func _process(delta) -> void:
 	# Animation shit, doesn't relate to physics
-	if velocity:
-		anim_spr.play("walk")
-	else:
-		anim_spr.play("idle")
+	if !Global.game_paused:
+		if velocity:
+			anim_spr.play("walk")
+		else:
+			anim_spr.play("idle")
 	
 
 
