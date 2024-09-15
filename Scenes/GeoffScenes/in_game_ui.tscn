@@ -33,6 +33,9 @@ layout_mode = 2
 
 [node name="SelectItemLabel" type="Label" parent="MarginContainer/ItemSelect"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 64
 text = "Player X

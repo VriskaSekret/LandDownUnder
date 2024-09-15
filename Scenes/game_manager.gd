@@ -30,6 +30,8 @@ func pause_for_item():
 	randomise_item_select()
 	in_game_ui.update_upgrade_buttons()
 	in_game_ui.item_select.show()
+	in_game_ui.xp_bar.hide()
+	in_game_ui.player_items.hide()
 	Engine.time_scale = 0
 	Global.game_paused = true
 
