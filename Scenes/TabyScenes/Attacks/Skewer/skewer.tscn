@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxk66lrtp7sms"]
+
+[ext_resource type="Texture2D" uid="uid://d2qujxxxhy025" path="res://Assets/JeremyAssets/skewer_atk.png" id="1_i1ndw"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer.gd" id="1_uo6ah"]
+[ext_resource type="Texture2D" uid="uid://dopmgcvn3mjo8" path="res://Assets/JeremyAssets/skewer_normal.png" id="2_qheks"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer_area.gd" id="4_74iwl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bs7jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i1ndw")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qheks")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymtem"]
+radius = 3.54734
+height = 35.3746
+
+[node name="Skewer" type="Node2D"]
+script = ExtResource("1_uo6ah")
+
+[node name="Attack" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 2.18166
+sprite_frames = SubResource("SpriteFrames_bs7jo")
+autoplay = "default"
+
+[node name="SkewerArea" type="Area2D" parent="." groups=["Attack"]]
+rotation = 2.18166
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_74iwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkewerArea"]
+rotation = -0.837758
+shape = SubResource("CapsuleShape2D_ymtem")
+
+[node name="Move" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Attack" to="SkewerArea" method="_on_attack_timeout"]
+[connection signal="timeout" from="Move" to="SkewerArea" method="_on_move_timeout"]

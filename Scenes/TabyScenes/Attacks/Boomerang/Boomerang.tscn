@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb7eckq557uu5"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang.gd" id="1_rax5j"]
+[ext_resource type="Texture2D" uid="uid://cabqxtxrau1i4" path="res://Assets/TabyAssets/boomerang.png" id="2_nygt7"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_area.gd" id="3_34iej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e45ci"]
+radius = 16.0
+
+[node name="Boomerang" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 0.0
+script = ExtResource("1_rax5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nygt7")
+
+[node name="BoomerangArea" type="Area2D" parent="Sprite2D" groups=["Attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_34iej")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sprite2D/BoomerangArea"]
+shape = SubResource("CircleShape2D_e45ci")
+
+[node name="SwitchTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="ReverseTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 2.2
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SwitchTimer" to="." method="_on_switch_timer_timeout"]
+[connection signal="timeout" from="ReverseTimer" to="." method="_on_reverse_timer_timeout"]
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]

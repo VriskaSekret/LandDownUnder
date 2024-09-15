@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb7eckq557uu5"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang.gd" id="1_rax5j"]
+[ext_resource type="Texture2D" uid="uid://8y7es6amc8d3" path="res://Assets/TabyAssets/boomerang_ph.png" id="2_3rjxr"]
+
+[node name="Boomerang" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+gravity_scale = 0.0
+script = ExtResource("1_rax5j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, 4, -4, -5, 4, -5, 10, 4, 7, 5, 2, 1, -5, 1, -10, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3rjxr")
