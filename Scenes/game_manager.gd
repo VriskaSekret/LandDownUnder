@@ -3,7 +3,6 @@ extends Node2D
 var player_character = preload("res://Scripts/GeoffScripts/TemporaryPlayer.tscn")
 var last_level = Global.total_level
 @onready var in_game_ui: Control = $"../InGameUI"
-var paused_for_item = false
 
 
 
@@ -23,12 +22,13 @@ func _process(delta: float) -> void:
 	pass
 
 func pause_for_item():
+	randomise_item_select()
+	in_game_ui.update_upgrade_buttons()
 	in_game_ui.item_select.show()
 	Engine.time_scale = 0
-	paused_for_item = true
 	Global.game_paused = true
 
-func randomise_item_select(playerNumber: int) -> void:
+func randomise_item_select() -> void:
 	# ITEMS ARE AS FOLLOWS:
 	# 0 - tradie default wep - stop sign or cone idk
 	# 1 - raygun default wep - vegemite
@@ -45,9 +45,25 @@ func randomise_item_select(playerNumber: int) -> void:
 	# 11 - hp buff
 	# 12 - attack damage buff
 	
-	
+	var item_array = []
 	##### CHECK PLAYER ITEMS THEN RANDOMISE #####
-	pass
+	var player_recieving = Global.player_recieving_item
+	var inventory = Global.player_weapons[player_recieving-1]
+	var inventory_levels = Global.player_weapon_levels[player_recieving-1]
+	var inv_full = not -1 in inventory
+	if inv_full:
+		for i in range(len(inventory)):
+			if inventory_levels[i] < 3:
+				item_array.append(inventory[i])
+		item_array += [9,10,11,12]
+	else:
+		item_array = [0,1,2,3,4,5,6,7,8]
+	var output = []
+	for i in range(len(inventory)):
+		var added_item = item_array.pick_random()
+		item_array.erase(added_item)
+		output.append(added_item)
+	Global.randomised_items = output
 
 func check_level():
 	if last_level < Global.total_level:
