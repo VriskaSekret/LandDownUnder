@@ -13,8 +13,8 @@ func level_up():
 	level += 1
 
 func new_vegemite():
-	var x = player.position.x + rng.randi_range(-200, 200)
-	var y = player.position.y + rng.randi_range(-20, -200)
+	var x = player.position.x + rng.randi_range(-300, 300)
+	var y = player.position.y + rng.randi_range(-300, -450)
 	var vegemite_instance = vegemite.instantiate()
 	vegemite_instance.level = level
 	vegemite_instance.position = Vector2(x, y)
