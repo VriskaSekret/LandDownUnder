@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
-[ext_resource type="PackedScene" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
+[ext_resource type="PackedScene" uid="uid://dvr7hxqjui07j" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
 
 [sub_resource type="Resource" id="Resource_b0klr"]
 script = ExtResource("4_7a5xy")
