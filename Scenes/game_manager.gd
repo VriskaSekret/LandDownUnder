@@ -30,11 +30,11 @@ func pause_for_item():
 
 func randomise_item_select() -> void:
 	# ITEMS ARE AS FOLLOWS:
-	# 0 - tradie default wep - stop sign or cone idk
+	# 0 - tradie default wep - cone 
 	# 1 - raygun default wep - vegemite
 	# 2 - abo default wep - didgeridoo
-	# 3 - bush default wep - boomerang
-	# 4 - stop sign or cone depending on tradie default wep
+	# 3 - bush default wep - whip
+	# 4 - boomerang
 	# 5 - shrimp from the barbie
 	# 6 - thongs
 	# 7 - TONGS (not the slipper)

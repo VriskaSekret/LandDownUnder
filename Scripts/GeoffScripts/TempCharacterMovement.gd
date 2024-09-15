@@ -30,6 +30,7 @@ var skewer = preload("res://Scenes/TabyScenes/Attacks/Skewer/skewer_shooter.tscn
 var thongs = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong.tscn")
 var vegemite = preload("res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn")
 var cone = preload("res://Scenes/TabyScenes/Attacks/Cone/cone_shooter.tscn")
+var surf = preload("res://Scenes/TabyScenes/Attacks/Surfboard/surf.tscn")
 
 func _ready():
 	print("hi im " + get_char_name())
@@ -113,10 +114,10 @@ func create_weapon(number):
 	elif number == 2:
 		return didgeridoo.instantiate()
 	elif number == 3:
-		return boomerang.instantiate()
-	elif number == 4:
-		#stop_sign.instantiate()
+		#return whip.instantiate()
 		pass
+	elif number == 4:
+		return boomerang.instantiate()
 	elif number == 5:
 		return skewer.instantiate()
 	elif number == 6:
@@ -125,7 +126,6 @@ func create_weapon(number):
 		#tongs.instantiate()
 		pass
 	elif number == 8:
-		#surfboard.instantiate()
-		pass
+		return surf.instantiate()
 	else:
 		print("invalid weapon number")
