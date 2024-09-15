@@ -15,6 +15,7 @@ var time_seconds = 0
 var player_characters = [-1,-1,-1,-1]
 var player_weapons = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]
 var player_weapon_levels = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]
+var players_alive = [false, false, false, false]
 # 
 # RANDOMISED ITEMS ARRAY
 # always 3 items

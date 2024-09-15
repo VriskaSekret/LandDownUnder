@@ -16,7 +16,6 @@ func level_up():
 	level += 1
 
 func new_whip():
-	print("smack")
 	var whip_instance = whip.instantiate()
 	whip_instance.level = level
 	whip_instance.player = get_parent()

@@ -103,6 +103,7 @@ func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 
 func die() -> void:
 	dead = true
+	Global.players_alive[character_player_number - 1] = false
 	anim_spr.rotate(-PI/2)
 	anim_spr.play(get_char_name() + "_idle")
 	anim_spr.speed_scale = 0
