@@ -1,11 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://dfu85v4eflk6q"]
+[gd_scene load_steps=31 format=3 uid="uid://dfu85v4eflk6q"]
 
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/main_menu.gd" id="1_3hnnt"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_t38q1"]
 [ext_resource type="Texture2D" uid="uid://6csfiaxiv4lx" path="res://Assets/GeoffAssets/new_bg.png" id="2_skyt3"]
-[ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="3_khd7a"]
 [ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="4_eci28"]
 [ext_resource type="PackedScene" uid="uid://deunyj7inebhm" path="res://main_menu_raygun.tscn" id="4_m0bib"]
+[ext_resource type="Texture2D" uid="uid://b58agb465jdgk" path="res://Assets/GeoffAssets/tradie_icon.png" id="6_6oxve"]
+[ext_resource type="Texture2D" uid="uid://d3nom0v2bf11a" path="res://Assets/GeoffAssets/koala_icon.png" id="7_84mkk"]
+[ext_resource type="Texture2D" uid="uid://p1yw7s0cupr7" path="res://Assets/GeoffAssets/ray_icon.png" id="8_4gyau"]
+[ext_resource type="Texture2D" uid="uid://cq3vw6dogwscf" path="res://Assets/GeoffAssets/ranger_icon.png" id="9_yox0p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alk2x"]
 
@@ -335,7 +338,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "Tradie"
-icon = ExtResource("3_khd7a")
+icon = ExtResource("6_6oxve")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -347,7 +350,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "\"Koala\""
-icon = ExtResource("3_khd7a")
+icon = ExtResource("7_84mkk")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -363,7 +366,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "Raygun"
-icon = ExtResource("3_khd7a")
+icon = ExtResource("8_4gyau")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -375,7 +378,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "Bushranger"
-icon = ExtResource("3_khd7a")
+icon = ExtResource("9_yox0p")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
