@@ -20,7 +20,7 @@ func _ready() -> void:
 		print (player_instance.character_player_number)
 		add_child(player_instance)
 		last_level = Global.total_level
-
+	in_game_ui.update_player_inventory()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

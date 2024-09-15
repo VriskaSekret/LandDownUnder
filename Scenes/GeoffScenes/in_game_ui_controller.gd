@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var game_manager: Node2D = $"../GameManager"
 @onready var count_up_time: Label = $XPBar/CountUpTime
 var local_time = 0
+@onready var select_item_label: Label = $MarginContainer/ItemSelect/SelectItemLabel
 
 #
 # Buttons for items when levelling up
@@ -32,13 +33,31 @@ func _process(_delta: float) -> void:
 
 func update_upgrade_buttons():
 	var items = Global.randomised_items
+	select_item_label.text = str("Player %d\nSelect your item" % (Global.player_recieving_item + 1))
 	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.text = str(items[0])
 	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.text = str(items[1])
 	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.text = str(items[2])
 
 func update_player_inventory():
-	#updates UI
-	pass
+	var list_of_all = []
+	for i in Global.player_weapons:
+		for j in i:
+			list_of_all.append(j)
+	$PlayerItems/ItemsPlayer1/Item1/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[0]
+	$PlayerItems/ItemsPlayer1/Item2/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[1]
+	$PlayerItems/ItemsPlayer1/Item3/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[2]
+	$PlayerItems/ItemsPlayer2/Item1/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[3]
+	$PlayerItems/ItemsPlayer2/Item2/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[4]
+	$PlayerItems/ItemsPlayer2/Item3/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[5]
+	$PlayerItems/ItemsPlayer3/Item1/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[6]
+	$PlayerItems/ItemsPlayer3/Item2/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[7]
+	$PlayerItems/ItemsPlayer3/Item3/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[8]
+	$PlayerItems/ItemsPlayer4/Item1/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[9]
+	$PlayerItems/ItemsPlayer4/Item2/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[10]
+	$PlayerItems/ItemsPlayer4/Item3/Frame/ItemImage.texture = "res://Assets/Icons/%d.png" % list_of_all[11]
+				#player_items.get_child(player_i).get_child\
+				#(weapon_i).get_child(0).get_child\
+				#(0).Texture = "res://Assets/Icons/%d.png" % Global.player_weapons[player_i][weapon_i]
 
 
 func _on_item_1_button_pressed() -> void:
