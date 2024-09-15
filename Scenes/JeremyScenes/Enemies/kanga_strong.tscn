@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://djf3fup248sxt"]
 
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_0h1mu"]
-[ext_resource type="Texture2D" uid="uid://duu4aeg27l28u" path="res://Scenes/JeremyScenes/Enemies/kanga_box.png" id="2_ubyvs"]
+[ext_resource type="Texture2D" uid="uid://duu4aeg27l28u" path="res://Assets/JeremyAssets/kanga_box.png" id="2_ubyvs"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_bnml5"]
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="4_s3pqk"]
 

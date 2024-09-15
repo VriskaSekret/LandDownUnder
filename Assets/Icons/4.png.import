@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brwdq81u30gob"
-path="res://.godot/imported/emu.png-3ae913ac5fb8493b4a53bb60a10a397c.ctex"
+uid="uid://7131jjjmun03"
+path="res://.godot/imported/4.png-0879d6ec6f60b88f5619998a25cd6a4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/JeremyScenes/Enemies/emu.png"
-dest_files=["res://.godot/imported/emu.png-3ae913ac5fb8493b4a53bb60a10a397c.ctex"]
+source_file="res://Assets/Icons/4.png"
+dest_files=["res://.godot/imported/4.png-0879d6ec6f60b88f5619998a25cd6a4e.ctex"]
 
 [params]
 
