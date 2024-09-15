@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cexuxpinf0yyj"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.gd" id="1_n6aoo"]
+
+[node name="SnakeShooter" type="Node2D"]
+script = ExtResource("1_n6aoo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
