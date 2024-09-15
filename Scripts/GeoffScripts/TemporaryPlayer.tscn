@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=66 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dn0e6oeyv0o3q" path="res://Assets/TabyAssets/koala_idle.png" id="2_10140"]
 [ext_resource type="Texture2D" uid="uid://cumqrhm4v1mbc" path="res://Assets/TabyAssets/ranger_idle-sheet.png" id="2_d1bjk"]
@@ -423,7 +423,7 @@ collision_layer = 16777217
 collision_mask = 256
 motion_mode = 1
 script = ExtResource("2_y3ftq")
-hp = 5
+hp = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
