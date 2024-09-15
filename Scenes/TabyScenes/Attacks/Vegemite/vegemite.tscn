@@ -53,7 +53,7 @@ rotation = 1.57385
 shape = SubResource("CapsuleShape2D_mlgcx")
 
 [node name="FallTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.7
 one_shot = true
 
 [node name="AOETimer" type="Timer" parent="."]
