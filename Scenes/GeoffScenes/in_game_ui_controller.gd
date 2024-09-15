@@ -38,13 +38,16 @@ func update_player_inventory():
 func _on_item_1_button_pressed() -> void:
 	reciever = Global.player_recieving_item
 	var item = Global.randomised_items[0]
-	if item in Global.player_weapons[reciever]:
-		var temp_index = Global.player_weapons[reciever].find(item)
-		Global.player_weapon_levels[reciever][temp_index] += 1
+	if item < 9: #AMOUNT OF WEAPONS
+		if item in Global.player_weapons[reciever]:
+			var temp_index = Global.player_weapons[reciever].find(item)
+			Global.player_weapon_levels[reciever][temp_index] += 1
+		else:
+			var temp_index = Global.player_weapons[reciever].find(-1)
+			Global.player_weapons[reciever][temp_index] = item
+			Global.player_weapon_levels[reciever][temp_index] = 1
 	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
+		pass # ADD BUFF BASED ON ITEM
 	Engine.time_scale = 1
 	item_select.hide()
 	Global.game_paused = false
@@ -55,13 +58,16 @@ func _on_item_1_button_pressed() -> void:
 func _on_item_2_button_pressed() -> void:
 	reciever = Global.player_recieving_item
 	var item = Global.randomised_items[1]
-	if item in Global.player_weapons[reciever]:
-		var temp_index = Global.player_weapons[reciever].find(item)
-		Global.player_weapon_levels[reciever][temp_index] += 1
+	if item < 9: #AMOUNT OF WEAPONS
+		if item in Global.player_weapons[reciever]:
+			var temp_index = Global.player_weapons[reciever].find(item)
+			Global.player_weapon_levels[reciever][temp_index] += 1
+		else:
+			var temp_index = Global.player_weapons[reciever].find(-1)
+			Global.player_weapons[reciever][temp_index] = item
+			Global.player_weapon_levels[reciever][temp_index] = 1
 	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
+		pass # ADD BUFF BASED ON ITEM
 	Engine.time_scale = 1
 	item_select.hide()
 	Global.game_paused = false
@@ -73,13 +79,16 @@ func _on_item_2_button_pressed() -> void:
 func _on_item_3_button_pressed() -> void:
 	reciever = Global.player_recieving_item
 	var item = Global.randomised_items[2]
-	if item in Global.player_weapons[reciever]:
-		var temp_index = Global.player_weapons[reciever].find(item)
-		Global.player_weapon_levels[reciever][temp_index] += 1
+	if item < 9: #AMOUNT OF WEAPONS
+		if item in Global.player_weapons[reciever]:
+			var temp_index = Global.player_weapons[reciever].find(item)
+			Global.player_weapon_levels[reciever][temp_index] += 1
+		else:
+			var temp_index = Global.player_weapons[reciever].find(-1)
+			Global.player_weapons[reciever][temp_index] = item
+			Global.player_weapon_levels[reciever][temp_index] = 1
 	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
+		pass # ADD BUFF BASED ON ITEM
 	Engine.time_scale = 1
 	item_select.hide()
 	Global.game_paused = false

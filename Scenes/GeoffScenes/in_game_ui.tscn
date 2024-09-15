@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://de12g5sywnmb7"]
+[gd_scene load_steps=9 format=3 uid="uid://dvr7hxqjui07j"]
 
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/in_game_ui_controller.gd" id="1_jdv0l"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_xk8la"]
 [ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="2_mos1q"]
-[ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="3_5o87m"]
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/xp_bar.gd" id="3_05yks"]
+[ext_resource type="Texture2D" uid="uid://41ma47fy6ps" path="res://Assets/GeoffAssets/load_text.png" id="4_55rt1"]
+[ext_resource type="Texture2D" uid="uid://doetlst640vjn" path="res://Assets/GeoffAssets/frame.png" id="6_s4df1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo423"]
+bg_color = Color(0.193154, 0.193154, 0.193153, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hxlb"]
+texture = ExtResource("4_55rt1")
 
 [node name="InGameUI" type="Control"]
 layout_mode = 3
@@ -82,8 +89,13 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 27.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_vo423")
+theme_override_styles/fill = SubResource("StyleBoxTexture_2hxlb")
 script = ExtResource("3_05yks")
 
 [node name="PlayerItems" type="HBoxContainer" parent="."]
@@ -109,14 +121,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item1"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item1"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item1/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer1/Item1"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -132,14 +155,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item2"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item2"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item2/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer1/Item2"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -155,14 +189,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item3"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item3"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer1/Item3/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer1/Item3"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -182,14 +227,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item1"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item1"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item1/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer2/Item1"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -205,14 +261,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item2"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item2"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item2/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer2/Item2"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -228,14 +295,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item3"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item3"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer2/Item3/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer2/Item3"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -255,14 +333,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item1"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item1"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item1/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer3/Item1"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -278,14 +367,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item2"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item2"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item2/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer3/Item2"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -301,14 +401,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item3"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item3"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer3/Item3/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer3/Item3"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -328,14 +439,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item1"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item1"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item1/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer4/Item1"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -351,14 +473,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item2"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item2"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item2/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer4/Item2"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
@@ -374,14 +507,25 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item3"]
+[node name="Frame" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item3"]
 layout_mode = 2
-texture = ExtResource("3_5o87m")
+texture = ExtResource("6_s4df1")
 expand_mode = 5
+
+[node name="ItemImage" type="TextureRect" parent="PlayerItems/ItemsPlayer4/Item3/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemLevelLabel" type="Label" parent="PlayerItems/ItemsPlayer4/Item3"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 16
 text = "1
