@@ -3,12 +3,16 @@ extends CharacterBody2D
 @onready var anim_spr: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var health_bar: ProgressBar = $HealthBar
-var hp := 80
+@export var hp := 80
+var dead = false
+
+var attack_speed: float = 1.0
+var attack_damage: float = 1.0
 
 var character_player_number
 var dir
-var last_dir = Vector2(1, 1)
-var has_assigned_keys = false
+var last_dir: Vector2 = Vector2(1, 1)
+var has_assigned_keys: bool = false
 var movement_speed := 100.0
 var left_button
 var right_button
@@ -36,6 +40,8 @@ var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip_shooter.tscn")
 
 func _ready():
+	health_bar.max_value = hp
+	health_bar.value = hp
 	player_type = Global.player_characters[character_player_number-1]
 	Global.player_weapons[character_player_number-1] = [player_type, -1, -1]
 	Global.player_weapon_levels[character_player_number-1] = [1,-1,-1]
@@ -58,7 +64,7 @@ func get_input() -> void:
 	velocity = input_direction * movement_speed
 
 func _physics_process(_delta) -> void:
-	if !Global.game_paused:
+	if !Global.game_paused and not dead:
 		get_input()
 		if dir[0] < 0:
 			anim_spr.flip_h = true
@@ -69,7 +75,7 @@ func _physics_process(_delta) -> void:
 
 func _process(_delta) -> void:
 	# Animation shit, doesn't relate to physics
-	if !Global.game_paused:
+	if !Global.game_paused and not dead:
 		if velocity != Vector2(0, 0):
 			anim_spr.play(get_char_name() + "_walk")
 		else:
@@ -88,9 +94,21 @@ func get_char_name() -> String:
 
 
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
-	hp -= damage
-	print(hp)
-	health_bar.value = hp
+	if not dead:
+		hp -= damage
+		print(hp)
+		health_bar.value = hp
+		if hp <= 0:
+			die()
+
+func die() -> void:
+	dead = true
+	anim_spr.rotate(-PI/2)
+	anim_spr.play(get_char_name() + "_idle")
+	anim_spr.speed_scale = 0
+	for wp in weapon_nodes:
+		if is_instance_valid(wp):
+			wp.queue_free()
 
 func add_weapons():
 	for i in range(len(Global.player_weapons[character_player_number - 1])):
@@ -98,8 +116,9 @@ func add_weapons():
 			weapons[i] = Global.player_weapons[character_player_number - 1][i]
 			wlevels[i] = 1
 			var new_weapon = create_weapon(weapons[i])
-			weapon_nodes.push_back(new_weapon)
-			add_child(new_weapon)
+			if new_weapon:
+				weapon_nodes.push_back(new_weapon)
+				add_child(new_weapon)
 
 func upgrade_weapons():
 	for i in range(len(Global.player_weapon_levels[character_player_number - 1])):
@@ -127,5 +146,11 @@ func create_weapon(number):
 		return snake.instantiate()
 	elif number == 8:
 		return surf.instantiate()
-	else:
-		print("invalid weapon number")
+	elif number == 9:
+		movement_speed += 10.0
+	elif number == 10:
+		attack_speed -= 0.1
+	elif number == 11:
+		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
+	elif number == 12:
+		attack_damage += 0.1

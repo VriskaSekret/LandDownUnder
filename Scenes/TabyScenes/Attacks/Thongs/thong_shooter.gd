@@ -1,16 +1,25 @@
 extends Node2D
 
 var thong = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong.tscn")
+@onready var timer: Timer = $Timer
 
 @export var level: int = 1
+var cooldown: float = 5.0
 @export var orbit_radius: float = 70.0
 
+func _ready() -> void:
+	set_timer()
+
+func set_timer():
+	timer.wait_time = cooldown * get_parent().attack_speed
+	timer.start()
+
 func _on_timer_timeout() -> void:
+	set_timer()
 	for i in range(level):
 		new_thong((2*PI/level) * i)
 
 func level_up():
-	print("thong up!")
 	level += 1
 
 func new_thong(offset):
