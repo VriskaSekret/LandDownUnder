@@ -37,7 +37,7 @@ func randomise_item_select() -> void:
 	# 4 - boomerang
 	# 5 - shrimp from the barbie
 	# 6 - thongs
-	# 7 - TONGS (not the slipper)
+	# 7 - snake
 	# 8 - surfboard
 	# IF ALL WEAPON SLOTS ARE FULL, START GIVING PASSIVE BUFFS
 	# 9 - walk speed buff
