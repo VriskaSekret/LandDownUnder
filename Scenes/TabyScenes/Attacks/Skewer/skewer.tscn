@@ -39,7 +39,6 @@ autostart = true
 rotation = 2.18166
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_bs7jo")
-animation = &"attack"
 autoplay = "default"
 
 [node name="SkewerArea" type="Area2D" parent="." groups=["Attack"]]

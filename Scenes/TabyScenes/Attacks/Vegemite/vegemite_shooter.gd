@@ -1,11 +1,21 @@
 extends Node2D
 
 @export var level: int = 1
+var cooldown: float = 6.0
+@onready var timer: Timer = $Timer
 var rng = RandomNumberGenerator.new()
 var vegemite = preload("res://Scenes/TabyScenes/Attacks/Vegemite/vegemite.tscn")
 @onready var player = get_parent()
 
+func set_timer():
+	timer.wait_time = cooldown * get_parent().attack_speed
+	timer.start()
+
+func _ready() -> void:
+	set_timer()
+	
 func _on_timer_timeout() -> void:
+	set_timer()
 	for i in range(level):
 		new_vegemite()
 
