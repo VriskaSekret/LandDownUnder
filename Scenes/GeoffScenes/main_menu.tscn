@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfu85v4eflk6q"]
+[gd_scene load_steps=28 format=3 uid="uid://dfu85v4eflk6q"]
 
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/main_menu.gd" id="1_3hnnt"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_t38q1"]
 [ext_resource type="Texture2D" uid="uid://6csfiaxiv4lx" path="res://Assets/GeoffAssets/new_bg.png" id="2_skyt3"]
 [ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="3_khd7a"]
+[ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="4_eci28"]
+[ext_resource type="PackedScene" uid="uid://deunyj7inebhm" path="res://main_menu_raygun.tscn" id="4_m0bib"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alk2x"]
 
@@ -26,6 +28,77 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7mcy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6654"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21ate"]
+atlas = ExtResource("4_eci28")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofvmq"]
+atlas = ExtResource("4_eci28")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qujl"]
+atlas = ExtResource("4_eci28")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o318w"]
+atlas = ExtResource("4_eci28")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5yaq"]
+atlas = ExtResource("4_eci28")
+region = Rect2(256, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbrpp"]
+atlas = ExtResource("4_eci28")
+region = Rect2(320, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifdot"]
+atlas = ExtResource("4_eci28")
+region = Rect2(384, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v62x2"]
+atlas = ExtResource("4_eci28")
+region = Rect2(448, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gshe"]
+atlas = ExtResource("4_eci28")
+region = Rect2(512, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0000"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21ate")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofvmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qujl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o318w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5yaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbrpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifdot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v62x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gshe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -159,11 +232,16 @@ theme_override_font_sizes/font_size = 64
 text = "The Land
 Down Under"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/StartingMenu/VBoxContainer2"]
+[node name="TextureRect" parent="MarginContainer/StartingMenu/VBoxContainer2" instance=ExtResource("4_m0bib")]
+visible = false
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("3_khd7a")
-expand_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/StartingMenu/VBoxContainer2"]
+position = Vector2(303, 403)
+scale = Vector2(6.70313, 6.70313)
+sprite_frames = SubResource("SpriteFrames_m0000")
+autoplay = "default"
+flip_h = true
 
 [node name="PlayerCountSelect" type="VBoxContainer" parent="MarginContainer"]
 visible = false
