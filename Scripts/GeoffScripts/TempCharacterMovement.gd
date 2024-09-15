@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var anim_spr: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var health_bar: ProgressBar = $HealthBar
 var hp := 80
 
 var character_player_number
@@ -35,7 +36,6 @@ var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip_shooter.tscn")
 
 func _ready():
-	print("hi im " + get_char_name())
 	player_type = Global.player_characters[character_player_number-1]
 	Global.player_weapons[character_player_number-1] = [player_type, -1, -1]
 	Global.player_weapon_levels[character_player_number-1] = [1,-1,-1]
@@ -90,6 +90,7 @@ func get_char_name() -> String:
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 	hp -= damage
 	print(hp)
+	health_bar.value = hp
 
 func add_weapons():
 	for i in range(len(Global.player_weapons[character_player_number - 1])):
