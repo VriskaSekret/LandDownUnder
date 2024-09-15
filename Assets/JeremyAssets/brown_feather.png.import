@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brwdq81u30gob"
-path="res://.godot/imported/emu.png-3ae913ac5fb8493b4a53bb60a10a397c.ctex"
+uid="uid://6pqbm7gjjeoc"
+path="res://.godot/imported/brown_feather.png-68a3d7e74431e6ee4e0a2f9c4cbcf254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/JeremyScenes/Enemies/emu.png"
-dest_files=["res://.godot/imported/emu.png-3ae913ac5fb8493b4a53bb60a10a397c.ctex"]
+source_file="res://Assets/JeremyAssets/brown_feather.png"
+dest_files=["res://.godot/imported/brown_feather.png-68a3d7e74431e6ee4e0a2f9c4cbcf254.ctex"]
 
 [params]
 

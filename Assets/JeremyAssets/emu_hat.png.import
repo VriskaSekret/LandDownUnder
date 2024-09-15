@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duu4aeg27l28u"
-path="res://.godot/imported/kanga_box.png-3aa20c68c4e15bc4c4eeb3b72ec0f729.ctex"
+uid="uid://cxf4akp25a4f3"
+path="res://.godot/imported/emu_hat.png-189d768d2deebfcdca2263fbf773a4ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/JeremyScenes/Enemies/kanga_box.png"
-dest_files=["res://.godot/imported/kanga_box.png-3aa20c68c4e15bc4c4eeb3b72ec0f729.ctex"]
+source_file="res://Assets/JeremyAssets/emu_hat.png"
+dest_files=["res://.godot/imported/emu_hat.png-189d768d2deebfcdca2263fbf773a4ba.ctex"]
 
 [params]
 

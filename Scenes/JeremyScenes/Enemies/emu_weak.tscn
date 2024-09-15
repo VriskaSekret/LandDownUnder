@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b4d8e1fbaxncv"]
 
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_huecr"]
-[ext_resource type="Texture2D" uid="uid://brwdq81u30gob" path="res://Scenes/JeremyScenes/Enemies/emu.png" id="1_j6b6e"]
+[ext_resource type="Texture2D" uid="uid://brwdq81u30gob" path="res://Assets/JeremyAssets/emu.png" id="1_j6b6e"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="2_oyr6u"]
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="3_coyef"]
 [ext_resource type="PackedScene" uid="uid://jtqybss23iwj" path="res://Scenes/JeremyScenes/Enemies/emu_attack_node.tscn" id="5_h2jal"]

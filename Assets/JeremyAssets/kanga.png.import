@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6pqbm7gjjeoc"
-path="res://.godot/imported/brown_feather.png-52afb1faaf81cf67fcade4a208e09257.ctex"
+uid="uid://cy3dw70ckmnxp"
+path="res://.godot/imported/kanga.png-799fdfba344652a87193641e7afd4651.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/JeremyScenes/Enemies/brown_feather.png"
-dest_files=["res://.godot/imported/brown_feather.png-52afb1faaf81cf67fcade4a208e09257.ctex"]
+source_file="res://Assets/JeremyAssets/kanga.png"
+dest_files=["res://.godot/imported/kanga.png-799fdfba344652a87193641e7afd4651.ctex"]
 
 [params]
 
