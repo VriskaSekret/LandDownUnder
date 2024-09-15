@@ -54,8 +54,7 @@ func _process(_delta) -> void:
 	# Animation shit, doesn't relate to physics
 	if !Global.game_paused:
 		if velocity != Vector2(0, 0):
-			#anim_spr.play(get_char_name() + "_walk")
-			anim_spr.play("walk")
+			anim_spr.play(get_char_name() + "_walk")
 		else:
 			anim_spr.play(get_char_name() + "_idle")
 

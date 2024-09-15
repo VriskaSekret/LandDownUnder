@@ -1,11 +1,11 @@
 extends Node2D
 
-var level: int = 1
+@export var level: int = 1
 var skewer = preload("res://Scenes/TabyScenes/Attacks/Skewer/skewer.tscn")
 
 func _ready():
-	var skewer_instance = skewer.instantiate()
-	new_skewer()
+	for i in range(level):
+		new_skewer()
 
 func level_up():
 	print("skewer up!")

@@ -50,5 +50,4 @@ func shoot() -> void:
 			get_parent().get_parent().get_parent().add_child(new_note)
 
 func _on_post_timeout() -> void:
-	print("bye?")
 	queue_free()
