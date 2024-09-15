@@ -104,7 +104,7 @@ func add_weapons():
 func upgrade_weapons():
 	for i in range(len(Global.player_weapon_levels[character_player_number - 1])):
 		if wlevels[i] != Global.player_weapon_levels[character_player_number - 1][i]:
-			wlevels[i] += Global.player_weapon_levels[character_player_number - 1][i]
+			wlevels[i] = Global.player_weapon_levels[character_player_number - 1][i]
 			while wlevels[i] > weapon_nodes[i].level:
 				weapon_nodes[i].level_up()
 

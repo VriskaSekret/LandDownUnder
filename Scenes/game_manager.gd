@@ -49,7 +49,7 @@ func randomise_item_select() -> void:
 	# IF ALL WEAPON SLOTS ARE FULL, START GIVING PASSIVE BUFFS
 	# 9 - walk speed buff
 	# 10 - attack speed buff
-	# 11 - hp buff
+	# 11 - heal buff
 	# 12 - attack damage buff
 	
 	var item_array = []
