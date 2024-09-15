@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqdf1sttxyn2u"]
+
+[ext_resource type="Texture2D" uid="uid://rhqnhdter5hw" path="res://icon.svg" id="1_50283"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/feather.gd" id="1_gfi7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bihxc"]
+
+[node name="Feather" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_gfi7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bihxc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_50283")

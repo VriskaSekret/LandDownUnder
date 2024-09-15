@@ -51,7 +51,6 @@ size = Vector2(26, 76)
 radius = 20.0998
 
 [node name="kanga_strong" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
 collision_layer = 128
 collision_mask = 128
 motion_mode = 1
