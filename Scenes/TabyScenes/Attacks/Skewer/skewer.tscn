@@ -29,7 +29,6 @@ radius = 3.54734
 height = 35.3746
 
 [node name="Skewer" type="Node2D"]
-rotation = -0.768377
 script = ExtResource("1_uo6ah")
 
 [node name="Attack" type="Timer" parent="."]
@@ -37,19 +36,22 @@ wait_time = 3.0
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 2.18166
 sprite_frames = SubResource("SpriteFrames_bs7jo")
 autoplay = "default"
 
 [node name="SkewerArea" type="Area2D" parent="." groups=["Attack"]]
+rotation = 2.18166
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("4_74iwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkewerArea"]
-rotation = -0.767945
+rotation = -0.837758
 shape = SubResource("CapsuleShape2D_ymtem")
 
 [node name="Move" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="Move" to="." method="_on_move_timeout"]
+[connection signal="timeout" from="Attack" to="SkewerArea" method="_on_attack_timeout"]
+[connection signal="timeout" from="Move" to="SkewerArea" method="_on_move_timeout"]

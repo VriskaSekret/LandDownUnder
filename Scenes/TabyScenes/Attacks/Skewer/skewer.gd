@@ -31,7 +31,7 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	animated_sprite_2d.animation = "attack"
-	rotation = get_angle_to(player.position)
+	look_at(player.position)
 	var random_angle = randf() * 2.0 * PI
 	
 	var new_position = player.position + Vector2(
