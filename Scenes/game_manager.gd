@@ -5,9 +5,14 @@ var last_level = Global.total_level
 @onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
 
+# FOR TIMER
+@onready var count_up: Timer = $CountUp
+#
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	count_up.start()
 	for i in range(Global.number_players):
 		var player_instance = player_character.instantiate()
 		player_instance.character_player_number = i + 1
@@ -15,7 +20,7 @@ func _ready() -> void:
 		print (player_instance.character_player_number)
 		add_child(player_instance)
 		last_level = Global.total_level
-
+	in_game_ui.update_player_inventory()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -25,6 +30,8 @@ func pause_for_item():
 	randomise_item_select()
 	in_game_ui.update_upgrade_buttons()
 	in_game_ui.item_select.show()
+	in_game_ui.xp_bar.hide()
+	in_game_ui.player_items.hide()
 	Engine.time_scale = 0
 	Global.game_paused = true
 
@@ -70,3 +77,7 @@ func check_level():
 		last_level = Global.total_level
 		print("Level: " + str(Global.total_level))
 		pause_for_item()
+
+
+func _on_count_up_timeout() -> void:
+	Global.time_seconds += 1

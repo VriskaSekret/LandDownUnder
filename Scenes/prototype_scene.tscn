@@ -298,4 +298,9 @@ shape = SubResource("RectangleShape2D_58btn")
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("10_kh3fb")
 
+[node name="CountUp" type="Timer" parent="GameManager"]
+autostart = true
+
 [node name="InGameUI" parent="." instance=ExtResource("10_vypcr")]
+
+[connection signal="timeout" from="GameManager/CountUp" to="GameManager" method="_on_count_up_timeout"]
