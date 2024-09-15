@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://brwdq81u30gob" path="res://Scenes/JeremyScenes/Enemies/emu.png" id="1_j6b6e"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="2_oyr6u"]
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="3_coyef"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/emu_attack.gd" id="5_e6w8k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljrj7"]
-radius = 19.0
+radius = 16.0
 
 [sub_resource type="Animation" id="Animation_s3yf8"]
 length = 0.001
@@ -48,9 +49,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3dxi"]
-size = Vector2(44, 56)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_trtg1"]
+size = Vector2(44, 39.5)
 
 [node name="emu_weak" type="CharacterBody2D"]
 collision_layer = 128
@@ -66,6 +65,7 @@ hframes = 8
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -4)
 shape = SubResource("CircleShape2D_ljrj7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -77,6 +77,7 @@ libraries = {
 collision_layer = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_u3dxi")
 
 [node name="Hurtbox" parent="." instance=ExtResource("2_oyr6u")]
@@ -85,17 +86,18 @@ collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 visible = true
-position = Vector2(0, -4)
+position = Vector2(0, -5.25)
 shape = SubResource("RectangleShape2D_u3dxi")
 
 [node name="AttackNode" type="Node2D" parent="."]
+script = ExtResource("5_e6w8k")
 
-[node name="Area2D" type="Area2D" parent="AttackNode"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackNode/Area2D"]
-shape = SubResource("CircleShape2D_trtg1")
+[node name="Timer" type="Timer" parent="AttackNode"]
+wait_time = 5.0
+autostart = true
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="timeout" from="AttackNode/Timer" to="AttackNode" method="_on_timer_timeout"]
 
 [editable path="Hitbox"]
 [editable path="Hurtbox"]
