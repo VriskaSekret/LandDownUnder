@@ -48,8 +48,8 @@ func randomise_item_select() -> void:
 	var item_array = []
 	##### CHECK PLAYER ITEMS THEN RANDOMISE #####
 	var player_recieving = Global.player_recieving_item
-	var inventory = Global.player_weapons[player_recieving-1]
-	var inventory_levels = Global.player_weapon_levels[player_recieving-1]
+	var inventory = Global.player_weapons[player_recieving]
+	var inventory_levels = Global.player_weapon_levels[player_recieving]
 	var inv_full = not -1 in inventory
 	if inv_full:
 		for i in range(len(inventory)):
