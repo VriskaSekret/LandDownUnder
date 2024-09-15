@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_5xlg4"]
 [ext_resource type="Texture2D" uid="uid://da4cebjee4ms0" path="res://Assets/TabyAssets/aussieman_idle.png" id="3_70toj"]
 [ext_resource type="Texture2D" uid="uid://d1dis6supl6ra" path="res://Assets/TabyAssets/aussie_shuffle.png" id="3_j7ka5"]
-[ext_resource type="PackedScene" uid="uid://dnatc1ouhsjv6" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_shooter.tscn" id="5_m3thl"]
-[ext_resource type="PackedScene" uid="uid://pl11g1lgvi2j" path="res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn" id="6_yhlfm"]
-[ext_resource type="PackedScene" uid="uid://bqbx7n1ny6axb" path="res://Scenes/TabyScenes/Attacks/Thongs/thong_shooter.tscn" id="7_ji4g5"]
-[ext_resource type="PackedScene" uid="uid://bkcbt3q2tmvc" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer_shooter.tscn" id="8_ms34t"]
-[ext_resource type="PackedScene" uid="uid://5gcywuvvqf40" path="res://Scenes/TabyScenes/Attacks/Didgeridoo/didgeridoo_shooter.tscn" id="9_7d6rt"]
+[ext_resource type="PackedScene" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_shooter.tscn" id="5_m3thl"]
+[ext_resource type="PackedScene" path="res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn" id="6_yhlfm"]
+[ext_resource type="PackedScene" path="res://Scenes/TabyScenes/Attacks/Thongs/thong_shooter.tscn" id="7_ji4g5"]
+[ext_resource type="PackedScene" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer_shooter.tscn" id="8_ms34t"]
+[ext_resource type="PackedScene" path="res://Scenes/TabyScenes/Attacks/Didgeridoo/didgeridoo_shooter.tscn" id="9_7d6rt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ymxa"]
 radius = 5.0
