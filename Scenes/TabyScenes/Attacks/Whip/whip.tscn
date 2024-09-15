@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dijf5fw72e608"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Whip/whip.gd" id="1_js3gq"]
+[ext_resource type="Texture2D" uid="uid://d08gdy38eg23j" path="res://Assets/TabyAssets/whip.png" id="1_v42nv"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Whip/whip_area.gd" id="3_1hpda"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p21mp"]
+radius = 1.96821
+height = 40.0007
+
+[node name="Whip" type="Node2D"]
+script = ExtResource("1_js3gq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v42nv")
+
+[node name="WhipArea" type="Area2D" parent="Sprite2D" groups=["Attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_1hpda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/WhipArea"]
+position = Vector2(2.00039, 3.02783)
+rotation = 1.57475
+shape = SubResource("CapsuleShape2D_p21mp")
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]

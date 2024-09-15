@@ -32,6 +32,6 @@ func _process(_delta: float) -> void:
 func add_xp(xp_added: int) -> void:
 	experience += xp_added
 	if experience >= experience_needed:
-		player_recieving_item = total_level % number_players
+		player_recieving_item = (total_level -1 )% number_players
 		total_level += 1
 		experience = 0

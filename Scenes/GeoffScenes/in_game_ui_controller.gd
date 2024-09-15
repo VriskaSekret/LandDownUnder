@@ -45,7 +45,6 @@ func _on_item_3_button_pressed() -> void:
 	item_selected(2)
 
 func item_selected(num: int) -> void:
-	Global.player_recieving_item = 0
 	reciever = Global.player_recieving_item
 	var player_instance = get_parent().get_node("GameManager").get_node("Player%d" % (reciever + 1))
 	var item = Global.randomised_items[num]

@@ -27,11 +27,12 @@ var enemy_close = []
 var boomerang = preload("res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_shooter.tscn")
 var didgeridoo = preload("res://Scenes/TabyScenes/Attacks/Didgeridoo/didgeridoo_shooter.tscn")
 var skewer = preload("res://Scenes/TabyScenes/Attacks/Skewer/skewer_shooter.tscn")
-var thongs = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong.tscn")
+var thongs = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong_shooter.tscn")
 var vegemite = preload("res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn")
 var cone = preload("res://Scenes/TabyScenes/Attacks/Cone/cone_shooter.tscn")
 var surf = preload("res://Scenes/TabyScenes/Attacks/Surfboard/surf.tscn")
 var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
+var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip_shooter.tscn")
 
 func _ready():
 	print("hi im " + get_char_name())
@@ -114,8 +115,7 @@ func create_weapon(number):
 	elif number == 2:
 		return didgeridoo.instantiate()
 	elif number == 3:
-		#return whip.instantiate()
-		pass
+		return whip.instantiate()
 	elif number == 4:
 		return boomerang.instantiate()
 	elif number == 5:
