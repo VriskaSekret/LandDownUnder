@@ -31,55 +31,33 @@ func update_upgrade_buttons():
 	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.text = str(items[2])
 
 func update_player_inventory():
+	#updates UI
 	pass
 
 
-
 func _on_item_1_button_pressed() -> void:
-	reciever = Global.player_recieving_item
-	var item = Global.randomised_items[0]
-	if item in Global.player_weapons[reciever]:
-		var temp_index = Global.player_weapons[reciever].find(item)
-		Global.player_weapon_levels[reciever][temp_index] += 1
-	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
-	Engine.time_scale = 1
-	item_select.hide()
-	Global.game_paused = false
-	print("Player " + str(1))
-	print("Weapons " + str(Global.player_weapons[0]))
-	print("Weapon Levels " + str(Global.player_weapon_levels[0]))
+	item_selected(0)
 
 func _on_item_2_button_pressed() -> void:
-	reciever = Global.player_recieving_item
-	var item = Global.randomised_items[1]
-	if item in Global.player_weapons[reciever]:
-		var temp_index = Global.player_weapons[reciever].find(item)
-		Global.player_weapon_levels[reciever][temp_index] += 1
-	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
-	Engine.time_scale = 1
-	item_select.hide()
-	Global.game_paused = false
-	print("Player " + str(1))
-	print("Weapons " + str(Global.player_weapons[0]))
-	print("Weapon Levels " + str(Global.player_weapon_levels[0]))
-
+	item_selected(1)
 
 func _on_item_3_button_pressed() -> void:
+	item_selected(2)
+
+func item_selected(num: int) -> void:
+	Global.player_recieving_item = 0
 	reciever = Global.player_recieving_item
-	var item = Global.randomised_items[2]
+	var player_instance = get_parent().get_node("GameManager").get_node("Player%d" % (reciever + 1))
+	var item = Global.randomised_items[num]
 	if item in Global.player_weapons[reciever]:
 		var temp_index = Global.player_weapons[reciever].find(item)
 		Global.player_weapon_levels[reciever][temp_index] += 1
+		player_instance.upgrade_weapons()
 	else:
 		var temp_index = Global.player_weapons[reciever].find(-1)
 		Global.player_weapons[reciever][temp_index] = item
 		Global.player_weapon_levels[reciever][temp_index] = 1
+		player_instance.add_weapons()
 	Engine.time_scale = 1
 	item_select.hide()
 	Global.game_paused = false
