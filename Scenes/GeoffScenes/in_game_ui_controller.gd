@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var item_select: VBoxContainer = $MarginContainer/ItemSelect
 @onready var player_items: HBoxContainer = $PlayerItems

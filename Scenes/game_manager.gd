@@ -2,7 +2,7 @@ extends Node2D
 
 var player_character = preload("res://Scripts/GeoffScripts/TemporaryPlayer.tscn")
 var last_level = Global.total_level
-@onready var in_game_ui: Control = $"../CanvasLayer/InGameUI"
+@onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
 
 

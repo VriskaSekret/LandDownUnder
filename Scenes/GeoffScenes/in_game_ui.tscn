@@ -13,13 +13,10 @@ bg_color = Color(0.193154, 0.193154, 0.193153, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hxlb"]
 texture = ExtResource("4_55rt1")
 
-[node name="InGameUI" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_jdv0l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -84,7 +81,6 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="XPBar" type="ProgressBar" parent="."]
-layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 27.0
@@ -99,7 +95,6 @@ theme_override_styles/fill = SubResource("StyleBoxTexture_2hxlb")
 script = ExtResource("3_05yks")
 
 [node name="PlayerItems" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
