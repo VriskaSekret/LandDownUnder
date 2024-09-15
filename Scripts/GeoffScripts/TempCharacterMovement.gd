@@ -29,6 +29,7 @@ var didgeridoo = preload("res://Scenes/TabyScenes/Attacks/Didgeridoo/didgeridoo_
 var skewer = preload("res://Scenes/TabyScenes/Attacks/Skewer/skewer_shooter.tscn")
 var thongs = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong.tscn")
 var vegemite = preload("res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn")
+var cone = preload("res://Scenes/TabyScenes/Attacks/Cone/cone_shooter.tscn")
 
 func _ready():
 	print("hi im " + get_char_name())
@@ -106,8 +107,7 @@ func upgrade_weapons():
 
 func create_weapon(number):
 	if number == 0:
-		#return cone.instantiate()
-		pass
+		return cone.instantiate()
 	elif number == 1:
 		return vegemite.instantiate()
 	elif number == 2:

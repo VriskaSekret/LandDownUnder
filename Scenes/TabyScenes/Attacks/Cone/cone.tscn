@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcl5tq78qhw23"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Cone/cone.gd" id="1_e1dyi"]
+[ext_resource type="Texture2D" uid="uid://ota0nvieunr0" path="res://Assets/TabyAssets/cone.png" id="2_tmagj"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Cone/cone_area.gd" id="3_b4f1b"]
+
+[node name="Cone" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_e1dyi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tmagj")
+
+[node name="ConeArea" type="Area2D" parent="Sprite2D" groups=["Attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_b4f1b")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite2D/ConeArea"]
+polygon = PackedVector2Array(-13, 16, 14, 16, 0, -16)
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]
