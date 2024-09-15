@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://brwdq81u30gob" path="res://Scenes/JeremyScenes/Enemies/emu.png" id="1_j6b6e"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="2_oyr6u"]
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="3_coyef"]
-[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/emu_attack.gd" id="5_e6w8k"]
+[ext_resource type="PackedScene" uid="uid://jtqybss23iwj" path="res://Scenes/JeremyScenes/Enemies/emu_attack_node.tscn" id="5_h2jal"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljrj7"]
 radius = 16.0
@@ -89,15 +89,9 @@ visible = true
 position = Vector2(0, -5.25)
 shape = SubResource("RectangleShape2D_u3dxi")
 
-[node name="AttackNode" type="Node2D" parent="."]
-script = ExtResource("5_e6w8k")
-
-[node name="Timer" type="Timer" parent="AttackNode"]
-wait_time = 5.0
-autostart = true
+[node name="AttackNode" parent="." instance=ExtResource("5_h2jal")]
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
-[connection signal="timeout" from="AttackNode/Timer" to="AttackNode" method="_on_timer_timeout"]
 
 [editable path="Hitbox"]
 [editable path="Hurtbox"]
