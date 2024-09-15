@@ -21,10 +21,12 @@ var coin_drop = preload("res://Scenes/GeoffScenes/coin.tscn")
 
 signal remove_from_array(object)
 
+var screen_size
 
 func _ready():
 	anim.play("walk")
 	hitBox.damage = enemy_damage
+	screen_size = get_viewport_rect().size
 
 func _physics_process(_delta):
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
@@ -56,6 +58,5 @@ func _on_hurtbox_hurt(damage, angle, knockback_amount):
 	knockback = angle * knockback_amount
 	if hp <= 0:
 		death()
-	else:
+	#else:
 		#snd_hit.play()
-		pass

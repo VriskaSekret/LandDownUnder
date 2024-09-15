@@ -17,7 +17,7 @@ script = ExtResource("4_7a5xy")
 time_start = 0
 time_end = 10
 enemy = ExtResource("4_fsdnv")
-enemy_num = 20
+enemy_num = 50
 enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_1rr21"]

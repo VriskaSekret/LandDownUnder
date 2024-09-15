@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4gcmlhyg7tmb"]
+[gd_scene load_steps=10 format=3 uid="uid://b4gcmlhyg7tmb"]
 
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_53iqn"]
 [ext_resource type="Texture2D" uid="uid://cy3dw70ckmnxp" path="res://Scenes/JeremyScenes/Enemies/kanga.png" id="2_yr7n5"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_s2of5"]
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="4_k7rht"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_llwkt"]
-size = Vector2(26, 76)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vb0t1"]
+radius = 16.0078
 
 [sub_resource type="Animation" id="Animation_x43i6"]
 length = 0.001
@@ -47,6 +47,9 @@ _data = {
 "walk": SubResource("Animation_tvdsx")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llwkt"]
+size = Vector2(26, 76)
+
 [node name="kanga_weak" type="CharacterBody2D"]
 scale = Vector2(0.4, 0.4)
 collision_layer = 128
@@ -60,8 +63,8 @@ hframes = 3
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -3)
-shape = SubResource("RectangleShape2D_llwkt")
+position = Vector2(-2.5, 5)
+shape = SubResource("CircleShape2D_vb0t1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -73,6 +76,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
+visible = true
 shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="Hitbox" parent="." instance=ExtResource("4_k7rht")]

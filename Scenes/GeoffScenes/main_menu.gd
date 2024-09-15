@@ -15,7 +15,7 @@ func _ready() -> void:
 	character_select.visible = false
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_selecting > players:
 		get_tree().change_scene_to_file("res://Scenes/prototype_scene.tscn")
 	player_selecting_label.text = "Player %d Select" % player_selecting
