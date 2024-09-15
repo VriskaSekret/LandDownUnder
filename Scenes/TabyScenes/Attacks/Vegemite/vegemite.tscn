@@ -28,6 +28,7 @@ animations = [{
 radius = 14.0
 
 [node name="Vegemite" type="RigidBody2D"]
+z_index = -1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_pr800")
@@ -36,14 +37,14 @@ script = ExtResource("1_pr800")
 sprite_frames = SubResource("SpriteFrames_vnhq5")
 autoplay = "default"
 
-[node name="VegemiteAOE" type="Area2D" parent="." groups=["Attack"]]
+[node name="VegemiteAOE" type="Area2D" parent="AnimatedSprite" groups=["Attack"]]
 collision_layer = 4
 collision_mask = 4
 monitoring = false
 monitorable = false
 script = ExtResource("4_u0op1")
 
-[node name="VegeCollider" type="CollisionShape2D" parent="VegemiteAOE"]
+[node name="VegeCollider" type="CollisionShape2D" parent="AnimatedSprite/VegemiteAOE"]
 shape = SubResource("CircleShape2D_bw5cm")
 
 [node name="FallTimer" type="Timer" parent="."]

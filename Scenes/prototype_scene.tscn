@@ -109,11 +109,11 @@ collision_mask = 259
 position = Vector2(16, 630)
 shape = SubResource("RectangleShape2D_58btn")
 
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("10_kh3fb")
+
 [node name="InGameUI" parent="." instance=ExtResource("10_vypcr")]
 offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0
 offset_bottom = 360.0
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("10_kh3fb")
