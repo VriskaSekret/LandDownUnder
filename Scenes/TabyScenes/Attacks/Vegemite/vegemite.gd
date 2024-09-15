@@ -3,7 +3,7 @@ extends RigidBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 @onready var fall_timer: Timer = $FallTimer
 @onready var aoe_timer: Timer = $AOETimer
-@onready var vegemite_aoe: Area2D = $VegemiteAOE
+@onready var vegemite_aoe: Area2D = $AnimatedSprite/VegemiteAOE
 
 var level: int = 1
 
@@ -14,6 +14,7 @@ func _ready() -> void:
 	fall_timer.start()
 	vegemite_aoe.monitorable = false
 	vegemite_aoe.monitoring = false
+	animated_sprite.scale += Vector2(2 + 0.2 * level, 2 + 0.2 * level)
 
 func _on_aoe_timer_timeout() -> void:
 	queue_free()

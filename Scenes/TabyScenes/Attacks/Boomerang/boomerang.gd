@@ -16,12 +16,13 @@ var initial_v
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var switch_timer: Timer = $SwitchTimer
 @onready var reverse_timer: Timer = $ReverseTimer
-@onready var boomerang_area: Area2D = $BoomerangArea
+@onready var boomerang_area: Area2D = $Sprite2D/BoomerangArea
 
 func _ready():
 	initial_v = Vector2(projectile_speed, 0).rotated(rotation)
 	apply_impulse(Vector2(projectile_speed, 0).rotated(rotation))
 	boomerang_area.level = level
+	sprite_2d.scale = Vector2(1 + 0.33 * level, 1 + 0.33 * level)
 
 func _physics_process(delta: float) -> void:
 	sprite_2d.rotate(10 * delta)

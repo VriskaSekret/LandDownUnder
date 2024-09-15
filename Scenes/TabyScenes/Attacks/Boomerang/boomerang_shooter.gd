@@ -1,7 +1,7 @@
 extends Node2D
 
 var boomerang = preload("res://Scenes/TabyScenes/Attacks/Boomerang/Boomerang.tscn")
-var level: int = 1
+@export var level: int = 1
 @onready var timer: Timer = $Timer
 
 func _on_timer_timeout() -> void:
@@ -10,7 +10,6 @@ func _on_timer_timeout() -> void:
 func level_up():
 	print("boomer up!")
 	level += 1
-	timer.wait_time = max(timer.wait_time - 0.2, 1)
 
 func new_boomerang():
 	var boomerang_instance = boomerang.instantiate()
