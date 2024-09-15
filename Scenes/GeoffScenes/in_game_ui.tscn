@@ -92,7 +92,23 @@ theme_override_fonts/font = ExtResource("1_xk8la")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/background = SubResource("StyleBoxFlat_vo423")
 theme_override_styles/fill = SubResource("StyleBoxTexture_2hxlb")
+show_percentage = false
 script = ExtResource("3_05yks")
+
+[node name="CountUpTime" type="Label" parent="XPBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 32.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
 
 [node name="PlayerItems" type="HBoxContainer" parent="."]
 anchors_preset = 12

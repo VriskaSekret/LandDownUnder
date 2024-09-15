@@ -6,6 +6,7 @@ var game_paused = false
 var experience = 0
 var total_level = 1
 var experience_needed = 10.0 * (total_level * 1.2)
+var time_seconds = 0
 
 
 # player_characters [player1, player2, player3, player4]

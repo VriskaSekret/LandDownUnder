@@ -2,6 +2,9 @@ extends CanvasLayer
 
 @onready var item_select: VBoxContainer = $MarginContainer/ItemSelect
 @onready var player_items: HBoxContainer = $PlayerItems
+@onready var game_manager: Node2D = $"../GameManager"
+@onready var count_up_time: Label = $XPBar/CountUpTime
+var local_time = 0
 
 #
 # Buttons for items when levelling up
@@ -22,6 +25,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if local_time != Global.time_seconds:
+		local_time = Global.time_seconds
+		count_up_time.text = ("%02d:%02d" % [floor(local_time/60), local_time%60])
 	pass
 
 func update_upgrade_buttons():

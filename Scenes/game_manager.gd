@@ -5,9 +5,14 @@ var last_level = Global.total_level
 @onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
 
+# FOR TIMER
+@onready var count_up: Timer = $CountUp
+#
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	count_up.start()
 	for i in range(Global.number_players):
 		var player_instance = player_character.instantiate()
 		player_instance.character_player_number = i + 1
@@ -70,3 +75,7 @@ func check_level():
 		last_level = Global.total_level
 		print("Level: " + str(Global.total_level))
 		pause_for_item()
+
+
+func _on_count_up_timeout() -> void:
+	Global.time_seconds += 1
