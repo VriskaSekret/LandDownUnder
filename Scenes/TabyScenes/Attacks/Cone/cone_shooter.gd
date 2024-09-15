@@ -14,3 +14,4 @@ func new_cone():
 	var cone_instance = cone.instantiate()
 	cone_instance.level = level
 	get_parent().get_parent().add_child(cone_instance)
+	cone_instance.position = get_parent().position

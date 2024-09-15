@@ -31,6 +31,7 @@ var thongs = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong.tscn")
 var vegemite = preload("res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn")
 var cone = preload("res://Scenes/TabyScenes/Attacks/Cone/cone_shooter.tscn")
 var surf = preload("res://Scenes/TabyScenes/Attacks/Surfboard/surf.tscn")
+var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
 
 func _ready():
 	print("hi im " + get_char_name())
@@ -101,10 +102,9 @@ func add_weapons():
 func upgrade_weapons():
 	for i in range(len(Global.player_weapon_levels[character_player_number - 1])):
 		if wlevels[i] != Global.player_weapon_levels[character_player_number - 1][i]:
-			wlevels[i] += 1
-			weapon_nodes[i].level_up()
-			print(weapon_nodes)
-			print(weapon_nodes[i])
+			wlevels[i] += Global.player_weapon_levels[character_player_number - 1][i]
+			while wlevels[i] > weapon_nodes[i].level:
+				weapon_nodes[i].level_up()
 
 func create_weapon(number):
 	if number == 0:
@@ -123,8 +123,7 @@ func create_weapon(number):
 	elif number == 6:
 		return thongs.instantiate()
 	elif number == 7:
-		#tongs.instantiate()
-		pass
+		return snake.instantiate()
 	elif number == 8:
 		return surf.instantiate()
 	else:
