@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=43 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dr3elfwjv40q" path="res://Assets/JeremyAssets/StolenAssets/knight.png" id="2_pvbi5"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
