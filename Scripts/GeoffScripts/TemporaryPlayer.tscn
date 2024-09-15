@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_5xlg4"]
 [ext_resource type="Texture2D" uid="uid://d1dis6supl6ra" path="res://Assets/TabyAssets/aussie_shuffle.png" id="3_j7ka5"]
-[ext_resource type="PackedScene" uid="uid://bqtvxpjx8p4vn" path="res://Scenes/JeremyScenes/Attacks/Didgeridoo/didgeridoo.tscn" id="4_w20g5"]
 [ext_resource type="PackedScene" uid="uid://dnatc1ouhsjv6" path="res://Scenes/TabyScenes/Attacks/Boomerang/boomerang_shooter.tscn" id="5_m3thl"]
 [ext_resource type="PackedScene" uid="uid://pl11g1lgvi2j" path="res://Scenes/TabyScenes/Attacks/Vegemite/vegemite_shooter.tscn" id="6_yhlfm"]
 [ext_resource type="PackedScene" uid="uid://bqbx7n1ny6axb" path="res://Scenes/TabyScenes/Attacks/Thongs/thong_shooter.tscn" id="7_ji4g5"]
 [ext_resource type="PackedScene" uid="uid://bkcbt3q2tmvc" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer_shooter.tscn" id="8_ms34t"]
+[ext_resource type="PackedScene" uid="uid://5gcywuvvqf40" path="res://Scenes/TabyScenes/Attacks/Didgeridoo/didgeridoo_shooter.tscn" id="9_7d6rt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ymxa"]
 radius = 5.0
@@ -266,8 +266,6 @@ shape = SubResource("CircleShape2D_0bspj")
 
 [node name="SkewerBase" type="Node2D" parent="."]
 
-[node name="Didgeridoo" parent="." instance=ExtResource("4_w20g5")]
-
 [node name="BoomerangShooter" parent="." instance=ExtResource("5_m3thl")]
 
 [node name="VegemiteShooter" parent="." instance=ExtResource("6_yhlfm")]
@@ -275,6 +273,8 @@ shape = SubResource("CircleShape2D_0bspj")
 [node name="ThongShooter" parent="." instance=ExtResource("7_ji4g5")]
 
 [node name="SkewerShooter" parent="." instance=ExtResource("8_ms34t")]
+
+[node name="DidgeridooShooter" parent="." instance=ExtResource("9_7d6rt")]
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]

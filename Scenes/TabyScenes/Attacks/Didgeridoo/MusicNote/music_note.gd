@@ -2,18 +2,11 @@ extends Area2D
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 
-var level: int = 1
-var speed: float = 100.0
-var damage: int = 10
-var knockback: int = 200
-var hp: int = 2
+var speed = 100.0
+var damage = 10
+var hp = 2
 
 var angle = Vector2.ZERO
-
-func _ready():
-	damage = 30 * level
-	speed = 100 + 20 * level
-	knockback = 200 + 50 * level
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)
