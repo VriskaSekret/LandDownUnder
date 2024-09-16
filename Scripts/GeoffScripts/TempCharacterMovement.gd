@@ -7,7 +7,7 @@ extends CharacterBody2D
 var dead = false
 
 var attack_speed: float = 1.0
-var attack_damage: float = 1.0
+var damage_multiplier: float = 1.0
 
 var character_player_number
 var dir
@@ -18,6 +18,7 @@ var left_button
 var right_button
 var up_button
 var down_button
+var controller_id: int
 
 var player_type
 
@@ -53,6 +54,7 @@ func _ready():
 
 func get_input() -> void:
 	if not has_assigned_keys:
+		has_assigned_keys = true
 		left_button = "p%dleft" % character_player_number
 		right_button = "p%dright" % character_player_number
 		up_button = "p%dup" % character_player_number
@@ -128,6 +130,9 @@ func upgrade_weapons():
 			while wlevels[i] > weapon_nodes[i].level:
 				weapon_nodes[i].level_up()
 
+func add_buff(buff: int):
+	create_weapon(buff)
+
 func create_weapon(number):
 	if number == 0:
 		return cone.instantiate()
@@ -150,8 +155,9 @@ func create_weapon(number):
 	elif number == 9:
 		movement_speed += 10.0
 	elif number == 10:
-		attack_speed -= 0.1
+		attack_speed = max(0.1, attack_speed - 0.1)
 	elif number == 11:
 		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
+		health_bar.value = hp
 	elif number == 12:
-		attack_damage += 0.1
+		damage_multiplier += 0.1

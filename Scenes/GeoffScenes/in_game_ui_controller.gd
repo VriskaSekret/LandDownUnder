@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var item_select: VBoxContainer = $MarginContainer/ItemSelect
+@onready var game_over: VBoxContainer = $MarginContainer/GameOver
 @onready var player_items: HBoxContainer = $PlayerItems
 @onready var game_manager: Node2D = $"../GameManager"
 @onready var count_up_time: Label = $XPBar/CountUpTime
@@ -24,6 +25,22 @@ var random_items
 
 var list_of_icons = []
 
+var item_names = {
+	0 : "Cone",
+	1: "Vegemite",
+	2: "Didgeridoo",
+	3: "Whip",
+	4: "Boomerang",
+	5: "Skewer",
+	6: "Thongs",
+	7: "Snake",
+	8: "Surfboard",
+	9: "+Move Speed",
+	10: "+Attack Speed",
+	11: "Heal",
+	12: "+Damage"
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(-1,11):
@@ -41,11 +58,11 @@ func _process(_delta: float) -> void:
 func update_upgrade_buttons():
 	var items = Global.randomised_items
 	select_item_label.text = str("Player %d\nSelect your item" % (Global.player_recieving_item + 1))
-	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.text = str(items[0])
+	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.text = str(item_names[items[0]])
 	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.icon = load("res://Assets/Icons/%d.png" % items[0])
-	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.text = str(items[1])
+	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.text = str(item_names[items[1]])
 	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.icon = load("res://Assets/Icons/%d.png" % items[1])
-	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.text = str(items[2])
+	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.text = str(item_names[items[2]])
 	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.icon = load("res://Assets/Icons/%d.png" % items[2])
 
 func update_player_inventory():
@@ -105,10 +122,13 @@ func item_selected(num: int) -> void:
 		Global.player_weapon_levels[reciever][temp_index] += 1
 		player_instance.upgrade_weapons()
 	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
-		player_instance.add_weapons()
+		if item <= 8:
+			var temp_index = Global.player_weapons[reciever].find(-1)
+			Global.player_weapons[reciever][temp_index] = item
+			Global.player_weapon_levels[reciever][temp_index] = 1
+			player_instance.add_weapons()
+		else:
+			player_instance.add_buff(item)
 	Engine.time_scale = 1
 	item_select.hide()
 	player_items.show()
@@ -118,3 +138,7 @@ func item_selected(num: int) -> void:
 	print("Weapons " + str(Global.player_weapons[0]))
 	print("Weapon Levels " + str(Global.player_weapon_levels[0]))
 	update_player_inventory()
+
+
+func _on_go_home_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/GeoffScenes/main_menu.tscn")

@@ -38,9 +38,14 @@ func game_over():
 
 
 func _on_game_over_timer_timeout() -> void:
+	#show game over ui
+	var time_lasted = ("%02d:%02d" % [floor(in_game_ui.local_time/60), in_game_ui.local_time%60])
+	in_game_ui.game_over.get_child(0).get_child(0).text = "Game Over\n\nYou lasted %s\nScore: %d" % [time_lasted, Global.score]
+	in_game_ui.game_over.show()
+	in_game_ui.xp_bar.hide()
+	#in_game_ui.player_items.hide()
 	Engine.time_scale = 0
 	Global.game_paused = true
-	#show game over ui
 
 func pause_for_item():
 	randomise_item_select()

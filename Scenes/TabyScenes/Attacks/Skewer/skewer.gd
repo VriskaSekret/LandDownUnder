@@ -2,7 +2,7 @@ extends Node2D
 
 var player
 @export var circle_radius: float = 50.0
-@export var move_time: float = 0.5 # Time to move to the new point on the circle
+@export var move_time: float = 0.2 # Time to move to the new point on the circle
 @export var wait_time: float = 3.0 # Time between each movement
 
 var level: int = 1
@@ -17,6 +17,7 @@ func _ready() -> void:
 	move.wait_time = move_time
 	animated_sprite_2d.animation = "default"
 	skewer_area.level = level
+	position = player.position
 	
 	# Set up Timer
 	timer = Timer.new()
