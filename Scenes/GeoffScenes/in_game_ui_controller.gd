@@ -24,6 +24,22 @@ var random_items
 
 var list_of_icons = []
 
+var item_names = {
+	0 : "Cone",
+	1: "Vegemite",
+	2: "Didgeridoo",
+	3: "Whip",
+	4: "Boomerang",
+	5: "Skewer",
+	6: "Thongs",
+	7: "Snake",
+	8: "Surfboard",
+	9: "+Move Speed",
+	10: "+Attack Speed",
+	11: "Heal",
+	12: "+Damage"
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(-1,11):
@@ -41,11 +57,11 @@ func _process(_delta: float) -> void:
 func update_upgrade_buttons():
 	var items = Global.randomised_items
 	select_item_label.text = str("Player %d\nSelect your item" % (Global.player_recieving_item + 1))
-	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.text = str(items[0])
+	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.text = str(item_names[items[0]])
 	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.icon = load("res://Assets/Icons/%d.png" % items[0])
-	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.text = str(items[1])
+	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.text = str(item_names[items[1]])
 	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.icon = load("res://Assets/Icons/%d.png" % items[1])
-	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.text = str(items[2])
+	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.text = str(item_names[items[2]])
 	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.icon = load("res://Assets/Icons/%d.png" % items[2])
 
 func update_player_inventory():

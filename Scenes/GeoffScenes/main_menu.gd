@@ -9,10 +9,10 @@ var players = 0
 var player_selecting = 0
 
 func _ready() -> void:
+	Global.reset_global_variables()
 	starting_menu.visible = true
 	player_count_select.visible = false
 	character_select.visible = false
-	pass
 
 func _process(_delta: float) -> void:
 	if player_selecting > players:

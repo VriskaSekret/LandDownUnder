@@ -1,10 +1,11 @@
-[gd_scene load_steps=66 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=78 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dn0e6oeyv0o3q" path="res://Assets/TabyAssets/koala_idle.png" id="2_10140"]
 [ext_resource type="Texture2D" uid="uid://cumqrhm4v1mbc" path="res://Assets/TabyAssets/ranger_idle-sheet.png" id="2_d1bjk"]
 [ext_resource type="Texture2D" uid="uid://dr3elfwjv40q" path="res://Assets/JeremyAssets/StolenAssets/knight.png" id="2_pvbi5"]
 [ext_resource type="Script" path="res://Scripts/GeoffScripts/TempCharacterMovement.gd" id="2_y3ftq"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_5xlg4"]
+[ext_resource type="Texture2D" uid="uid://bb20ave7p2blf" path="res://Assets/TabyAssets/koala_walking.png" id="3_7uid0"]
 [ext_resource type="Texture2D" uid="uid://da4cebjee4ms0" path="res://Assets/TabyAssets/aussieman_idle.png" id="3_70toj"]
 [ext_resource type="Texture2D" uid="uid://dx58a4kxxyhja" path="res://Assets/TabyAssets/raygun_idle.png" id="3_e8l1b"]
 [ext_resource type="Texture2D" uid="uid://d1dis6supl6ra" path="res://Assets/TabyAssets/aussie_shuffle.png" id="3_j7ka5"]
@@ -23,6 +24,50 @@ region = Rect2(0, 0, 64, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjkpp"]
 atlas = ExtResource("2_10140")
 region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmxns"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxa0u"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c80a5"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpnpd"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwjd1"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(256, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el25i"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(320, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i51no"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(384, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgpo7"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(448, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mux7"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(512, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5olty"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(576, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1myxf"]
+atlas = ExtResource("3_7uid0")
+region = Rect2(640, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qlm5"]
 atlas = ExtResource("2_d1bjk")
@@ -221,10 +266,43 @@ animations = [{
 "name": &"abo_idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmxns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxa0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c80a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpnpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwjd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el25i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i51no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgpo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mux7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5olty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1myxf")
+}],
 "loop": true,
 "name": &"abo_walk",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -431,7 +509,8 @@ shape = SubResource("CapsuleShape2D_7ymxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5clye")
-animation = &"tradie_idle"
+animation = &"abo_walk"
+frame_progress = 0.931297
 flip_v = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_5xlg4")]

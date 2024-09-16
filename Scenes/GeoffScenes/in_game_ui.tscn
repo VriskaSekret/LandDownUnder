@@ -48,35 +48,40 @@ size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="Item1Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("1_xk8la")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 38
 text = "Item 1"
 icon = ExtResource("2_mos1q")
+autowrap_mode = 3
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="Item2Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("1_xk8la")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 38
 text = "Item 1"
 icon = ExtResource("2_mos1q")
+autowrap_mode = 3
+clip_text = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="Item3Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("1_xk8la")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 38
 text = "Item 1"
 icon = ExtResource("2_mos1q")
 icon_alignment = 1

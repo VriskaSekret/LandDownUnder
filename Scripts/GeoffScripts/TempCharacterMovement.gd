@@ -7,7 +7,7 @@ extends CharacterBody2D
 var dead = false
 
 var attack_speed: float = 1.0
-var attack_damage: float = 1.0
+var damage_multiplier: float = 1.0
 
 var character_player_number
 var dir
@@ -153,9 +153,9 @@ func create_weapon(number):
 	elif number == 9:
 		movement_speed += 10.0
 	elif number == 10:
-		attack_speed -= 0.1
+		attack_speed = max(0.1, attack_speed - 0.1)
 	elif number == 11:
 		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
 		health_bar.value = hp
 	elif number == 12:
-		attack_damage += 0.1
+		damage_multiplier += 0.1
