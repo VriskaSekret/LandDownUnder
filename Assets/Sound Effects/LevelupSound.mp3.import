@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbd2uhgq3u1p2"
+path="res://.godot/imported/LevelupSound.mp3-f7825faedb0338863b3a5bb9b8901740.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/LevelupSound.mp3"
+dest_files=["res://.godot/imported/LevelupSound.mp3-f7825faedb0338863b3a5bb9b8901740.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
