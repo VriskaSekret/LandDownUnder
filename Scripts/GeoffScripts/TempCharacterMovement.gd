@@ -148,6 +148,7 @@ func add_weapons():
 				add_child(new_weapon)
 
 func upgrade_weapons():
+	Engine.time_scale = 2
 	for i in range(len(Global.player_weapon_levels[character_player_number - 1])):
 		if wlevels[i] != Global.player_weapon_levels[character_player_number - 1][i]:
 			wlevels[i] = Global.player_weapon_levels[character_player_number - 1][i]
