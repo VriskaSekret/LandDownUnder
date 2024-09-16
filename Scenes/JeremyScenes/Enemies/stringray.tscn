@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfj2fki6rgm6n"]
+
+[ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="1_0ob8b"]
+[ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="2_ftx55"]
+
+[node name="stringray" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("1_0ob8b")]
+
+[node name="Hurtbox" parent="." instance=ExtResource("2_ftx55")]
