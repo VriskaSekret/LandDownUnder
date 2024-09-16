@@ -18,8 +18,8 @@ script = ExtResource("4_7a5xy")
 time_start = 0
 time_end = 1000
 enemy = ExtResource("5_wlusa")
-enemy_num = 5
-enemy_spawn_delay = 3
+enemy_num = 4
+enemy_spawn_delay = 5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
 texture = ExtResource("7_u3ckx")

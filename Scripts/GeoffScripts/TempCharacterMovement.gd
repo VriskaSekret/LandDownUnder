@@ -18,6 +18,7 @@ var left_button
 var right_button
 var up_button
 var down_button
+var controller_id: int
 
 var player_type
 
@@ -53,6 +54,7 @@ func _ready():
 
 func get_input() -> void:
 	if not has_assigned_keys:
+		has_assigned_keys = true
 		left_button = "p%dleft" % character_player_number
 		right_button = "p%dright" % character_player_number
 		up_button = "p%dup" % character_player_number
