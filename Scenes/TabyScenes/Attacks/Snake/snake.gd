@@ -9,7 +9,7 @@ func _ready() -> void:
 	snake_area.level = level
 	apply_impulse(Vector2(0, -500).rotated(rotation))
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	rotation = linear_velocity.angle() + (PI/2)
 
 func _on_death_timeout() -> void:

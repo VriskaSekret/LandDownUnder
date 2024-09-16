@@ -155,7 +155,3 @@ func create_weapon(number):
 		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
 	elif number == 12:
 		attack_damage += 0.1
-
-
-func _on_hurtbox_for_feathers_hurt(damage: Variant, angle: Variant, knockback: Variant) -> void:
-	pass # Replace with function body.

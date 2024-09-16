@@ -56,8 +56,6 @@ collision_layer = 128
 collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_53iqn")
-hp = 9999
-enemy_damage = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yr7n5")

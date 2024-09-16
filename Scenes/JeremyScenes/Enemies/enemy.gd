@@ -28,7 +28,7 @@ var direction
 func _ready():
 	player = get_random_player()
 	hp = hp + (hp * Global.time_seconds * 0.02)
-	anim.play("walk")
+	#anim.play("walk")
 	hitBox.damage = enemy_damage
 	screen_size = get_viewport_rect().size
 
@@ -83,6 +83,12 @@ func _on_hurtbox_hurt(damage, angle, knockback_amount):
 	knockback = angle * knockback_amount
 	if hp <= 0:
 		death()
-	#else:
+	else:
+		sprite.modulate = Color.RED
+		var old_movement_speed = movement_speed
+		movement_speed = 10
+		await get_tree().create_timer(0.5).timeout
+		sprite.modulate = Color.WHITE
+		movement_speed = old_movement_speed
 		#sprite.material.set_shader_parameter("solid_color", Color.RED)
 		#snd_hit.play()

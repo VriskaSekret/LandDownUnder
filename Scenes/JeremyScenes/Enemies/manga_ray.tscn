@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2ytm0wc1ssky"]
+
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_qdpqo"]
+[ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="2_afaid"]
+[ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="2_m4fo2"]
+[ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_0l5pu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_806ms"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvakb"]
+
+[node name="manga_ray" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_qdpqo")
+movement_speed = 1000.0
+hp = 99999
+enemy_damage = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_afaid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_806ms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("2_m4fo2")]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_806ms")
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_0l5pu")]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_bvakb")
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]
