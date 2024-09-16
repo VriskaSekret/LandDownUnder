@@ -194,7 +194,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1l1jd")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_r1mok")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
-text = "Options"
+text = "Fullscreen"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
 layout_mode = 2
