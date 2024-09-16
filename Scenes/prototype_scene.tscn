@@ -15,9 +15,9 @@
 [sub_resource type="Resource" id="Resource_kg5hi"]
 script = ExtResource("4_7a5xy")
 time_start = 0
-time_end = 3
+time_end = 6
 enemy = ExtResource("4_83un1")
-enemy_num = 1
+enemy_num = 100
 enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]

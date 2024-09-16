@@ -27,29 +27,41 @@ var direction
 
 func _ready():
 	player = get_random_player()
-	print("targetting", player.name)
 	hp = hp + (hp * Global.time_seconds * 0.02)
 	anim.play("walk")
 	hitBox.damage = enemy_damage
 	screen_size = get_viewport_rect().size
 
 func _physics_process(_delta):
-	#if player is dead: # WORK ON HERE
-		#get_random_player()
+	if player != null:
+		if player.dead:
+			get_random_player()
 	
-	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
-	direction = global_position.direction_to(player.global_position)
-	velocity = direction*movement_speed
-	velocity += knockback
-	move_and_slide()
-	
-	if direction.x > 0.1:
-		sprite.flip_h = false
-	elif direction.x < -0.1:
-		sprite.flip_h = true
+		knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
+		direction = global_position.direction_to(player.global_position)
+		velocity = direction*movement_speed
+		velocity += knockback
+		move_and_slide()
+		
+		if direction.x > 0.1:
+			sprite.flip_h = false
+		elif direction.x < -0.1:
+			sprite.flip_h = true
 
 func get_random_player() -> CharacterBody2D:
-	var player = players.pick_random()
+	# SO I DON'T CRASH THE FUCK OUT OF THIS GAME
+	var alive_counter = 0
+	if alive_counter >= 4:
+		return
+	for i in Global.players_alive:
+		if not i:
+			alive_counter += 1
+		if alive_counter >= 4:
+			return
+	
+	player = players.pick_random()
+	while player.dead:
+		player = players.pick_random()
 	return player
 
 func death():
@@ -66,9 +78,11 @@ func death():
 	queue_free()
 
 func _on_hurtbox_hurt(damage, angle, knockback_amount):
+	
 	hp -= damage
 	knockback = angle * knockback_amount
 	if hp <= 0:
 		death()
 	#else:
+		#sprite.material.set_shader_parameter("solid_color", Color.RED)
 		#snd_hit.play()
