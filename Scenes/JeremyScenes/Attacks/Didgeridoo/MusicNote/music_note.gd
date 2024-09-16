@@ -4,7 +4,7 @@ extends Area2D
 
 var level: int = 1
 var speed: float = 100.0
-var damage: int = 10
+var damage: int = 25
 var knockback: int = 200
 var hp: int = 2
 

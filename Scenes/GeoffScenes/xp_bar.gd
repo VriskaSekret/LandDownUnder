@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	value = 100 * (Global.experience/Global.experience_needed)
+	value = 100 * (Global.experience/float(Global.experience_needed))

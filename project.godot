@@ -27,6 +27,10 @@ window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+coins="all spawned coins"
+
 [input]
 
 p1up={
