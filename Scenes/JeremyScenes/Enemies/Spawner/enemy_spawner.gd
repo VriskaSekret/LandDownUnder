@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_cap = 500
+var enemy_cap = 9999999
 var enemies_to_spawn = []
 
 @export var spawns: Array[Spawn_info] = []

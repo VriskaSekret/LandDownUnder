@@ -4,10 +4,13 @@ var player_character = preload("res://Scripts/GeoffScripts/TemporaryPlayer.tscn"
 var last_level = Global.total_level
 @onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
+var is_game_over = false
+
 
 # FOR TIMER
 @onready var count_up: Timer = $CountUp
-#
+# GameOver timer
+@onready var game_over_timer: Timer = $GameOverTimer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +27,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Global.players_alive == [false, false, false, false]:
+		game_over()
+
+func game_over():
+	if not is_game_over:
+		is_game_over = true
+		print("everyone is dead!!!!!")
+		game_over_timer.start()
+
+
+func _on_game_over_timer_timeout() -> void:
+	Engine.time_scale = 0
+	Global.game_paused = true
+	#show game over ui
 
 func pause_for_item():
 	randomise_item_select()

@@ -303,6 +303,10 @@ script = ExtResource("10_kh3fb")
 [node name="CountUp" type="Timer" parent="GameManager"]
 autostart = true
 
+[node name="GameOverTimer" type="Timer" parent="GameManager"]
+wait_time = 2.0
+
 [node name="InGameUI" parent="." instance=ExtResource("10_vypcr")]
 
 [connection signal="timeout" from="GameManager/CountUp" to="GameManager" method="_on_count_up_timeout"]
+[connection signal="timeout" from="GameManager/GameOverTimer" to="GameManager" method="_on_game_over_timer_timeout"]

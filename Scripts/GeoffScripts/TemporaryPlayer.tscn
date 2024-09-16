@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=66 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dn0e6oeyv0o3q" path="res://Assets/TabyAssets/koala_idle.png" id="2_10140"]
 [ext_resource type="Texture2D" uid="uid://cumqrhm4v1mbc" path="res://Assets/TabyAssets/ranger_idle-sheet.png" id="2_d1bjk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1dis6supl6ra" path="res://Assets/TabyAssets/aussie_shuffle.png" id="3_j7ka5"]
 [ext_resource type="Texture2D" uid="uid://c4uatm4l8lgj7" path="res://Assets/TabyAssets/ranger_walking.png" id="3_kd3ma"]
 [ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="4_jtkbm"]
+[ext_resource type="Texture2D" uid="uid://beem5esmfeawn" path="res://Assets/GeoffAssets/hp.png" id="10_40b18"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ymxa"]
 radius = 15.0
@@ -411,12 +412,18 @@ height = 22.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bspj"]
 radius = 125.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo3ue"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpxda"]
+texture = ExtResource("10_40b18")
+
 [node name="Player1" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 16777217
 collision_mask = 256
 motion_mode = 1
 script = ExtResource("2_y3ftq")
-hp = 50
+hp = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
@@ -450,13 +457,23 @@ monitorable = false
 shape = SubResource("CircleShape2D_0bspj")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -99.0
-offset_top = 46.0
-offset_right = 97.0
-offset_bottom = 73.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = 40.0
+offset_right = 26.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_jo3ue")
+theme_override_styles/fill = SubResource("StyleBoxTexture_jpxda")
 max_value = 80.0
 step = 1.0
 value = 80.0
+show_percentage = false
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
