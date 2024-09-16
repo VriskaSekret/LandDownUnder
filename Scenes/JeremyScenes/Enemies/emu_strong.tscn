@@ -55,7 +55,6 @@ _data = {
 collision_layer = 128
 collision_mask = 128
 script = ExtResource("1_28ioi")
-movement_speed = 40.0
 hp = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

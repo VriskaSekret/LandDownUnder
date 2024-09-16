@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6pqbm7gjjeoc" path="res://Assets/JeremyAssets/brown_feather.png" id="2_dkqr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bihxc"]
-size = Vector2(12, 30.467)
+size = Vector2(12, 22.0208)
 
 [node name="Feather" type="Area2D" groups=["Attack"]]
 rotation = 2.35619
