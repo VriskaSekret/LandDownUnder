@@ -60,6 +60,7 @@ hp = 50
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_l45rs")
 flip_h = true
+flip_v = true
 hframes = 8
 frame = 1
 

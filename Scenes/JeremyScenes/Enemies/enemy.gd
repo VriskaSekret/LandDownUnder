@@ -28,7 +28,7 @@ var direction
 func _ready():
 	player = get_random_player()
 	hp = hp + (hp * Global.time_seconds * 0.02)
-	#anim.play("walk")
+	anim.play("walk")
 	hitBox.damage = enemy_damage
 	screen_size = get_viewport_rect().size
 

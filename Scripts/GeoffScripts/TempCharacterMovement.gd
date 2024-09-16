@@ -40,6 +40,8 @@ var surf = preload("res://Scenes/TabyScenes/Attacks/Surfboard/surf.tscn")
 var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip_shooter.tscn")
 
+
+
 func _ready():
 	health_bar.max_value = hp
 	health_bar.value = hp
@@ -104,6 +106,8 @@ func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 			die()
 
 func die() -> void:
+	var camera = get_tree().get_first_node_in_group("Camera")
+	camera.remove_target(self)
 	dead = true
 	Global.players_alive[character_player_number - 1] = false
 	anim_spr.rotate(-PI/2)

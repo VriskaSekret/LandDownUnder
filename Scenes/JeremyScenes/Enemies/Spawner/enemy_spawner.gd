@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_cap = 9999999
+var enemy_cap = 300
 var enemies_to_spawn = []
 
 @export var spawns: Array[Spawn_info] = []
@@ -9,6 +9,7 @@ var enemies_to_spawn = []
 @onready var camera: Camera2D = $"../Camera2D"
 
 var time = 0
+
 
 func _on_timer_timeout():
 	time += 1

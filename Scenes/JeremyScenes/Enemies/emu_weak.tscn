@@ -63,6 +63,7 @@ script = ExtResource("1_huecr")
 material = SubResource("ShaderMaterial_bkiar")
 texture = ExtResource("1_j6b6e")
 flip_h = true
+flip_v = true
 hframes = 8
 frame = 1
 
