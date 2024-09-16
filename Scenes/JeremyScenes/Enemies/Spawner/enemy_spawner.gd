@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_cap = 500
+var enemy_cap = 300
 var enemies_to_spawn = []
 
 @export var spawns: Array[Spawn_info] = []
@@ -9,6 +9,7 @@ var enemies_to_spawn = []
 @onready var camera: Camera2D = $"../Camera2D"
 
 var time = 0
+
 
 func _on_timer_timeout():
 	time += 1
@@ -22,7 +23,7 @@ func _on_timer_timeout():
 				i.spawn_delay_counter = 0
 				var new_enemy = i.enemy
 				var counter = 0
-				while counter < i.enemy_num:
+				while counter < (i.enemy_num):
 					if my_children.size() <= enemy_cap:
 						var enemy_spawn = new_enemy.instantiate()
 						enemy_spawn.global_position = get_random_position()

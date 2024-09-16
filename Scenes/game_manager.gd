@@ -4,10 +4,18 @@ var player_character = preload("res://Scripts/GeoffScripts/TemporaryPlayer.tscn"
 var last_level = Global.total_level
 @onready var in_game_ui: CanvasLayer = $"../InGameUI"
 
+var is_game_over = false
+
+
+# FOR TIMER
+@onready var count_up: Timer = $CountUp
+# GameOver timer
+@onready var game_over_timer: Timer = $GameOverTimer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	count_up.start()
 	for i in range(Global.number_players):
 		var player_instance = player_character.instantiate()
 		player_instance.character_player_number = i + 1
@@ -15,34 +23,54 @@ func _ready() -> void:
 		print (player_instance.character_player_number)
 		add_child(player_instance)
 		last_level = Global.total_level
-
+	in_game_ui.update_player_inventory()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if Global.players_alive == [false, false, false, false]:
+		game_over()
+
+func game_over():
+	if not is_game_over:
+		is_game_over = true
+		print("everyone is dead!!!!!")
+		game_over_timer.start()
+
+
+func _on_game_over_timer_timeout() -> void:
+	#show game over ui
+	var time_lasted = ("%02d:%02d" % [floor(in_game_ui.local_time/60), in_game_ui.local_time%60])
+	in_game_ui.game_over.get_child(0).get_child(0).text = "Game Over\n\nYou lasted %s\nScore: %d" % [time_lasted, Global.score]
+	in_game_ui.game_over.show()
+	in_game_ui.xp_bar.hide()
+	#in_game_ui.player_items.hide()
+	Engine.time_scale = 0
+	Global.game_paused = true
 
 func pause_for_item():
 	randomise_item_select()
 	in_game_ui.update_upgrade_buttons()
 	in_game_ui.item_select.show()
+	in_game_ui.xp_bar.hide()
+	in_game_ui.player_items.hide()
 	Engine.time_scale = 0
 	Global.game_paused = true
 
 func randomise_item_select() -> void:
 	# ITEMS ARE AS FOLLOWS:
-	# 0 - tradie default wep - stop sign or cone idk
+	# 0 - tradie default wep - cone 
 	# 1 - raygun default wep - vegemite
 	# 2 - abo default wep - didgeridoo
-	# 3 - bush default wep - boomerang
-	# 4 - stop sign or cone depending on tradie default wep
+	# 3 - bush default wep - whip
+	# 4 - boomerang
 	# 5 - shrimp from the barbie
 	# 6 - thongs
-	# 7 - TONGS (not the slipper)
+	# 7 - snake
 	# 8 - surfboard
 	# IF ALL WEAPON SLOTS ARE FULL, START GIVING PASSIVE BUFFS
 	# 9 - walk speed buff
 	# 10 - attack speed buff
-	# 11 - hp buff
+	# 11 - heal buff
 	# 12 - attack damage buff
 	
 	var item_array = []
@@ -70,3 +98,7 @@ func check_level():
 		last_level = Global.total_level
 		print("Level: " + str(Global.total_level))
 		pause_for_item()
+
+
+func _on_count_up_timeout() -> void:
+	Global.time_seconds += 1

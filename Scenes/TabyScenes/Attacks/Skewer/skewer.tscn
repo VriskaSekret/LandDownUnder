@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxk66lrtp7sms"]
 
-[ext_resource type="Texture2D" uid="uid://d2qujxxxhy025" path="res://Assets/JeremyAssets/skewer_atk.png" id="1_i1ndw"]
 [ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer.gd" id="1_uo6ah"]
-[ext_resource type="Texture2D" uid="uid://dopmgcvn3mjo8" path="res://Assets/JeremyAssets/skewer_normal.png" id="2_qheks"]
+[ext_resource type="Texture2D" uid="uid://cde4od0qm553l" path="res://Assets/TabyAssets/attacking_shrimp.png" id="2_4mcu2"]
+[ext_resource type="Texture2D" uid="uid://bh3i0n655um8f" path="res://Assets/TabyAssets/shrimp.png" id="3_ri41i"]
 [ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Skewer/skewer_area.gd" id="4_74iwl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bs7jo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i1ndw")
+"texture": ExtResource("2_4mcu2")
 }],
 "loop": false,
 "name": &"attack",
@@ -17,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qheks")
+"texture": ExtResource("3_ri41i")
 }],
 "loop": false,
 "name": &"default",
@@ -37,6 +37,7 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 2.18166
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_bs7jo")
 autoplay = "default"
 

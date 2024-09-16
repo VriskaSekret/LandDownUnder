@@ -11,7 +11,6 @@ var offset: float = 0.0
 
 func _ready() -> void:
 	thong_aoe.level = level
-	orbit_radius = get_parent().orbit_radius
 
 func _process(delta: float) -> void:
 	# Update the angle based on the orbit speed

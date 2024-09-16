@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyvr24rglpp7h"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Cone/cone_shooter.gd" id="1_pxco8"]
+
+[node name="ConeShooter" type="Node2D"]
+script = ExtResource("1_pxco8")
+level = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

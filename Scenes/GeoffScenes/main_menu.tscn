@@ -1,9 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfu85v4eflk6q"]
+[gd_scene load_steps=31 format=3 uid="uid://dfu85v4eflk6q"]
 
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/main_menu.gd" id="1_3hnnt"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_t38q1"]
-[ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="3_khd7a"]
-[ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="4_yedyq"]
+[ext_resource type="Texture2D" uid="uid://6csfiaxiv4lx" path="res://Assets/GeoffAssets/new_bg.png" id="2_skyt3"]
+[ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="4_eci28"]
+[ext_resource type="PackedScene" uid="uid://deunyj7inebhm" path="res://main_menu_raygun.tscn" id="4_m0bib"]
+[ext_resource type="Texture2D" uid="uid://b58agb465jdgk" path="res://Assets/GeoffAssets/tradie_icon.png" id="6_6oxve"]
+[ext_resource type="Texture2D" uid="uid://d3nom0v2bf11a" path="res://Assets/GeoffAssets/koala_icon.png" id="7_84mkk"]
+[ext_resource type="Texture2D" uid="uid://p1yw7s0cupr7" path="res://Assets/GeoffAssets/ray_icon.png" id="8_4gyau"]
+[ext_resource type="Texture2D" uid="uid://cq3vw6dogwscf" path="res://Assets/GeoffAssets/ranger_icon.png" id="9_yox0p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alk2x"]
 
@@ -27,6 +32,77 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6654"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_21ate"]
+atlas = ExtResource("4_eci28")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofvmq"]
+atlas = ExtResource("4_eci28")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qujl"]
+atlas = ExtResource("4_eci28")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o318w"]
+atlas = ExtResource("4_eci28")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5yaq"]
+atlas = ExtResource("4_eci28")
+region = Rect2(256, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbrpp"]
+atlas = ExtResource("4_eci28")
+region = Rect2(320, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifdot"]
+atlas = ExtResource("4_eci28")
+region = Rect2(384, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v62x2"]
+atlas = ExtResource("4_eci28")
+region = Rect2(448, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gshe"]
+atlas = ExtResource("4_eci28")
+region = Rect2(512, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0000"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21ate")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofvmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qujl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o318w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5yaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbrpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifdot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v62x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gshe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -45,7 +121,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_yedyq")
+texture = ExtResource("2_skyt3")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -118,7 +194,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1l1jd")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_r1mok")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
-text = "Options"
+text = "Fullscreen"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
 layout_mode = 2
@@ -145,10 +221,30 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
 text = "Quit"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/StartingMenu"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/StartingMenu"]
 layout_mode = 2
-texture = ExtResource("3_khd7a")
-expand_mode = 3
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/StartingMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.415686, 0.788235, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.462745, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_t38q1")
+theme_override_font_sizes/font_size = 64
+text = "The Land
+Down Under"
+
+[node name="TextureRect" parent="MarginContainer/StartingMenu/VBoxContainer2" instance=ExtResource("4_m0bib")]
+visible = false
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/StartingMenu/VBoxContainer2"]
+position = Vector2(303, 403)
+scale = Vector2(6.70313, 6.70313)
+sprite_frames = SubResource("SpriteFrames_m0000")
+autoplay = "default"
+flip_h = true
 
 [node name="PlayerCountSelect" type="VBoxContainer" parent="MarginContainer"]
 visible = false
@@ -159,7 +255,8 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/PlayerCountSelect"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.415686, 0.788235, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.462745, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 72
@@ -217,7 +314,8 @@ alignment = 1
 [node name="PlayerSelecting" type="Label" parent="MarginContainer/CharacterSelect"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.415686, 0.788235, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.462745, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 72
@@ -240,7 +338,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "Tradie"
-icon = ExtResource("3_khd7a")
+icon = ExtResource("6_6oxve")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -251,8 +349,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
-text = "Aboriginal"
-icon = ExtResource("3_khd7a")
+text = "\"Koala\""
+icon = ExtResource("7_84mkk")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -268,7 +366,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "Raygun"
-icon = ExtResource("3_khd7a")
+icon = ExtResource("8_4gyau")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -280,7 +378,7 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
 text = "Bushranger"
-icon = ExtResource("3_khd7a")
+icon = ExtResource("9_yox0p")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

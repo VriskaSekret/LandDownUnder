@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://djf3fup248sxt"]
 
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_0h1mu"]
-[ext_resource type="Texture2D" uid="uid://duu4aeg27l28u" path="res://Scenes/JeremyScenes/Enemies/kanga_box.png" id="2_ubyvs"]
+[ext_resource type="Texture2D" uid="uid://duu4aeg27l28u" path="res://Assets/JeremyAssets/kanga_box.png" id="2_ubyvs"]
 [ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_bnml5"]
 [ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="4_s3pqk"]
 
@@ -55,13 +55,14 @@ collision_layer = 128
 collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_0h1mu")
-movement_speed = 30.0
+movement_speed = 60.0
 hp = 20
 knockback_recovery = 5.0
 enemy_damage = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ubyvs")
+flip_v = true
 hframes = 3
 frame = 1
 
