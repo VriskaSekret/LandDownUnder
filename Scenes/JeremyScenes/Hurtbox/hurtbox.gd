@@ -15,6 +15,7 @@ func _on_area_entered(area):
 			match HurtBoxType:
 				0: #Cooldown
 					collision.call_deferred("set", "disabled", true)
+					collision.visible = false
 					disable_timer.start()
 				1: #HitOnce
 					if hit_once_arr.has(area) == false:
@@ -35,6 +36,8 @@ func _on_area_entered(area):
 				angle = area.angle
 			if not area.get("knockback_amount") == null:
 				knockback = area.knockback_amount
+			#else: # TESTING HERE
+				#print("no knockback?")
 			
 			emit_signal("hurt", damage, angle, knockback)
 			if area.has_method("enemy_hit"):
@@ -46,3 +49,4 @@ func remove_from_list(obj):
 
 func _on_disable_timer_timeout():
 	collision.call_deferred("set", "disabled", false)
+	collision.visible = true

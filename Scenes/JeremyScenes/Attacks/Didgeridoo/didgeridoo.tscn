@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqtvxpjx8p4vn"]
+[gd_scene load_steps=3 format=3 uid="uid://bh00jf6030e0o"]
 
 [ext_resource type="Texture2D" uid="uid://cap7s12v6eiea" path="res://Assets/JeremyAssets/didgeridoo2.png" id="1_1p68b"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Attacks/Didgeridoo/didgeridoo.gd" id="1_g7rgj"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://b01xgbhjj0y66"]
+
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_28ioi"]
+[ext_resource type="Texture2D" uid="uid://cxf4akp25a4f3" path="res://Assets/JeremyAssets/emu_hat.png" id="2_l45rs"]
+[ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="3_nnokv"]
+[ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="4_hphpr"]
+[ext_resource type="PackedScene" uid="uid://jtqybss23iwj" path="res://Scenes/JeremyScenes/Enemies/emu_attack_node.tscn" id="5_m7ifr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljrj7"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3dxi"]
+size = Vector2(44, 39.5)
+
+[sub_resource type="Animation" id="Animation_lstuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xmghr"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6iot7"]
+_data = {
+"RESET": SubResource("Animation_lstuj"),
+"walk": SubResource("Animation_xmghr")
+}
+
+[node name="emu_strong" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_28ioi")
+hp = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_l45rs")
+flip_h = true
+flip_v = true
+hframes = 8
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ljrj7")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_nnokv")]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_u3dxi")
+
+[node name="Hurtbox" parent="." instance=ExtResource("4_hphpr")]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_u3dxi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6iot7")
+}
+
+[node name="AttackNode" parent="." instance=ExtResource("5_m7ifr")]
+
+[node name="Timer" parent="AttackNode" index="0"]
+wait_time = 15.0
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]
+[editable path="AttackNode"]

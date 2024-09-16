@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk8rxypmugo4o"
+path="res://.godot/imported/ButtonMainMenu.mp3-12f6cf2a34996634dd8d93ecc615f45b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/ButtonMainMenu.mp3"
+dest_files=["res://.godot/imported/ButtonMainMenu.mp3-12f6cf2a34996634dd8d93ecc615f45b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

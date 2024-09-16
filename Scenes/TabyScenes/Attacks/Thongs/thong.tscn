@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bat3dqqsnhuy3"]
+
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Thongs/thong.gd" id="1_8pj0h"]
+[ext_resource type="Texture2D" uid="uid://ei1ruq1gkht2" path="res://Assets/TabyAssets/thongs.png" id="2_0fcy0"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Thongs/thong_area.gd" id="3_4pj6i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6v7ga"]
+radius = 10.0477
+height = 36.7825
+
+[node name="Thong" type="Node2D"]
+script = ExtResource("1_8pj0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0fcy0")
+
+[node name="ThongAOE" type="Area2D" parent="." groups=["Attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_4pj6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ThongAOE"]
+position = Vector2(-1.98927, -1.14608)
+rotation = 0.120428
+shape = SubResource("CapsuleShape2D_6v7ga")
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]

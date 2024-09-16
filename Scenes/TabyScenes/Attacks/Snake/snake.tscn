@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfrkbcmjkhoud"]
+
+[ext_resource type="Texture2D" uid="uid://bfq0ds8t610rq" path="res://Assets/TabyAssets/snake1.png" id="1_0wn6m"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Snake/snake.gd" id="1_sx8py"]
+[ext_resource type="Texture2D" uid="uid://dd4kmnu0a4bjd" path="res://Assets/TabyAssets/snake2.png" id="2_k4x5y"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Snake/snake_area.gd" id="4_1way5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mlotu"]
+bounce = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1yoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0wn6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k4x5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vqovx"]
+radius = 3.50595
+height = 59.1376
+
+[node name="Snake" type="RigidBody2D"]
+rotation = 1.58138
+collision_layer = 67108864
+collision_mask = 67108864
+physics_material_override = SubResource("PhysicsMaterial_mlotu")
+gravity_scale = 0.0
+script = ExtResource("1_sx8py")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+rotation = 0.746823
+sprite_frames = SubResource("SpriteFrames_r1yoe")
+autoplay = "default"
+frame_progress = 0.0295767
+
+[node name="SnakeArea" type="Area2D" parent="AnimatedSprite2D" groups=["Attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_1way5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/SnakeArea"]
+position = Vector2(-1.73385, 0.679311)
+rotation = -0.747204
+shape = SubResource("CapsuleShape2D_vqovx")
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.266149, -0.679311)
+rotation = -0.000380741
+shape = SubResource("CapsuleShape2D_vqovx")
+
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]

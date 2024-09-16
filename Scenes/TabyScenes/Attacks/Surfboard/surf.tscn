@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://bd2dd0gj0x0ax"]
+
+[ext_resource type="Texture2D" uid="uid://cijhvbbtb2ec4" path="res://Assets/TabyAssets/waves/w1.png" id="1_46x4t"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Surfboard/surf.gd" id="1_p3asb"]
+[ext_resource type="Texture2D" uid="uid://1vrmbnvrpqqq" path="res://Assets/TabyAssets/waves/w2.png" id="2_phk41"]
+[ext_resource type="Texture2D" uid="uid://mvql63f6on0l" path="res://Assets/TabyAssets/waves/w3.png" id="3_80gkl"]
+[ext_resource type="Texture2D" uid="uid://becmik1mdud8i" path="res://Assets/TabyAssets/waves/w4.png" id="4_0yw1p"]
+[ext_resource type="Texture2D" uid="uid://3a76k1rf4gb0" path="res://Assets/TabyAssets/waves/w5.png" id="5_it45t"]
+[ext_resource type="Texture2D" uid="uid://d367joo3kqbh" path="res://Assets/TabyAssets/waves/w6.png" id="6_yu2on"]
+[ext_resource type="Texture2D" uid="uid://dhnfhb0ybrlwy" path="res://Assets/TabyAssets/waves/w7.png" id="7_qxld8"]
+[ext_resource type="Texture2D" uid="uid://dh64pkywuwm1j" path="res://Assets/TabyAssets/waves/w8.png" id="8_i70bk"]
+[ext_resource type="Script" path="res://Scenes/TabyScenes/Attacks/Surfboard/surf_area.gd" id="10_ojdyy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2w66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_46x4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_phk41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_80gkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0yw1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_it45t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yu2on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qxld8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i70bk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dst7d"]
+radius = 21.0238
+
+[node name="Surf" type="Node2D"]
+z_index = -1
+script = ExtResource("1_p3asb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+sprite_frames = SubResource("SpriteFrames_d2w66")
+autoplay = "default"
+frame_progress = 0.0357339
+
+[node name="SurfArea" type="Area2D" parent="AnimatedSprite2D" groups=["Attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("10_ojdyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/SurfArea"]
+shape = SubResource("CircleShape2D_dst7d")

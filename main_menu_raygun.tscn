@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://deunyj7inebhm"]
+
+[ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="1_lxis4"]
+[ext_resource type="Script" path="res://Scenes/GeoffScenes/main_menu_raygun.gd" id="2_antrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53jli"]
+atlas = ExtResource("1_lxis4")
+region = Rect2(0, 0, 64, 80)
+
+[node name="TextureRect" type="TextureRect"]
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_53jli")
+expand_mode = 5
+script = ExtResource("2_antrm")
+
+[node name="Timer" type="Timer" parent="."]
