@@ -41,6 +41,7 @@ var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip_shooter.tscn")
 
 func _ready():
+	set_base_stats()
 	health_bar.max_value = hp
 	health_bar.value = hp
 	player_type = Global.player_characters[character_player_number-1]
@@ -94,6 +95,25 @@ func get_char_name() -> String:
 	else:
 		return "bush"
 
+func set_base_stats():
+	var char_index: int = Global.player_characters[character_player_number - 1]
+	if char_index == 0:
+		hp = 15
+		damage_multiplier = 1.0
+		movement_speed = 100.0
+	if char_index == 1:
+		hp == 10
+		damage_multiplier = 0.85
+		movement_speed = 120.0
+	if char_index == 2:
+		hp = 20
+		damage_multiplier = 1.0
+		movement_speed = 80.0
+	if char_index == 3:
+		hp = 10
+		damage_multiplier = 1.2
+		movement_speed = 100.0
+	
 
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 	if not dead:
@@ -153,7 +173,7 @@ func create_weapon(number):
 	elif number == 8:
 		return surf.instantiate()
 	elif number == 9:
-		movement_speed += 10.0
+		movement_speed += 5.0
 	elif number == 10:
 		attack_speed = max(0.1, attack_speed - 0.1)
 	elif number == 11:
