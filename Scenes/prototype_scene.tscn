@@ -1,23 +1,92 @@
-[gd_scene load_steps=18 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=31 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="PackedScene" uid="uid://n5onsju4xm8c" path="res://Scenes/JeremyScenes/Enemies/Spawner/enemy_spawner.tscn" id="3_r4swq"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Spawner/spawn_info.gd" id="4_7a5xy"]
+[ext_resource type="PackedScene" uid="uid://b4gcmlhyg7tmb" path="res://Scenes/JeremyScenes/Enemies/kanga_weak.tscn" id="4_enefm"]
+[ext_resource type="PackedScene" uid="uid://djf3fup248sxt" path="res://Scenes/JeremyScenes/Enemies/kanga_strong.tscn" id="5_bfdmg"]
+[ext_resource type="PackedScene" uid="uid://b4d8e1fbaxncv" path="res://Scenes/JeremyScenes/Enemies/emu_weak.tscn" id="6_j5iwe"]
 [ext_resource type="PackedScene" uid="uid://blho5e68w8l3b" path="res://Scenes/GeoffScenes/stuff.tscn" id="7_615b2"]
 [ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="7_d6iib"]
+[ext_resource type="PackedScene" uid="uid://b01xgbhjj0y66" path="res://Scenes/JeremyScenes/Enemies/emu_strong.tscn" id="7_gi35y"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
 [ext_resource type="PackedScene" uid="uid://bfj2fki6rgm6n" path="res://Scenes/JeremyScenes/Enemies/stringray.tscn" id="8_od4pu"]
+[ext_resource type="PackedScene" uid="uid://b2ytm0wc1ssky" path="res://Scenes/JeremyScenes/Enemies/grim_reaper.tscn" id="9_6ar0m"]
 [ext_resource type="PackedScene" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
 [ext_resource type="PackedScene" uid="uid://dvr7hxqjui07j" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
 [ext_resource type="AudioStream" uid="uid://cmiqgg47rifnf" path="res://Assets/Music/Land Down Under Main Theme.mp3" id="12_ha6ae"]
 
-[sub_resource type="Resource" id="Resource_hug8x"]
+[sub_resource type="Resource" id="Resource_qphdx"]
 script = ExtResource("4_7a5xy")
-time_start = 1
-time_end = 1
+time_start = 0
+time_end = 180
+enemy = ExtResource("4_enefm")
+enemy_num = 2
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_gse4v"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 180
+enemy = ExtResource("5_bfdmg")
+enemy_num = 3
+enemy_spawn_delay = 10
+
+[sub_resource type="Resource" id="Resource_8hrp3"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 180
+enemy = ExtResource("6_j5iwe")
+enemy_num = 2
+enemy_spawn_delay = 20
+
+[sub_resource type="Resource" id="Resource_svkx3"]
+script = ExtResource("4_7a5xy")
+time_start = 180
+time_end = 300
+enemy = ExtResource("4_enefm")
+enemy_num = 5
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_plcpv"]
+script = ExtResource("4_7a5xy")
+time_start = 180
+time_end = 300
+enemy = ExtResource("5_bfdmg")
+enemy_num = 5
+enemy_spawn_delay = 5
+
+[sub_resource type="Resource" id="Resource_b6bxk"]
+script = ExtResource("4_7a5xy")
+time_start = 180
+time_end = 300
+enemy = ExtResource("6_j5iwe")
+enemy_num = 5
+enemy_spawn_delay = 10
+
+[sub_resource type="Resource" id="Resource_8vphc"]
+script = ExtResource("4_7a5xy")
+time_start = 180
+time_end = 300
+enemy = ExtResource("7_gi35y")
+enemy_num = 3
+enemy_spawn_delay = 10
+
+[sub_resource type="Resource" id="Resource_0iqlx"]
+script = ExtResource("4_7a5xy")
+time_start = 300
+time_end = 300
 enemy = ExtResource("8_od4pu")
+enemy_num = 1
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_tf5xj"]
+script = ExtResource("4_7a5xy")
+time_start = 390
+time_end = 390
+enemy = ExtResource("9_6ar0m")
 enemy_num = 1
 enemy_spawn_delay = 0
 
@@ -244,7 +313,7 @@ size = Vector2(1500, 20)
 script = ExtResource("1_miors")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_hug8x")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_qphdx"), SubResource("Resource_gse4v"), SubResource("Resource_8hrp3"), SubResource("Resource_svkx3"), SubResource("Resource_plcpv"), SubResource("Resource_b6bxk"), SubResource("Resource_8vphc"), SubResource("Resource_0iqlx"), SubResource("Resource_tf5xj")])
 
 [node name="Coin" parent="EnemySpawner" instance=ExtResource("9_ar65b")]
 position = Vector2(85, -1)
