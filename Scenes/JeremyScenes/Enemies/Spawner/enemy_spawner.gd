@@ -22,7 +22,7 @@ func _on_timer_timeout():
 				i.spawn_delay_counter = 0
 				var new_enemy = i.enemy
 				var counter = 0
-				while counter < i.enemy_num:
+				while counter < (i.enemy_num):
 					if my_children.size() <= enemy_cap:
 						var enemy_spawn = new_enemy.instantiate()
 						enemy_spawn.global_position = get_random_position()

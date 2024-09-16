@@ -36,6 +36,8 @@ func _on_area_entered(area):
 				angle = area.angle
 			if not area.get("knockback_amount") == null:
 				knockback = area.knockback_amount
+			#else: # TESTING HERE
+				#print("no knockback?")
 			
 			emit_signal("hurt", damage, angle, knockback)
 			if area.has_method("enemy_hit"):

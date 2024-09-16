@@ -56,7 +56,7 @@ collision_layer = 128
 collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_huecr")
-movement_speed = 40.0
+movement_speed = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j6b6e")
@@ -91,7 +91,11 @@ shape = SubResource("RectangleShape2D_u3dxi")
 
 [node name="AttackNode" parent="." instance=ExtResource("5_h2jal")]
 
+[node name="Timer" parent="AttackNode" index="0"]
+wait_time = 20.0
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 
 [editable path="Hitbox"]
 [editable path="Hurtbox"]
+[editable path="AttackNode"]

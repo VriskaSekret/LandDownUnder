@@ -6,7 +6,7 @@ var speed = 100.0
 var damage = 10
 var hp = 2
 
-var angle = Vector2.ZERO
+var angle = Vector2.UP
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)
