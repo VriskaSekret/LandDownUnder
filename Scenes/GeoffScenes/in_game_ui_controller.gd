@@ -105,10 +105,13 @@ func item_selected(num: int) -> void:
 		Global.player_weapon_levels[reciever][temp_index] += 1
 		player_instance.upgrade_weapons()
 	else:
-		var temp_index = Global.player_weapons[reciever].find(-1)
-		Global.player_weapons[reciever][temp_index] = item
-		Global.player_weapon_levels[reciever][temp_index] = 1
-		player_instance.add_weapons()
+		if item <= 8:
+			var temp_index = Global.player_weapons[reciever].find(-1)
+			Global.player_weapons[reciever][temp_index] = item
+			Global.player_weapon_levels[reciever][temp_index] = 1
+			player_instance.add_weapons()
+		else:
+			player_instance.add_buff(item)
 	Engine.time_scale = 1
 	item_select.hide()
 	player_items.show()

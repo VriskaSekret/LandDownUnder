@@ -128,6 +128,9 @@ func upgrade_weapons():
 			while wlevels[i] > weapon_nodes[i].level:
 				weapon_nodes[i].level_up()
 
+func add_buff(buff: int):
+	create_weapon(buff)
+
 func create_weapon(number):
 	if number == 0:
 		return cone.instantiate()
@@ -153,5 +156,6 @@ func create_weapon(number):
 		attack_speed -= 0.1
 	elif number == 11:
 		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
+		health_bar.value = hp
 	elif number == 12:
 		attack_damage += 0.1

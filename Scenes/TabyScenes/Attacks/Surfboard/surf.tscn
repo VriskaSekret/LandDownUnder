@@ -49,9 +49,9 @@ radius = 21.0238
 [node name="Surf" type="Node2D"]
 z_index = -1
 script = ExtResource("1_p3asb")
-level = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
 sprite_frames = SubResource("SpriteFrames_d2w66")
 autoplay = "default"
 frame_progress = 0.0357339

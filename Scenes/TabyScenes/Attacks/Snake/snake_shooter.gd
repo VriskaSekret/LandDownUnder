@@ -22,6 +22,7 @@ func new_snake():
 	var snake_instance = snake.instantiate()
 	snake_instance.level = level
 	snake_instance.rotation = rng.randf_range(0, 2*PI)
+	snake_instance.player = get_parent()
 	get_parent().get_parent().add_child(snake_instance)
 
 func level_up():
