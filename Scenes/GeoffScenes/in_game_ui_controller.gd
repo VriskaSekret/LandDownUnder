@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var item_select: VBoxContainer = $MarginContainer/ItemSelect
+@onready var game_over: VBoxContainer = $MarginContainer/GameOver
 @onready var player_items: HBoxContainer = $PlayerItems
 @onready var game_manager: Node2D = $"../GameManager"
 @onready var count_up_time: Label = $XPBar/CountUpTime
@@ -137,3 +138,7 @@ func item_selected(num: int) -> void:
 	print("Weapons " + str(Global.player_weapons[0]))
 	print("Weapon Levels " + str(Global.player_weapon_levels[0]))
 	update_player_inventory()
+
+
+func _on_go_home_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/GeoffScenes/main_menu.tscn")

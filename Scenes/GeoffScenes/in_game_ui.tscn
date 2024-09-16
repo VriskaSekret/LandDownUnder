@@ -88,6 +88,55 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="GameOver" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/GameOver"]
+custom_minimum_size = Vector2(1200, 300)
+layout_mode = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer/GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -65.5
+offset_right = 365.0
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 48
+text = "Game Over
+Score: X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/GameOver"]
+layout_mode = 2
+
+[node name="GoHome" type="Button" parent="MarginContainer/GameOver/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_xk8la")
+theme_override_font_sizes/font_size = 38
+text = "Return to Main Menu"
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="XPBar" type="ProgressBar" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
@@ -555,3 +604,4 @@ vertical_alignment = 2
 [connection signal="pressed" from="MarginContainer/ItemSelect/HBoxContainer/Item1Button" to="." method="_on_item_1_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ItemSelect/HBoxContainer/Item2Button" to="." method="_on_item_2_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ItemSelect/HBoxContainer/Item3Button" to="." method="_on_item_3_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GameOver/HBoxContainer/GoHome" to="." method="_on_go_home_pressed"]

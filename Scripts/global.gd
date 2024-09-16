@@ -4,6 +4,7 @@ var number_players = -1
 
 var game_paused = false
 var experience = 0
+var score: int = 0
 var total_level = 1
 var experience_needed = 10.0 * (total_level * 1.2)
 var time_seconds = 0
@@ -23,9 +24,11 @@ var player_recieving_item: int = -1
 var randomised_items = [-1,-1,-1]
 
 func reset_global_variables():
+	Engine.time_scale = 1
 	number_players = -1
 	game_paused = false
 	experience = 0
+	score = 0
 	total_level = 1
 	experience_needed = 10.0 * (total_level * 1.2)
 	time_seconds = 0
@@ -44,6 +47,7 @@ func _process(_delta: float) -> void:
 
 func add_xp(xp_added: int) -> void:
 	experience += xp_added
+	score += xp_added
 	if experience >= experience_needed:
 		#player_recieving_item = (total_level -1 )% number_players
 		update_recieving_player()
