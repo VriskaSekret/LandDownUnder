@@ -71,6 +71,7 @@ libraries = {
 }
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_s2of5")]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -82,6 +83,7 @@ shape = SubResource("RectangleShape2D_llwkt")
 collision_layer = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
