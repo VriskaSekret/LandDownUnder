@@ -124,6 +124,9 @@ func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 		health_bar.value = hp
 		if hp <= 0:
 			die()
+		anim_spr.modulate = Color.RED
+		await get_tree().create_timer(0.5).timeout
+		anim_spr.modulate = Color.WHITE
 
 func die() -> void:
 	var camera = get_tree().get_first_node_in_group("Camera")

@@ -54,7 +54,7 @@ collision_layer = 128
 collision_mask = 128
 script = ExtResource("1_6mtyc")
 movement_speed = 100.0
-hp = 500
+hp = 100
 enemy_damage = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

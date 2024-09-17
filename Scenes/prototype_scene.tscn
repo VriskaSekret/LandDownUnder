@@ -327,6 +327,7 @@ tile_map_data = PackedByteArray("AAD///7/AAABAAEAAAD+//7/AAABAAEAAAD9//7/AAABAAE
 tile_set = SubResource("TileSet_5m4f6")
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("9_pld26")

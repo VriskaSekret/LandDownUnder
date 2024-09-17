@@ -23,6 +23,7 @@ func _on_fall_timer_timeout() -> void:
 	animated_sprite.animation = "burst"
 	gravity_scale = 0
 	linear_velocity = Vector2(0, 0)
+	modulate = "ffffffcc"
 	aoe_timer.start()
 	vegemite_aoe.monitorable = true
 	vegemite_aoe.monitoring = true
