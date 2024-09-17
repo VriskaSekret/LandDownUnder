@@ -71,7 +71,6 @@ libraries = {
 }
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_s2of5")]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
