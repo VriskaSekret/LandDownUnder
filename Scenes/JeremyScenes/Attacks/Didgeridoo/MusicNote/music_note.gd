@@ -6,7 +6,7 @@ var level: int = 1
 var speed: float = 100.0
 var damage: int = 25
 var knockback: int = 200
-var hp: int = 1
+var hp: int = 2
 
 var angle = Vector2.ZERO
 
