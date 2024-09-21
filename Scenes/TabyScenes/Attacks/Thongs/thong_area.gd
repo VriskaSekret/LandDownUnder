@@ -6,5 +6,5 @@ var damage: int = 10
 var knockback_amount: int = 100
 
 func _ready():
-	damage = 10 * level
+	damage = 10 * level * thong.player.damage_multiplier
 	knockback_amount = 100 * level * thong.player.damage_multiplier

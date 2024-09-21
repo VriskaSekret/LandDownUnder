@@ -2,7 +2,7 @@ extends Node2D
 
 @export var level: int = 1
 @onready var timer: Timer = $Timer
-var cooldown: float = 2.0
+var cooldown: float = 1.5
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip.tscn")
 var last_x_dir: float = 1.0
 var player
