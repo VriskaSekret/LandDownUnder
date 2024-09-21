@@ -9,6 +9,7 @@ var phase :int = 0
 var level: int = 1
 
 var player
+var damage_multiplier
 var normal_dir
 var tan_dir
 var initial_v
