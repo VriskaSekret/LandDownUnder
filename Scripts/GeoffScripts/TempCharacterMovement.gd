@@ -102,19 +102,19 @@ func set_base_stats():
 	if char_index == 0:
 		hp = 15
 		damage_multiplier = 1.0
-		movement_speed = 100.0
+		movement_speed = 110.0
 	if char_index == 1:
 		hp == 10
 		damage_multiplier = 0.85
-		movement_speed = 120.0
+		movement_speed = 130.0
 	if char_index == 2:
 		hp = 20
 		damage_multiplier = 1.0
-		movement_speed = 80.0
+		movement_speed = 90.0
 	if char_index == 3:
 		hp = 10
 		damage_multiplier = 1.2
-		movement_speed = 100.0
+		movement_speed = 110.0
 	
 
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
