@@ -5,6 +5,7 @@ extends Node2D
 var cooldown: float = 2.0
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip.tscn")
 var last_x_dir: float = 1.0
+var player
 
 func set_timer():
 	timer.wait_time = cooldown * get_parent().attack_speed

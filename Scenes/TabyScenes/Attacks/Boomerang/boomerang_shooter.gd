@@ -5,7 +5,7 @@ var boomerang = preload("res://Scenes/TabyScenes/Attacks/Boomerang/Boomerang.tsc
 @onready var timer: Timer = $Timer
 var cooldown: float = 5.0
 var damage_multiplier
-
+var player
 func set_timer():
 	timer.wait_time = cooldown * get_parent().attack_speed
 	timer.start()

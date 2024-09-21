@@ -148,6 +148,7 @@ func add_weapons():
 			var new_weapon = create_weapon(weapons[i])
 			if new_weapon:
 				weapon_nodes.push_back(new_weapon)
+				new_weapon.player = $"."
 				add_child(new_weapon)
 
 func upgrade_weapons():

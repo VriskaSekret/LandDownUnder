@@ -4,7 +4,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 var cooldown: float = 5.0
 var damage_multiplier
-
+var player
 var cone = preload("res://Scenes/TabyScenes/Attacks/Cone/cone.tscn")
 
 func set_timer():

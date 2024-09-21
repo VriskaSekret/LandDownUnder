@@ -28,4 +28,5 @@ func new_vegemite():
 	var vegemite_instance = vegemite.instantiate()
 	vegemite_instance.level = level
 	vegemite_instance.position = Vector2(x, y)
+	vegemite_instance.player = player
 	get_parent().get_parent().add_child(vegemite_instance)
