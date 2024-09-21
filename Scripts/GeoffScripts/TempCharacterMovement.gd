@@ -185,7 +185,7 @@ func create_weapon(number):
 	elif number == 10:
 		attack_speed = max(0.7, attack_speed - 0.05)
 	elif number == 11:
-		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.2)
+		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
 		health_bar.value = hp
 	elif number == 12:
-		damage_multiplier += 0.1
+		damage_multiplier += 0.05

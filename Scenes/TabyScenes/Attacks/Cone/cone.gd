@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var level: int = 1
 var player
+var damage_multiplier
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var cone_area: Area2D = $Sprite2D/ConeArea

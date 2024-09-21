@@ -19,7 +19,7 @@ func _process(delta):
 	for target in targets:
 		p += target.position
 	p /= targets.size()
-	position = lerp(position, p, move_speed * delta)
+	position = p #lerp(position, p, move_speed * delta)
 
 	# Find the zoom that will contain all targets
 	var r = Rect2(position, Vector2.ONE)
