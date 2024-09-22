@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b01xgbhjj0y66" path="res://Scenes/JeremyScenes/Enemies/emu_strong.tscn" id="7_gi35y"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
 [ext_resource type="PackedScene" uid="uid://bfj2fki6rgm6n" path="res://Scenes/JeremyScenes/Enemies/stringray.tscn" id="8_od4pu"]
-[ext_resource type="PackedScene" uid="uid://b2ytm0wc1ssky" path="res://Scenes/JeremyScenes/Enemies/grim_reaper.tscn" id="9_6ar0m"]
+[ext_resource type="PackedScene" uid="uid://bqn1jk4yaca6b" path="res://Scenes/JeremyScenes/Enemies/new_reaper.tscn" id="9_51m1e"]
 [ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
@@ -86,7 +86,7 @@ enemy_spawn_delay = 90
 script = ExtResource("4_7a5xy")
 time_start = 600
 time_end = 1800
-enemy = ExtResource("9_6ar0m")
+enemy = ExtResource("9_51m1e")
 enemy_num = 1
 enemy_spawn_delay = 120
 
