@@ -6,5 +6,5 @@ var damage: int = 50
 var knockback_amount: int = 200
 
 func _ready() -> void:
-	damage = 20 * level * cone.damage_multiplier
+	damage = 30 * level * cone.damage_multiplier
 	knockback_amount = 200 * level

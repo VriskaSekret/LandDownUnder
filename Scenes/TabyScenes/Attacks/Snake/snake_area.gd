@@ -7,4 +7,4 @@ var knockback_amount: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	damage = 10 * level * snake.player.damage_multiplier
+	damage = 20 * level * snake.player.damage_multiplier

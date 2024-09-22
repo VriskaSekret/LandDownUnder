@@ -7,5 +7,5 @@ var knockback_amount: int = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	damage = 10 * level * whip.player.damage_multiplier
+	damage = 20 * level * whip.player.damage_multiplier
 	knockback_amount = 200 + 50 * level * whip.player.damage_multiplier
