@@ -15,7 +15,7 @@ func _ready() -> void:
 	fall_timer.start()
 	vegemite_aoe.monitorable = false
 	vegemite_aoe.monitoring = false
-	animated_sprite.scale += Vector2(3 + 0.5 * level, 3 + 0.5 * level)
+	animated_sprite.scale += Vector2(2 + 0.5 * level, 2 + 0.5 * level)
 
 func _on_aoe_timer_timeout() -> void:
 	queue_free()

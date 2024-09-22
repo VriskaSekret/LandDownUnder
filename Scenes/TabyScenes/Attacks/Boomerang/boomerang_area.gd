@@ -6,5 +6,5 @@ var damage: int = 10
 var knockback_amount: int = 50
 
 func _ready() -> void:
-	damage = 20 * level * boomerang.damage_multiplier
+	damage = 30 * level * boomerang.damage_multiplier
 	knockback_amount = 2000 * level
