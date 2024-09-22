@@ -32,7 +32,7 @@ time_start = 30
 time_end = 180
 enemy = ExtResource("5_bfdmg")
 enemy_num = 2
-enemy_spawn_delay = 10
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_8hrp3"]
 script = ExtResource("4_7a5xy")
@@ -40,7 +40,7 @@ time_start = 45
 time_end = 180
 enemy = ExtResource("6_j5iwe")
 enemy_num = 2
-enemy_spawn_delay = 10
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_svkx3"]
 script = ExtResource("4_7a5xy")
@@ -56,7 +56,7 @@ time_start = 181
 time_end = 300
 enemy = ExtResource("5_bfdmg")
 enemy_num = 4
-enemy_spawn_delay = 1
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_b6bxk"]
 script = ExtResource("4_7a5xy")
@@ -64,7 +64,7 @@ time_start = 181
 time_end = 300
 enemy = ExtResource("6_j5iwe")
 enemy_num = 5
-enemy_spawn_delay = 1
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_8vphc"]
 script = ExtResource("4_7a5xy")
@@ -72,7 +72,7 @@ time_start = 181
 time_end = 900
 enemy = ExtResource("7_gi35y")
 enemy_num = 3
-enemy_spawn_delay = 2
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_0iqlx"]
 script = ExtResource("4_7a5xy")
@@ -80,7 +80,7 @@ time_start = 210
 time_end = 1800
 enemy = ExtResource("8_od4pu")
 enemy_num = 1
-enemy_spawn_delay = 90
+enemy_spawn_delay = 30
 
 [sub_resource type="Resource" id="Resource_tf5xj"]
 script = ExtResource("4_7a5xy")
@@ -88,7 +88,7 @@ time_start = 600
 time_end = 1800
 enemy = ExtResource("9_51m1e")
 enemy_num = 1
-enemy_spawn_delay = 120
+enemy_spawn_delay = 30
 
 [sub_resource type="Resource" id="Resource_jut6o"]
 script = ExtResource("4_7a5xy")
@@ -96,7 +96,7 @@ time_start = 901
 time_end = 1800
 enemy = ExtResource("7_gi35y")
 enemy_num = 5
-enemy_spawn_delay = 1
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_ycva5"]
 script = ExtResource("4_7a5xy")
@@ -104,7 +104,7 @@ time_start = 901
 time_end = 1800
 enemy = ExtResource("5_bfdmg")
 enemy_num = 5
-enemy_spawn_delay = 1
+enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
 texture = ExtResource("7_u3ckx")
