@@ -2,7 +2,7 @@ extends Node2D
 
 var thong = preload("res://Scenes/TabyScenes/Attacks/Thongs/thong.tscn")
 @onready var timer: Timer = $Timer
-
+var player
 @export var level: int = 1
 var cooldown: float = 5.0
 @export var orbit_radius: float = 70.0
@@ -28,4 +28,5 @@ func new_thong(offset):
 	thong_instance.position.x = orbit_radius * cos(offset)
 	thong_instance.position.y = orbit_radius * sin(offset)
 	thong_instance.offset = offset
+	thong_instance.player = player
 	add_child(thong_instance)

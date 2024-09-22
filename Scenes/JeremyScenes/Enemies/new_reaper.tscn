@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqn1jk4yaca6b"]
+
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/enemy.gd" id="1_pdowb"]
+[ext_resource type="Texture2D" uid="uid://6wcsr1h8xfw0" path="res://Assets/JeremyAssets/necromancer.png" id="2_8q6br"]
+[ext_resource type="PackedScene" uid="uid://6lqc7rn8nprc" path="res://Scenes/JeremyScenes/Hurtbox/hurtbox.tscn" id="3_tapea"]
+[ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="4_gfpks"]
+
+[sub_resource type="Animation" id="Animation_urkf1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xxqoa"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knrme"]
+_data = {
+"RESET": SubResource("Animation_urkf1"),
+"walk": SubResource("Animation_xxqoa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llwkt"]
+size = Vector2(26, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtctc"]
+radius = 20.0998
+
+[node name="new_reaper" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 128
+collision_mask = 128
+motion_mode = 1
+script = ExtResource("1_pdowb")
+movement_speed = 140.0
+hp = 10000
+enemy_damage = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.10543e-15, 1.42109e-14)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("2_8q6br")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_knrme")
+}
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_tapea")]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+visible = true
+shape = SubResource("RectangleShape2D_llwkt")
+
+[node name="Hitbox" parent="." instance=ExtResource("4_gfpks")]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_llwkt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xtctc")
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]

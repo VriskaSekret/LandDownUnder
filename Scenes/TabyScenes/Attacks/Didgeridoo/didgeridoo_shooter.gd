@@ -2,7 +2,7 @@ extends Node2D
 
 @export var level: int = 1
 var cooldown: float = 5.0
-
+var player
 var didgeridoo = preload("res://Scenes/TabyScenes/Attacks/Didgeridoo/didgeridoo.tscn")
 @onready var timer: Timer = $Timer
 

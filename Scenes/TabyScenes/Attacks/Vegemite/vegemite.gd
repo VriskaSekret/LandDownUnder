@@ -4,6 +4,7 @@ extends RigidBody2D
 @onready var fall_timer: Timer = $FallTimer
 @onready var aoe_timer: Timer = $AOETimer
 @onready var vegemite_aoe: Area2D = $AnimatedSprite/VegemiteAOE
+var player
 
 var level: int = 1
 
