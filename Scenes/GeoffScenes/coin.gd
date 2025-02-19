@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @onready var game_manager: Node2D = $"../../GameManager"
-@onready var coin_sound: AudioStreamPlayer = $CoinSound
 
 @export var target = null
 var speed = 350
