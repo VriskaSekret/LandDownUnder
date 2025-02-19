@@ -10,6 +10,7 @@ var players = 0
 var player_selecting = 0
 
 func _ready() -> void:
+	MenuBgMusic.play()
 	Global.reset_global_variables()
 	starting_menu.visible = true
 	player_count_select.visible = false

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cphqap31x2llb"]
+
+[ext_resource type="AudioStream" uid="uid://bvln85l4qukjm" path="res://Assets/Music/Land Down Under Main Theme[no drums].mp3" id="1_d8s7j"]
+
+[node name="MenuBGMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_d8s7j")
+volume_db = 2.0
+bus = &"BGMusic"

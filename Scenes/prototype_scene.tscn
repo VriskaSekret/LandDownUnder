@@ -378,7 +378,7 @@ wait_time = 2.0
 
 [node name="InGameUI" parent="." instance=ExtResource("10_vypcr")]
 
-[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ha6ae")
 autoplay = true
 bus = &"BGMusic"
