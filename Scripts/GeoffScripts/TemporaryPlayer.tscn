@@ -511,7 +511,6 @@ shape = SubResource("CapsuleShape2D_7ymxa")
 sprite_frames = SubResource("SpriteFrames_5clye")
 animation = &"abo_walk"
 frame_progress = 0.686915
-flip_v = true
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_5xlg4")]
 collision_layer = 0

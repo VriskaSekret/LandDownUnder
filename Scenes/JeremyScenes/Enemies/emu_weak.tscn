@@ -64,7 +64,6 @@ movement_speed = 30.0
 material = SubResource("ShaderMaterial_bkiar")
 texture = ExtResource("1_j6b6e")
 flip_h = true
-flip_v = true
 hframes = 8
 frame = 1
 
