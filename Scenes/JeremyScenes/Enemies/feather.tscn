@@ -23,6 +23,8 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_dkqr7")
 
 [node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [node name="DisableHitboxTimer" type="Timer" parent="."]
 wait_time = 0.5
