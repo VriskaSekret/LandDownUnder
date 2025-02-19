@@ -12,6 +12,7 @@ var time = 0
 
 
 func _on_timer_timeout():
+	print("enemy spawned???")
 	time += 1
 	var enemy_spawns = spawns
 	var my_children = get_children()

@@ -24,6 +24,7 @@ signal remove_from_array(object)
 var screen_size
 var player 
 var direction
+var distance
 
 func _ready():
 	player = get_random_player()
@@ -39,6 +40,10 @@ func _physics_process(_delta):
 	
 		knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
 		direction = global_position.direction_to(player.global_position)
+		if (global_position.distance_to(player.global_position) > 2000):
+			print("enemy deleted")
+			queue_free()
+		distance = global_position.distance_to(player.global_position)
 		velocity = direction*movement_speed
 		velocity += knockback
 		move_and_slide()

@@ -53,7 +53,7 @@ func add_xp(xp_added: int) -> void:
 		update_recieving_player()
 		total_level += 1
 		experience = 0
-		experience_needed = int(10.0 + ((total_level-1) * 3))
+		experience_needed = int(30.0 + ((total_level-1) * 5))
 
 func update_recieving_player():
 	var next_player = (player_recieving_item + 1) % 4
