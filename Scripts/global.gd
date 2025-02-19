@@ -30,7 +30,7 @@ func reset_global_variables():
 	experience = 0
 	score = 0
 	total_level = 1
-	experience_needed = 10.0 * (total_level * 1.2)
+	experience_needed = 20.0 * (total_level * 1.2)
 	time_seconds = 0
 	player_characters = [-1,-1,-1,-1]
 	player_weapons = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]

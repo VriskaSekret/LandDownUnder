@@ -44,9 +44,9 @@ func _physics_process(_delta):
 		move_and_slide()
 		
 		if direction.x > 0.1:
-			sprite.flip_h = false
+			sprite.flip_v = false
 		elif direction.x < -0.1:
-			sprite.flip_h = true
+			sprite.flip_v = true
 
 func get_random_player() -> CharacterBody2D:
 	# SO I DON'T CRASH THE FUCK OUT OF THIS GAME
