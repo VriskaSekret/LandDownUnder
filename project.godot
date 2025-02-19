@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/global.gd"
 CoinSound="*res://coin_sound.tscn"
+MenuBgMusic="*res://Scenes/menu_bg_music.tscn"
 
 [display]
 
