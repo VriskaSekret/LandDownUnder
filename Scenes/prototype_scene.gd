@@ -13,11 +13,4 @@ func _ready() -> void:
 		camera_2d.add_target(i)
 
 func _process(delta: float) -> void:
-	if not players:
-		return
-	
-	for player in players:
-		player.camera_die.connect(_on_player_camera_died)
-
-func _on_player_camera_died():
-	camera_2d.remove_arget(player)
+	pass
