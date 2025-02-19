@@ -1,11 +1,12 @@
 extends Node2D
 
 var player
-@export var circle_radius: float = 50.0
+@export var circle_radius: float = 100.0
 @export var move_time: float = 0.2 # Time to move to the new point on the circle
-@export var wait_time: float = 3.0 # Time between each movement
+@export var wait_time: float = 0.5 # Time between each movement
 
 var level: int = 1
+var damage_multiplier
 @onready var skewer_area: Area2D = $SkewerArea
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -14,6 +15,7 @@ var level: int = 1
 var timer: Timer
 
 func _ready() -> void:
+	damage_multiplier = player.damage_multiplier
 	move.wait_time = move_time
 	animated_sprite_2d.animation = "default"
 	skewer_area.level = level
@@ -32,6 +34,7 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	timer.wait_time = wait_time * player.attack_speed
 	timer.start()
+	damage_multiplier = player.damage_multiplier
 	animated_sprite_2d.animation = "attack"
 	look_at(player.position)
 	var random_angle = randf() * 2.0 * PI

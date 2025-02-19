@@ -4,14 +4,14 @@ extends Area2D
 
 var level: int = 1
 var speed: float = 100.0
-var damage: int = 10
+var damage: int = 25
 var knockback: int = 200
 var hp: int = 2
 
 var angle = Vector2.ZERO
 
 func _ready():
-	damage = 30 * level
+	damage = 100 * level
 	speed = 100 + 20 * level
 	knockback = 200 + 50 * level
 

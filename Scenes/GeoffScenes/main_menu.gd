@@ -3,6 +3,7 @@ extends Control
 @onready var player_count_select: VBoxContainer = $MarginContainer/PlayerCountSelect
 @onready var character_select: VBoxContainer = $MarginContainer/CharacterSelect
 @onready var player_selecting_label: Label = $MarginContainer/CharacterSelect/PlayerSelecting
+var is_fullscreen = false
 
 
 var players = 0
@@ -25,6 +26,12 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_options_button_pressed() -> void:
+	if is_fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		is_fullscreen = false
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		is_fullscreen = true
 	pass # Replace with function body.
 
 

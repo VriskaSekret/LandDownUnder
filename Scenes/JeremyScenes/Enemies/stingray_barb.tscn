@@ -7,9 +7,12 @@
 size = Vector2(10.7322, 29.7113)
 
 [node name="stingray_barb" type="Area2D" groups=["Attack"]]
+rotation = -1.59096
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_nvtdf")
+damage = 5
+speed = 250.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ss4tn")

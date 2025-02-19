@@ -42,12 +42,15 @@ func shoot() -> void:
 	var angles = [-0.08, 0.08, -0.2, 0.2, -0.4, 0.4]
 	if not shot:
 		shot = true
-		for i in range(min(level * 2, 6)):
-			var new_note = music_note.instantiate()
-			new_note.level = level
-			new_note.transform = shooting_point.global_transform
-			new_note.rotation += angles[i]
-			get_parent().get_parent().get_parent().add_child(new_note)
+		for i in range(6):
+			for j in range(level):
+				var new_note = music_note.instantiate()
+				new_note.level = j + 1
+				new_note.transform = shooting_point.global_transform
+				new_note.rotation += angles[i]
+				new_note.scale.x = 2
+				new_note.scale.y = 2
+				get_parent().get_parent().get_parent().add_child(new_note)
 
 func _on_post_timeout() -> void:
 	queue_free()

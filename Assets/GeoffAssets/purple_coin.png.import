@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w0wtki1k234v"
-path="res://.godot/imported/6.png-d716b46db681bac6da2b7376aa05128d.ctex"
+uid="uid://b0te6u2wk4yjc"
+path="res://.godot/imported/purple_coin.png-ee882a4bd7cad9d18024a321d5845d09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/6.png"
-dest_files=["res://.godot/imported/6.png-d716b46db681bac6da2b7376aa05128d.ctex"]
+source_file="res://Assets/GeoffAssets/purple_coin.png"
+dest_files=["res://.godot/imported/purple_coin.png-ee882a4bd7cad9d18024a321d5845d09.ctex"]
 
 [params]
 

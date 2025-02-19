@@ -12,6 +12,7 @@ var time = 0
 
 
 func _on_timer_timeout():
+	print("enemy spawned???")
 	time += 1
 	var enemy_spawns = spawns
 	var my_children = get_children()
@@ -24,7 +25,8 @@ func _on_timer_timeout():
 				var new_enemy = i.enemy
 				var counter = 0
 				while counter < (i.enemy_num):
-					if my_children.size() <= enemy_cap:
+					# checks if mob count minus coins is less than enemy cap
+					if (my_children.size() - get_tree().get_nodes_in_group("coins").size()) <= enemy_cap:
 						var enemy_spawn = new_enemy.instantiate()
 						enemy_spawn.global_position = get_random_position()
 						add_child(enemy_spawn)

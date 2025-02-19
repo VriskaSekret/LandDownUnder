@@ -6,7 +6,7 @@ var game_paused = false
 var experience = 0
 var score: int = 0
 var total_level = 1
-var experience_needed = 10.0 * (total_level * 1.2)
+var experience_needed
 var time_seconds = 0
 
 
@@ -30,7 +30,7 @@ func reset_global_variables():
 	experience = 0
 	score = 0
 	total_level = 1
-	experience_needed = 20.0 * (total_level * 1.2)
+	experience_needed = int(10.0 + ((total_level-1) * 10))
 	time_seconds = 0
 	player_characters = [-1,-1,-1,-1]
 	player_weapons = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]
@@ -53,6 +53,7 @@ func add_xp(xp_added: int) -> void:
 		update_recieving_player()
 		total_level += 1
 		experience = 0
+		experience_needed = int(30.0 + ((total_level-1) * 5))
 
 func update_recieving_player():
 	var next_player = (player_recieving_item + 1) % 4

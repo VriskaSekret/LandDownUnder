@@ -102,19 +102,19 @@ func set_base_stats():
 	if char_index == 0:
 		hp = 15
 		damage_multiplier = 1.0
-		movement_speed = 100.0
+		movement_speed = 140.0
 	if char_index == 1:
 		hp == 10
 		damage_multiplier = 0.85
-		movement_speed = 120.0
+		movement_speed = 170.0
 	if char_index == 2:
 		hp = 20
 		damage_multiplier = 1.0
-		movement_speed = 80.0
+		movement_speed = 120.0
 	if char_index == 3:
 		hp = 10
 		damage_multiplier = 1.2
-		movement_speed = 100.0
+		movement_speed = 140.0
 	
 
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
@@ -124,6 +124,9 @@ func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 		health_bar.value = hp
 		if hp <= 0:
 			die()
+		anim_spr.modulate = Color.RED
+		await get_tree().create_timer(0.5).timeout
+		anim_spr.modulate = Color.WHITE
 
 func die() -> void:
 	var camera = get_tree().get_first_node_in_group("Camera")
@@ -145,6 +148,7 @@ func add_weapons():
 			var new_weapon = create_weapon(weapons[i])
 			if new_weapon:
 				weapon_nodes.push_back(new_weapon)
+				new_weapon.player = $"."
 				add_child(new_weapon)
 
 func upgrade_weapons():
@@ -182,7 +186,7 @@ func create_weapon(number):
 	elif number == 10:
 		attack_speed = max(0.7, attack_speed - 0.05)
 	elif number == 11:
-		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.2)
+		hp = min(health_bar.max_value, hp + health_bar.max_value * 0.5)
 		health_bar.value = hp
 	elif number == 12:
-		damage_multiplier += 0.1
+		damage_multiplier += 0.05

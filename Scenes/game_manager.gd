@@ -24,6 +24,7 @@ func _ready() -> void:
 		add_child(player_instance)
 		last_level = Global.total_level
 	in_game_ui.update_player_inventory()
+	print(Global.experience_needed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -97,6 +98,7 @@ func check_level():
 	if last_level < Global.total_level:
 		last_level = Global.total_level
 		print("Level: " + str(Global.total_level))
+		print(Global.experience_needed)
 		pause_for_item()
 
 

@@ -23,6 +23,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	rotation += 1 * delta
 	position += direction * speed * delta
 
 func _on_timer_timeout() -> void:

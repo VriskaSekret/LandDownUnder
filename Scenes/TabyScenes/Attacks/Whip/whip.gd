@@ -16,7 +16,7 @@ func _ready() -> void:
 	position.y = player.position.y
 	whip_area.level = level
 	dir = Vector2(player.last_dir.x, 0).normalized()
-	sprite_2d.scale = Vector2(1.5 + 2 * level, 1.5 + 2 * level)
+	sprite_2d.scale = Vector2(3 + 2 * level, 3 + 2 * level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1jia1awgg4in"]
+
+[ext_resource type="AudioStream" uid="uid://b3o7x2ravh0h3" path="res://Assets/Sound Effects/Coin.mp3" id="1_0vudr"]
+
+[node name="CoinSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_0vudr")
+bus = &"SFX"
