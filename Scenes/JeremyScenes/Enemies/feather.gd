@@ -19,10 +19,11 @@ func _on_disable_hitbox_timer_timeout():
 
 
 func _ready() -> void:
-	direction = global_position.direction_to(player.global_position)
+	var player_pos = player.global_position
+	direction = global_position.direction_to(player_pos)
+	look_at(player_pos)
 
 func _physics_process(delta: float) -> void:
-	rotation += 25
 	position += direction * speed * delta
 
 func _on_timer_timeout() -> void:

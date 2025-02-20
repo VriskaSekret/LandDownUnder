@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5y7myf612gy0"]
 
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/feather.gd" id="1_gfi7k"]
-[ext_resource type="Texture2D" uid="uid://6pqbm7gjjeoc" path="res://Assets/JeremyAssets/brown_feather.png" id="2_dkqr7"]
+[ext_resource type="Texture2D" uid="uid://c80axa10jrr4u" path="res://Assets/JeremyAssets/red_feather.png" id="2_8tita"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bihxc"]
 size = Vector2(12, 30.467)
@@ -15,12 +15,13 @@ speed = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.714466, 0.714466)
-rotation = -0.785398
+rotation = -4.87639
 shape = SubResource("RectangleShape2D_bihxc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -4.091
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_dkqr7")
+texture = ExtResource("2_8tita")
 
 [node name="CooldownTimer" type="Timer" parent="."]
 
