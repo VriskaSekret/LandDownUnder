@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dfu85v4eflk6q"]
+[gd_scene load_steps=39 format=3 uid="uid://dfu85v4eflk6q"]
 
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/main_menu.gd" id="1_3hnnt"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_t38q1"]
@@ -103,6 +103,30 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbmek"]
+bg_color = Color(0.329363, 0.54334, 0.243389, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5d8m"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7oda"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbkk5"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv4d3"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vphu6"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fohjh"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3usqg"]
+bg_color = Color(0.329412, 0.545098, 0.243137, 1)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -146,13 +170,13 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="StartButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.835294, 0.752941, 0.529412, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.979736, 0.701778, 0, 1)
 theme_override_colors/font_hover_color = Color(0.79896, 0.606518, 0.236812, 1)
 theme_override_colors/font_pressed_color = Color(0.980392, 0.701961, 0, 1)
-theme_override_colors/font_focus_color = Color(0.835294, 0.752941, 0.529412, 1)
+theme_override_colors/font_focus_color = Color(0.447628, 0.722189, 0.335683, 1)
 theme_override_colors/font_color = Color(0.836012, 0.752559, 0.527808, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -171,13 +195,13 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.835294, 0.752941, 0.529412, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.979736, 0.701778, 0, 1)
 theme_override_colors/font_hover_color = Color(0.79896, 0.606518, 0.236812, 1)
 theme_override_colors/font_pressed_color = Color(0.980392, 0.701961, 0, 1)
-theme_override_colors/font_focus_color = Color(0.835294, 0.752941, 0.529412, 1)
+theme_override_colors/font_focus_color = Color(0.447059, 0.721569, 0.337255, 1)
 theme_override_colors/font_color = Color(0.836012, 0.752559, 0.527808, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -196,13 +220,13 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
 text = "Fullscreen"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.835294, 0.752941, 0.529412, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.979736, 0.701778, 0, 1)
 theme_override_colors/font_hover_color = Color(0.79896, 0.606518, 0.236812, 1)
 theme_override_colors/font_pressed_color = Color(0.980392, 0.701961, 0, 1)
-theme_override_colors/font_focus_color = Color(0.835294, 0.752941, 0.529412, 1)
+theme_override_colors/font_focus_color = Color(0.447059, 0.721569, 0.337255, 1)
 theme_override_colors/font_color = Color(0.836012, 0.752559, 0.527808, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -272,37 +296,41 @@ theme_override_constants/separation = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="1PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer"]
+[node name="1PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/focus = SubResource("StyleBoxFlat_lbmek")
 text = "1
 "
 
-[node name="3PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer"]
+[node name="3PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/focus = SubResource("StyleBoxFlat_s5d8m")
 text = "3"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PlayerCountSelect/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="2PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2"]
+[node name="2PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/focus = SubResource("StyleBoxFlat_h7oda")
 text = "2"
 
-[node name="4PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2"]
+[node name="4PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 72
+theme_override_styles/focus = SubResource("StyleBoxFlat_pbkk5")
 text = "4"
 
 [node name="CharacterSelect" type="VBoxContainer" parent="MarginContainer"]
@@ -331,24 +359,26 @@ theme_override_constants/separation = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Tradie" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer"]
+[node name="Tradie" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_kv4d3")
 text = "Tradie"
 icon = ExtResource("6_6oxve")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Abo" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer"]
+[node name="Abo" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_vphu6")
 text = "\"Koala\""
 icon = ExtResource("7_84mkk")
 icon_alignment = 1
@@ -359,32 +389,37 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Raygun" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3"]
+[node name="Raygun" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_fohjh")
 text = "Breakdancer"
 icon = ExtResource("8_4gyau")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Ranger" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3"]
+[node name="Ranger" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_3usqg")
 text = "Bushranger"
 icon = ExtResource("9_yox0p")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
+[connection signal="mouse_entered" from="MarginContainer/StartingMenu/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/StartingMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/StartingMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/StartingMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/StartingMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/StartingMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer/1PButton" to="." method="_on_1p_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer/3PButton" to="." method="_on_3p_button_pressed"]

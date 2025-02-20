@@ -52,6 +52,7 @@ rotation = -0.837758
 shape = SubResource("CapsuleShape2D_ymtem")
 
 [node name="Move" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 
 [connection signal="timeout" from="Attack" to="SkewerArea" method="_on_attack_timeout"]

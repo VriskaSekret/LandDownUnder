@@ -95,7 +95,7 @@ shape = SubResource("RectangleShape2D_u3dxi")
 [node name="AttackNode" parent="." instance=ExtResource("5_h2jal")]
 
 [node name="Timer" parent="AttackNode" index="0"]
-wait_time = 20.0
+wait_time = 5.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

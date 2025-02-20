@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var anim_spr: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurt_noise: AudioStreamPlayer = $hurtNoise
+@onready var death_noise: AudioStreamPlayer = $deathNoise
 
 @onready var health_bar: ProgressBar = $HealthBar
 @export var hp := 80
@@ -120,6 +122,9 @@ func set_base_stats():
 func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 	if not dead:
 		hp -= damage
+		if hp > 0:
+			hurt_noise.pitch_scale = randf_range(0.9, 1.1)
+			hurt_noise.play()
 		print(hp)
 		health_bar.value = hp
 		if hp <= 0:
@@ -129,9 +134,10 @@ func _on_hurtbox_hurt(damage, _angle, _knockback) -> void:
 		anim_spr.modulate = Color.WHITE
 
 func die() -> void:
+	dead = true
+	death_noise.play()
 	var camera = get_tree().get_first_node_in_group("Camera")
 	camera.remove_target(self)
-	dead = true
 	Global.players_alive[character_player_number - 1] = false
 	anim_spr.rotate(-PI/2)
 	anim_spr.play(get_char_name() + "_idle")
@@ -166,7 +172,7 @@ func create_weapon(number):
 	if number == 0:
 		return cone.instantiate()
 	elif number == 1:
-		return vegemite.instantiate()
+		return skewer.instantiate()
 	elif number == 2:
 		return didgeridoo.instantiate()
 	elif number == 3:
@@ -174,7 +180,7 @@ func create_weapon(number):
 	elif number == 4:
 		return boomerang.instantiate()
 	elif number == 5:
-		return skewer.instantiate()
+		return vegemite.instantiate()
 	elif number == 6:
 		return thongs.instantiate()
 	elif number == 7:

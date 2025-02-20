@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=80 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dn0e6oeyv0o3q" path="res://Assets/TabyAssets/koala_idle.png" id="2_10140"]
 [ext_resource type="Texture2D" uid="uid://cumqrhm4v1mbc" path="res://Assets/TabyAssets/ranger_idle-sheet.png" id="2_d1bjk"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c4uatm4l8lgj7" path="res://Assets/TabyAssets/ranger_walking.png" id="3_kd3ma"]
 [ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="4_jtkbm"]
 [ext_resource type="Texture2D" uid="uid://beem5esmfeawn" path="res://Assets/GeoffAssets/hp.png" id="10_40b18"]
+[ext_resource type="AudioStream" uid="uid://cdvdhjqxtkas5" path="res://Assets/GeoffAssets/hurt.mp3" id="13_mj61t"]
+[ext_resource type="AudioStream" uid="uid://besn1cmw54xdb" path="res://Assets/GeoffAssets/death.mp3" id="14_pnxbg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ymxa"]
 radius = 15.0
@@ -485,7 +487,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_srnsr"]
 radius = 8.0
-height = 22.0
+height = 20.3125
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bspj"]
 radius = 125.0
@@ -518,14 +520,12 @@ collision_layer = 0
 collision_mask = 1048578
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(0, -3)
+visible = true
+position = Vector2(0, 8)
 scale = Vector2(1, 2.56)
 shape = SubResource("CapsuleShape2D_srnsr")
 
 [node name="Attack" type="Node2D" parent="."]
-
-[node name="SkewerBase" type="Node2D" parent="Attack"]
-unique_name_in_owner = true
 
 [node name="EnemyDetectionArea" type="Area2D" parent="."]
 collision_layer = 4
@@ -553,6 +553,16 @@ max_value = 80.0
 step = 1.0
 value = 80.0
 show_percentage = false
+
+[node name="hurtNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_mj61t")
+volume_db = 20.0
+bus = &"SFX"
+
+[node name="deathNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_pnxbg")
+volume_db = 20.0
+bus = &"SFX"
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
