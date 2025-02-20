@@ -29,14 +29,16 @@ func _on_timer_timeout():
 			else: # wait time is over, so spawn n number of enemies
 				i.spawn_delay_counter = 1
 				
+				print("check1")
 				# check if it's reached enemy cap & whether it's a magpie
 				if get_tree().get_nodes_in_group("active_enemy").size() >= enemy_cap:
+					print("check2")
 					enemies_to_spawn.append(i)
-					pass
 				else: # enemy cap has not been reached or enemy is magpie
+					print("check3")
 					spawn_enemy(i)
 	# if there's little to no spawning happening, pull from enemy cap array
-	if (get_tree().get_nodes_in_group("enemy").size() < enemy_cap) and (enemies_to_spawn.size() > 0):
+	if (get_tree().get_nodes_in_group("active_enemy").size() < enemy_cap) and (enemies_to_spawn.size() > 0):
 		spawn_enemy(enemies_to_spawn[0])
 		enemies_to_spawn.pop_at(0)
 	

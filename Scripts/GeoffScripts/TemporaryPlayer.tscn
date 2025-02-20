@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=80 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dn0e6oeyv0o3q" path="res://Assets/TabyAssets/koala_idle.png" id="2_10140"]
 [ext_resource type="Texture2D" uid="uid://cumqrhm4v1mbc" path="res://Assets/TabyAssets/ranger_idle-sheet.png" id="2_d1bjk"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://beem5esmfeawn" path="res://Assets/GeoffAssets/hp.png" id="10_40b18"]
 [ext_resource type="AudioStream" uid="uid://cdvdhjqxtkas5" path="res://Assets/GeoffAssets/hurt.mp3" id="13_mj61t"]
 [ext_resource type="AudioStream" uid="uid://besn1cmw54xdb" path="res://Assets/GeoffAssets/death.mp3" id="14_pnxbg"]
-[ext_resource type="PackedScene" uid="uid://b21tvrmp22pwx" path="res://Scenes/JeremyScenes/Hitbox/hitbox.tscn" id="15_ldykh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ymxa"]
 radius = 15.0
@@ -499,9 +498,6 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpxda"]
 texture = ExtResource("10_40b18")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tjnrm"]
-radius = 150.0
-
 [node name="Player1" type="CharacterBody2D" groups=["Player"]]
 z_as_relative = false
 collision_layer = 16777217
@@ -568,19 +564,8 @@ stream = ExtResource("14_pnxbg")
 volume_db = 20.0
 bus = &"SFX"
 
-[node name="DEBUG" type="Node2D" parent="."]
-
-[node name="Hitbox" parent="DEBUG" instance=ExtResource("15_ldykh")]
-collision_layer = 4
-collision_mask = 4
-damage = 15
-
-[node name="CollisionShape2D" parent="DEBUG/Hitbox" index="0"]
-shape = SubResource("CircleShape2D_tjnrm")
-
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_entered"]
 [connection signal="body_exited" from="EnemyDetectionArea" to="." method="_on_enemy_detection_area_body_exited"]
 
 [editable path="Hurtbox"]
-[editable path="DEBUG/Hitbox"]

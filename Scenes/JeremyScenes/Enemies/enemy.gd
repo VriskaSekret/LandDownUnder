@@ -29,6 +29,7 @@ var distance
 var enemy_manager
 
 func _ready():
+	add_to_group("active_enemy")
 	enemy_manager = get_tree().get_first_node_in_group("enemy_manager")
 	player = get_random_player()
 	set_hp()
@@ -76,15 +77,15 @@ func set_hp() -> void:
 	hp = hp + (hp * Global.time_seconds * 0.02)
 
 func death():
-	#var coin = coin_drop.instantiate()
+	var coin = coin_drop.instantiate()
 	var enemy_death = death_anim.instantiate()
 	enemy_death.scale = sprite.scale
-	#coin.scale = sprite.scale
+	coin.scale = sprite.scale
 	enemy_death.global_position = global_position
-	#coin.global_position = global_position
+	coin.global_position = global_position
 	
 	get_parent().call_deferred("add_child", enemy_death)
-	#get_parent().call_deferred("add_child", coin)
+	get_parent().call_deferred("add_child", coin)
 	
 	enemy_manager.remove_enemy(self)
 

@@ -1,11 +1,5 @@
 extends Node2D
 
-#@export_category("Pools")
-#@export var kanga_weak: Node
-#@export var kanga_strong: Node
-#@export var emu_weak: Node
-#@export var emu_strong: Node
-
 @onready var kanga_weak: Node = $Pools/KangaWeak
 @onready var kanga_strong: Node = $Pools/KangaStrong
 @onready var emu_weak: Node = $Pools/EmuWeak
@@ -51,23 +45,23 @@ func remove_enemy(enemy):
 
 func _on_debug_timeout() -> void:
 	print("|-------------------------------------------------------------------|")
-	
-	print(
-		"Kanga Weak Pool: " + str(kanga_weak.object_pool)
-		)
-	print("Kanga Weak Pool Size: " + str(kanga_weak.object_pool.size()))
-	
-	print(
-		"Kanga Strong Pool: " + str(kanga_strong.object_pool)
-		)
-	print("Kanga Strong Pool Size: " + str(kanga_strong.object_pool.size()))
-	
-	print(
-		"Emu Weak Pool: " + str(emu_weak.object_pool)
-		)
-	print("Emu Weak Pool Size: " + str(emu_weak.object_pool.size()))
-	
-	print(
-		"Emu Strong Pool: " + str(emu_strong.object_pool)
-		)
-	print("Emu Strong Pool Size: " + str(emu_strong.object_pool.size()))
+	#
+	#print(
+		#"Kanga Weak Pool: " + str(kanga_weak.object_pool)
+		#)
+	#print("Kanga Weak Pool Size: " + str(kanga_weak.object_pool.size()))
+	#
+	#print(
+		#"Kanga Strong Pool: " + str(kanga_strong.object_pool)
+		#)
+	#print("Kanga Strong Pool Size: " + str(kanga_strong.object_pool.size()))
+	#
+	#print(
+		#"Emu Weak Pool: " + str(emu_weak.object_pool)
+		#)
+	#print("Emu Weak Pool Size: " + str(emu_weak.object_pool.size()))
+	#
+	#print(
+		#"Emu Strong Pool: " + str(emu_strong.object_pool)
+		#)
+	#print("Emu Strong Pool Size: " + str(emu_strong.object_pool.size()))
