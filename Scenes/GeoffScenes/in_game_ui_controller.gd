@@ -29,11 +29,11 @@ var list_of_icons = []
 
 var item_names = {
 	0 : "Cone",
-	1: "Vegemite",
+	1: "Skewer",
 	2: "Didgeridoo",
 	3: "Whip",
 	4: "Boomerang",
-	5: "Skewer",
+	5: "Vegemite",
 	6: "Thongs",
 	7: "Snake",
 	8: "Surfboard",

@@ -166,7 +166,7 @@ func create_weapon(number):
 	if number == 0:
 		return cone.instantiate()
 	elif number == 1:
-		return vegemite.instantiate()
+		return skewer.instantiate()
 	elif number == 2:
 		return didgeridoo.instantiate()
 	elif number == 3:
@@ -174,7 +174,7 @@ func create_weapon(number):
 	elif number == 4:
 		return boomerang.instantiate()
 	elif number == 5:
-		return skewer.instantiate()
+		return vegemite.instantiate()
 	elif number == 6:
 		return thongs.instantiate()
 	elif number == 7:
