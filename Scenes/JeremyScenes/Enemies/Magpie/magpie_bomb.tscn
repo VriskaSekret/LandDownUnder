@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=3 uid="uid://br7bauhfqdaq8"]
+
+[ext_resource type="Texture2D" uid="uid://db6jmvkls5iv5" path="res://Assets/GeoffAssets/white_boom.png" id="1_nbdp4"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Magpie/magpie_bomb.gd" id="1_sd5jg"]
+
+[sub_resource type="Curve" id="Curve_ypg61"]
+_data = [Vector2(0, 1), 0.0, -0.155684, 0, 0, Vector2(1, 0), -1.49147, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_abi7y"]
+curve = SubResource("Curve_ypg61")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t82v3"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(50, 50, 1)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -400.0
+linear_accel_max = -350.0
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_abi7y")
+color = Color(1, 0.682353, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40dme"]
+radius = 58.0
+
+[sub_resource type="Animation" id="Animation_pqfb2"]
+resource_name = "dropping"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.96667, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.921569), Color(1, 0.407246, 0.338652, 1), Color(1, 0.407843, 0.337255, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_50o1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ma0i"]
+_data = {
+"RESET": SubResource("Animation_50o1o"),
+"dropping": SubResource("Animation_pqfb2")
+}
+
+[node name="MagpieBomb" type="Area2D" groups=["Attack"]]
+collision_layer = 1048576
+collision_mask = 0
+script = ExtResource("1_sd5jg")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 1
+emitting = false
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_t82v3")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+trail_lifetime = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.407305, 0.338512, 0.9)
+texture = ExtResource("1_nbdp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_40dme")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_5ma0i")
+}
+autoplay = "dropping"

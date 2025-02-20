@@ -32,6 +32,8 @@ func _on_timer_timeout():
 					else:
 						enemies_to_spawn.append(new_enemy)
 					counter += 1
+		if time > i.time_end:
+			spawns.pop_front()
 	if my_children.size() <= enemy_cap and enemies_to_spawn.size() > 0:
 		var spawn_number = clamp(enemies_to_spawn.size(), 1, 50) - 1
 		var counter = 0

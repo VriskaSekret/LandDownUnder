@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8ggj2mlvoww3"
+path="res://.godot/imported/Land Down Under Main Theme[no drums].mp3-53c34f22143cdf936edb8e1d50801338.mp3str"
+
+[deps]
+
+source_file="res://Assets/GeoffAssets/Land Down Under Main Theme[no drums].mp3"
+dest_files=["res://.godot/imported/Land Down Under Main Theme[no drums].mp3-53c34f22143cdf936edb8e1d50801338.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
