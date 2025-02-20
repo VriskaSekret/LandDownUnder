@@ -170,7 +170,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="StartButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.835294, 0.752941, 0.529412, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.979736, 0.701778, 0, 1)
@@ -195,7 +195,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.835294, 0.752941, 0.529412, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.979736, 0.701778, 0, 1)
@@ -220,7 +220,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_n7mcy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w6654")
 text = "Fullscreen"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/StartingMenu/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.835294, 0.752941, 0.529412, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.979736, 0.701778, 0, 1)
@@ -296,7 +296,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="1PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer"]
+[node name="1PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
@@ -305,7 +305,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_lbmek")
 text = "1
 "
 
-[node name="3PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer"]
+[node name="3PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
@@ -317,7 +317,7 @@ text = "3"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="2PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2"]
+[node name="2PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
@@ -325,7 +325,7 @@ theme_override_font_sizes/font_size = 72
 theme_override_styles/focus = SubResource("StyleBoxFlat_h7oda")
 text = "2"
 
-[node name="4PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2"]
+[node name="4PButton" type="Button" parent="MarginContainer/PlayerCountSelect/Buttons/VBoxContainer2" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_t38q1")
@@ -359,7 +359,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Tradie" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer"]
+[node name="Tradie" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -372,7 +372,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Abo" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer"]
+[node name="Abo" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -389,7 +389,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Raygun" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3"]
+[node name="Raygun" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -402,7 +402,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Ranger" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3"]
+[node name="Ranger" type="Button" parent="MarginContainer/CharacterSelect/Buttons/VBoxContainer3" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

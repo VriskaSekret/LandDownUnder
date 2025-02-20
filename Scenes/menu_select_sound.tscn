@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6mk7b74ngyvl"]
+
+[ext_resource type="AudioStream" uid="uid://dm7hoqbwkmsx0" path="res://Assets/Music/menu_sound.mp3" id="1_r24f2"]
+
+[node name="MenuSelectSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_r24f2")

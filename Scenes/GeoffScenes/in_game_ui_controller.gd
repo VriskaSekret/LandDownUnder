@@ -45,10 +45,14 @@ var item_names = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for button in get_tree().get_nodes_in_group("Button"):
+		button.connect("focus_entered", _on_button_focused)
+
 	for i in range(-1,11):
 		list_of_icons.append(String("res://Assets/Icons/%d.png" % i))
 
-
+func _on_button_focused():
+	MenuSelectSound.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -109,12 +113,15 @@ func update_player_inventory():
 
 
 func _on_item_1_button_pressed() -> void:
+	CoinSound.play()
 	item_selected(0)
 
 func _on_item_2_button_pressed() -> void:
+	CoinSound.play()
 	item_selected(1)
 
 func _on_item_3_button_pressed() -> void:
+	CoinSound.play()
 	item_selected(2)
 
 func item_selected(num: int) -> void:
@@ -145,6 +152,7 @@ func item_selected(num: int) -> void:
 
 
 func _on_go_home_pressed() -> void:
+	CoinSound.play()
 	get_tree().change_scene_to_file("res://Scenes/GeoffScenes/main_menu.tscn")
 
 func open_pause_menu():
@@ -160,6 +168,7 @@ func open_pause_menu():
 		Engine.time_scale = 1
 
 func _on_resume_game_pressed() -> void:
+	CoinSound.play()
 	pause_menu.visible = false
 	Global.game_paused = false
 	Engine.time_scale = 1
