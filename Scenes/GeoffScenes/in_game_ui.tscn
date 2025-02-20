@@ -65,7 +65,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
-[node name="Item1Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+[node name="Item1Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer" groups=["Button"]]
 custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 0
@@ -79,7 +79,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Item2Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+[node name="Item2Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer" groups=["Button"]]
 custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -95,7 +95,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Item3Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer"]
+[node name="Item3Button" type="Button" parent="MarginContainer/ItemSelect/HBoxContainer" groups=["Button"]]
 custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -147,7 +147,7 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/GameOver"]
 layout_mode = 2
 
-[node name="GoHome" type="Button" parent="MarginContainer/GameOver/HBoxContainer"]
+[node name="GoHome" type="Button" parent="MarginContainer/GameOver/HBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
@@ -197,7 +197,7 @@ vertical_alignment = 1
 [node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/PauseMenu"]
 layout_mode = 2
 
-[node name="ResumeGame" type="Button" parent="MarginContainer/PauseMenu/HBoxContainer"]
+[node name="ResumeGame" type="Button" parent="MarginContainer/PauseMenu/HBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
@@ -209,7 +209,7 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="GoHome" type="Button" parent="MarginContainer/PauseMenu/HBoxContainer"]
+[node name="GoHome" type="Button" parent="MarginContainer/PauseMenu/HBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
