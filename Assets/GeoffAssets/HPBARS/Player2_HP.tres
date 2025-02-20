@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cbnhyqy2in01s"]
+
+[ext_resource type="Texture2D" uid="uid://drj71vie0qshg" path="res://Assets/GeoffAssets/bw_hp.png" id="1_u6l53"]
+
+[resource]
+texture = ExtResource("1_u6l53")
+modulate_color = Color(0, 0, 1, 1)

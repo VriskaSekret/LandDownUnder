@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bftyfi2yhwtd3"]
+[gd_scene load_steps=79 format=3 uid="uid://bftyfi2yhwtd3"]
 
 [ext_resource type="Texture2D" uid="uid://dn0e6oeyv0o3q" path="res://Assets/TabyAssets/koala_idle.png" id="2_10140"]
 [ext_resource type="Texture2D" uid="uid://cumqrhm4v1mbc" path="res://Assets/TabyAssets/ranger_idle-sheet.png" id="2_d1bjk"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d1dis6supl6ra" path="res://Assets/TabyAssets/aussie_shuffle.png" id="3_j7ka5"]
 [ext_resource type="Texture2D" uid="uid://c4uatm4l8lgj7" path="res://Assets/TabyAssets/ranger_walking.png" id="3_kd3ma"]
 [ext_resource type="Texture2D" uid="uid://dmc2ra1jpfv7b" path="res://Assets/TabyAssets/raygun_walking.png" id="4_jtkbm"]
-[ext_resource type="Texture2D" uid="uid://beem5esmfeawn" path="res://Assets/GeoffAssets/hp.png" id="10_40b18"]
+[ext_resource type="StyleBox" uid="uid://0b48kl244v0s" path="res://Assets/GeoffAssets/HPBARS/Player1_HP.tres" id="12_h8w1x"]
 [ext_resource type="AudioStream" uid="uid://cdvdhjqxtkas5" path="res://Assets/GeoffAssets/hurt.mp3" id="13_mj61t"]
 [ext_resource type="AudioStream" uid="uid://besn1cmw54xdb" path="res://Assets/GeoffAssets/death.mp3" id="14_pnxbg"]
 
@@ -495,9 +495,6 @@ radius = 125.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo3ue"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpxda"]
-texture = ExtResource("10_40b18")
-
 [node name="Player1" type="CharacterBody2D" groups=["Player"]]
 z_as_relative = false
 collision_layer = 16777217
@@ -548,7 +545,7 @@ offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_jo3ue")
-theme_override_styles/fill = SubResource("StyleBoxTexture_jpxda")
+theme_override_styles/fill = ExtResource("12_h8w1x")
 max_value = 80.0
 step = 1.0
 value = 80.0

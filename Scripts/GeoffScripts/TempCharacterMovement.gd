@@ -42,7 +42,11 @@ var surf = preload("res://Scenes/TabyScenes/Attacks/Surfboard/surf.tscn")
 var snake = preload("res://Scenes/TabyScenes/Attacks/Snake/snake_shooter.tscn")
 var whip = preload("res://Scenes/TabyScenes/Attacks/Whip/whip_shooter.tscn")
 
-
+# HP BARS
+const PLAYER_1_HP = preload("res://Assets/GeoffAssets/HPBARS/Player1_HP.tres")
+const PLAYER_2_HP = preload("res://Assets/GeoffAssets/HPBARS/Player2_HP.tres")
+const PLAYER_3_HP = preload("res://Assets/GeoffAssets/HPBARS/Player3_HP.tres")
+const PLAYER_4_HP = preload("res://Assets/GeoffAssets/HPBARS/Player4_HP.tres")
 
 func _ready():
 	set_base_stats()
@@ -55,6 +59,14 @@ func _ready():
 	print("Weapons " + str(Global.player_weapons[character_player_number-1]))
 	print("Weapon Levels " + str(Global.player_weapon_levels[character_player_number-1]))
 	add_weapons()
+	if character_player_number == 1:
+		health_bar.add_theme_stylebox_override("fill", PLAYER_1_HP)
+	elif character_player_number == 2:
+		health_bar.add_theme_stylebox_override("fill", PLAYER_2_HP)
+	elif character_player_number == 3:
+		health_bar.add_theme_stylebox_override("fill", PLAYER_3_HP)
+	elif character_player_number == 4:
+		health_bar.add_theme_stylebox_override("fill", PLAYER_4_HP)
 
 
 func get_input() -> void:
