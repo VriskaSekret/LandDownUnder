@@ -26,9 +26,12 @@ var player
 var direction
 var distance
 
+var enemy_manager
+
 func _ready():
+	enemy_manager = get_tree().get_first_node_in_group("enemy_manager")
 	player = get_random_player()
-	hp = hp + (hp * Global.time_seconds * 0.02)
+	set_hp()
 	anim.play("walk")
 	hitBox.damage = enemy_damage
 	screen_size = get_viewport_rect().size
@@ -69,18 +72,21 @@ func get_random_player() -> CharacterBody2D:
 		player = players.pick_random()
 	return player
 
+func set_hp() -> void:
+	hp = hp + (hp * Global.time_seconds * 0.02)
+
 func death():
-	# wtf does this signal do
-	#emit_signal("remove_from_arr", self)
-	var coin = coin_drop.instantiate()
+	#var coin = coin_drop.instantiate()
 	var enemy_death = death_anim.instantiate()
 	enemy_death.scale = sprite.scale
-	coin.scale = sprite.scale
+	#coin.scale = sprite.scale
 	enemy_death.global_position = global_position
-	coin.global_position = global_position
+	#coin.global_position = global_position
+	
 	get_parent().call_deferred("add_child", enemy_death)
-	get_parent().call_deferred("add_child", coin)
-	queue_free()
+	#get_parent().call_deferred("add_child", coin)
+	
+	enemy_manager.remove_enemy(self)
 
 func _on_hurtbox_hurt(damage, angle, knockback_amount):
 	hp -= damage

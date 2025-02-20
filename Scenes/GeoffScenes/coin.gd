@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var game_manager: Node2D = $"../../GameManager"
+@onready var game_manager: Node2D = $"../../../GameManager"
 
 @export var target = null
 var speed = 350

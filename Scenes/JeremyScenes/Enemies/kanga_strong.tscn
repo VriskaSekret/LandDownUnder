@@ -78,7 +78,7 @@ collision_mask = 4
 visible = true
 shape = SubResource("RectangleShape2D_llwkt")
 
-[node name="Hitbox" parent="." instance=ExtResource("4_s3pqk")]
+[node name="Hitbox" parent="." groups=["active_enemy"] instance=ExtResource("4_s3pqk")]
 collision_layer = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]

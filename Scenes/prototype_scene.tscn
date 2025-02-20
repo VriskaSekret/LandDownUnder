@@ -1,36 +1,62 @@
-[gd_scene load_steps=20 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=27 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
+[ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="2_q44n7"]
 [ext_resource type="PackedScene" uid="uid://n5onsju4xm8c" path="res://Scenes/JeremyScenes/Enemies/Spawner/enemy_spawner.tscn" id="3_r4swq"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Spawner/spawn_info.gd" id="4_7a5xy"]
 [ext_resource type="PackedScene" uid="uid://b4gcmlhyg7tmb" path="res://Scenes/JeremyScenes/Enemies/kanga_weak.tscn" id="4_ymi4j"]
 [ext_resource type="PackedScene" uid="uid://blho5e68w8l3b" path="res://Scenes/GeoffScenes/stuff.tscn" id="7_615b2"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/ObjectPooling/object_pool.gd" id="7_b6a0x"]
 [ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="7_d6iib"]
-[ext_resource type="PackedScene" uid="uid://cl43jdlrq6jwr" path="res://Scenes/JeremyScenes/Enemies/Magpie/magpie.tscn" id="7_jcia4"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
+[ext_resource type="PackedScene" uid="uid://djf3fup248sxt" path="res://Scenes/JeremyScenes/Enemies/kanga_strong.tscn" id="8_6n7mi"]
+[ext_resource type="PackedScene" uid="uid://b4d8e1fbaxncv" path="res://Scenes/JeremyScenes/Enemies/emu_weak.tscn" id="9_15ots"]
 [ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
+[ext_resource type="PackedScene" uid="uid://b01xgbhjj0y66" path="res://Scenes/JeremyScenes/Enemies/emu_strong.tscn" id="10_0xe8a"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
 [ext_resource type="PackedScene" uid="uid://dvr7hxqjui07j" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
 [ext_resource type="AudioStream" uid="uid://cmiqgg47rifnf" path="res://Assets/Music/Land Down Under Main Theme.mp3" id="12_ha6ae"]
 
-[sub_resource type="Resource" id="Resource_pji17"]
-script = ExtResource("4_7a5xy")
-time_start = 0
-time_end = 1
-enemy = ExtResource("7_jcia4")
-enemy_num = 1
-enemy_spawn_delay = 0
-is_magpie = true
-
 [sub_resource type="Resource" id="Resource_l73lw"]
 script = ExtResource("4_7a5xy")
 time_start = 0
-time_end = 20
-enemy = ExtResource("4_ymi4j")
-enemy_num = 100
+time_end = 60
+enemy = 0
+enemy_num = 1
 enemy_spawn_delay = 0
-is_magpie = false
+
+[sub_resource type="Resource" id="Resource_8wq83"]
+script = ExtResource("4_7a5xy")
+time_start = 30
+time_end = 60
+enemy = 1
+enemy_num = 1
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_t6fna"]
+script = ExtResource("4_7a5xy")
+time_start = 60
+time_end = 180
+enemy = 0
+enemy_num = 10
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_kkumi"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 999999
+enemy = 0
+enemy_num = 2
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_65kcr"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 9999
+enemy = 4
+enemy_num = 1
+enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
 texture = ExtResource("7_u3ckx")
@@ -254,11 +280,36 @@ size = Vector2(1500, 20)
 [node name="PrototypeScene" type="Node2D"]
 script = ExtResource("1_miors")
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_pji17"), SubResource("Resource_l73lw")])
+[node name="EnemyManager" type="Node2D" parent="." groups=["enemy_manager"]]
+script = ExtResource("2_q44n7")
 
-[node name="Coin" parent="EnemySpawner" instance=ExtResource("9_ar65b")]
+[node name="EnemySpawner" parent="EnemyManager" instance=ExtResource("3_r4swq")]
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw"), SubResource("Resource_8wq83"), SubResource("Resource_t6fna"), SubResource("Resource_kkumi"), SubResource("Resource_65kcr")])
+
+[node name="Coin" parent="EnemyManager/EnemySpawner" instance=ExtResource("9_ar65b")]
 position = Vector2(85, -1)
+
+[node name="Pools" type="Node" parent="EnemyManager"]
+
+[node name="KangaWeak" type="Node" parent="EnemyManager/Pools"]
+script = ExtResource("7_b6a0x")
+scene = ExtResource("4_ymi4j")
+
+[node name="KangaStrong" type="Node" parent="EnemyManager/Pools"]
+script = ExtResource("7_b6a0x")
+scene = ExtResource("8_6n7mi")
+
+[node name="EmuWeak" type="Node" parent="EnemyManager/Pools"]
+script = ExtResource("7_b6a0x")
+scene = ExtResource("9_15ots")
+
+[node name="EmuStrong" type="Node" parent="EnemyManager/Pools"]
+script = ExtResource("7_b6a0x")
+scene = ExtResource("10_0xe8a")
+
+[node name="Debug" type="Timer" parent="EnemyManager"]
+wait_time = 5.0
+autostart = true
 
 [node name="Stuff" parent="." instance=ExtResource("7_615b2")]
 z_index = -1
@@ -327,5 +378,6 @@ volume_db = -2.0
 autoplay = true
 bus = &"BGMusic"
 
+[connection signal="timeout" from="EnemyManager/Debug" to="EnemyManager" method="_on_debug_timeout"]
 [connection signal="timeout" from="GameManager/CountUp" to="GameManager" method="_on_count_up_timeout"]
 [connection signal="timeout" from="GameManager/GameOverTimer" to="GameManager" method="_on_game_over_timer_timeout"]

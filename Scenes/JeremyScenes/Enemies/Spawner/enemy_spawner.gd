@@ -1,26 +1,25 @@
 extends Node2D
 
-const MAGPIE = preload("res://Scenes/JeremyScenes/Enemies/Magpie/magpie.tscn")
-
 var enemy_cap = 300
 var enemies_to_spawn = []
 var spawn_rate = 1
 var rate_counter
 @export var spawns: Array[Spawn_info] = []
-@onready var camera: Camera2D = $"../Camera2D"
+@onready var camera: Camera2D = $"../../Camera2D"
 var enemy_spawn
-
+var enemy_manager
 var time = 0
 
 
 func _ready() -> void:
+	enemy_manager = get_tree().get_first_node_in_group("enemy_manager")
+	
 	if (0 < Global.number_players and Global.number_players < 3):
 		spawn_rate = 1
 	elif (2 < Global.number_players and Global.number_players < 5):
 		spawn_rate = 2
 
 func _on_timer_timeout():
-	print("Enemy Cap Array Size: " + str(enemies_to_spawn.size()))
 	time += 1
 	enemy_spawn = spawns
 	for i in enemy_spawn: # loop through array holding spawn information
@@ -30,15 +29,11 @@ func _on_timer_timeout():
 			else: # wait time is over, so spawn n number of enemies
 				i.spawn_delay_counter = 1
 				
-				
-				# check if it's reached enemy cap
-				if get_tree().get_nodes_in_group("enemy").size() >= enemy_cap:
-					if i.is_magpie:
-						print("enemy is magpie")
-						spawn_enemy(i)
-					else:
-						enemies_to_spawn.append(i)
-				else: # enemy cap has not been reached
+				# check if it's reached enemy cap & whether it's a magpie
+				if get_tree().get_nodes_in_group("active_enemy").size() >= enemy_cap:
+					enemies_to_spawn.append(i)
+					pass
+				else: # enemy cap has not been reached or enemy is magpie
 					spawn_enemy(i)
 	# if there's little to no spawning happening, pull from enemy cap array
 	if (get_tree().get_nodes_in_group("enemy").size() < enemy_cap) and (enemies_to_spawn.size() > 0):
@@ -81,9 +76,13 @@ func spawn_enemy(enemy_info: Resource):
 	while counter < enemy_info.enemy_num:
 		rate_counter = spawn_rate
 		while rate_counter > 0:
-			var new_enemy = enemy_info.enemy.instantiate()
+			var new_enemy = enemy_manager.get_enemy(enemy_info.enemy)
+			new_enemy.set_hp()
 			new_enemy.global_position = get_random_position()
-			add_child(new_enemy)
+			if !(new_enemy.get_parent() == self):
+				add_child(new_enemy)
+			
+			
 			rate_counter -= 1
 		counter += 1
 
