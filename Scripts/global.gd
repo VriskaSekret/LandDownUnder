@@ -42,7 +42,7 @@ func reset_global_variables():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and get_tree().current_scene.name != "PrototypeScene":
 		get_tree().change_scene_to_file("res://Scenes/GeoffScenes/main_menu.tscn")
 
 func add_xp(xp_added: int) -> void:
