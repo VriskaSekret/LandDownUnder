@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var item_select: VBoxContainer = $MarginContainer/ItemSelect
 @onready var game_over: VBoxContainer = $MarginContainer/GameOver
+@onready var go_home_button: Button = $MarginContainer/GameOver/HBoxContainer/GoHome
 @onready var player_items: HBoxContainer = $PlayerItems
 @onready var game_manager: Node2D = $"../GameManager"
 @onready var count_up_time: Label = $XPBar/CountUpTime
@@ -10,6 +11,7 @@ var local_time = 0
 
 @onready var xp_bar: ProgressBar = $XPBar
 
+@onready var pause_menu: VBoxContainer = $MarginContainer/PauseMenu
 
 #
 # Buttons for items when levelling up
@@ -27,11 +29,11 @@ var list_of_icons = []
 
 var item_names = {
 	0 : "Cone",
-	1: "Vegemite",
+	1: "Skewer",
 	2: "Didgeridoo",
 	3: "Whip",
 	4: "Boomerang",
-	5: "Skewer",
+	5: "Vegemite",
 	6: "Thongs",
 	7: "Snake",
 	8: "Surfboard",
@@ -45,7 +47,7 @@ var item_names = {
 func _ready() -> void:
 	for i in range(-1,11):
 		list_of_icons.append(String("res://Assets/Icons/%d.png" % i))
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,7 +55,9 @@ func _process(_delta: float) -> void:
 	if local_time != Global.time_seconds:
 		local_time = Global.time_seconds
 		count_up_time.text = ("%02d:%02d" % [floor(local_time/60), local_time%60])
-	pass
+	if Input.is_action_just_pressed("pause"):
+		print("pausing?")
+		open_pause_menu()
 
 func update_upgrade_buttons():
 	var items = Global.randomised_items
@@ -142,3 +146,40 @@ func item_selected(num: int) -> void:
 
 func _on_go_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/GeoffScenes/main_menu.tscn")
+
+func open_pause_menu():
+	if not pause_menu.visible and not Global.game_paused:
+		$MarginContainer/PauseMenu/ColorRect/PauseLabel.text = "Game Paused\n\nScore: %d" % [Global.score]
+		$MarginContainer/PauseMenu/HBoxContainer/ResumeGame.grab_focus()
+		Global.game_paused = true
+		Engine.time_scale = 0
+		pause_menu.visible = true
+	elif pause_menu.visible:
+		pause_menu.visible = false
+		Global.game_paused = false
+		Engine.time_scale = 1
+
+func _on_resume_game_pressed() -> void:
+	pause_menu.visible = false
+	Global.game_paused = false
+	Engine.time_scale = 1
+
+
+func _on_resume_game_mouse_entered() -> void:
+	$MarginContainer/PauseMenu/HBoxContainer/ResumeGame.grab_focus()
+
+
+func _on_go_home_mouse_entered() -> void:
+	$MarginContainer/PauseMenu/HBoxContainer/GoHome.grab_focus()
+
+
+func _on_item_1_button_mouse_entered() -> void:
+	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.grab_focus()
+
+
+func _on_item_2_button_mouse_entered() -> void:
+	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.grab_focus()
+
+
+func _on_item_3_button_mouse_entered() -> void:
+	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.grab_focus()
