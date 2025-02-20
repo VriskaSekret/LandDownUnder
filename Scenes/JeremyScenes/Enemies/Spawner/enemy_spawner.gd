@@ -2,7 +2,8 @@ extends Node2D
 
 var enemy_cap = 300
 var enemies_to_spawn = []
-
+var spawn_rate = 1
+var rate_counter
 @export var spawns: Array[Spawn_info] = []
 
 #@onready var player = get_tree().get_first_node_in_group("Player")
@@ -10,6 +11,11 @@ var enemies_to_spawn = []
 
 var time = 0
 
+func _ready() -> void:
+	if (0 < Global.number_players and Global.number_players < 3):
+		spawn_rate = 1
+	elif (2 < Global.number_players and Global.number_players < 5):
+		spawn_rate = 2
 
 func _on_timer_timeout():
 	time += 1
@@ -26,9 +32,12 @@ func _on_timer_timeout():
 				while counter < (i.enemy_num):
 					# checks if mob count minus coins is less than enemy cap
 					if (my_children.size() - get_tree().get_nodes_in_group("coins").size()) <= enemy_cap:
-						var enemy_spawn = new_enemy.instantiate()
-						enemy_spawn.global_position = get_random_position()
-						add_child(enemy_spawn)
+						rate_counter = spawn_rate
+						while rate_counter > 0:
+							var enemy_spawn = new_enemy.instantiate()
+							enemy_spawn.global_position = get_random_position()
+							add_child(enemy_spawn)
+							rate_counter -= 1
 					else:
 						enemies_to_spawn.append(new_enemy)
 					counter += 1
