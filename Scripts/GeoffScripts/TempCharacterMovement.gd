@@ -55,6 +55,7 @@ func _ready():
 	print("Weapons " + str(Global.player_weapons[character_player_number-1]))
 	print("Weapon Levels " + str(Global.player_weapon_levels[character_player_number-1]))
 	add_weapons()
+	collision_layer
 
 
 func get_input() -> void:

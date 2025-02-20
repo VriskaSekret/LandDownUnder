@@ -8,8 +8,14 @@ func add_to_pool(object: Node2D) -> void:
 	
 	object.get_node("Hitbox").set_deferred("monitorable", false)
 	object.get_node("Hitbox").set_deferred("monitoring", false)
+	
 	object.get_node("Hurtbox").set_deferred("monitorable", false)
 	object.get_node("Hurtbox").set_deferred("monitoring", false)
+	
+	object.set_collision_layer_value(8, false)
+	object.set_collision_mask_value(8, false)
+
+	
 	object.remove_from_group("active_enemy")
 	
 	object.set_process(false)
@@ -28,6 +34,10 @@ func pull_from_pool() -> Node2D:
 	
 	object.get_node("Hurtbox").set_deferred("monitorable", true)
 	object.get_node("Hurtbox").set_deferred("monitoring", true)
+	
+	object.set_collision_layer_value(8, true)
+	object.set_collision_mask_value(8, true)
+	
 	object.add_to_group("active_enemy")
 	
 	object.set_process(true)

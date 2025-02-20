@@ -41,27 +41,3 @@ func remove_enemy(enemy):
 	elif enemy.is_in_group("emu_strong"):
 		#print("emu strong")
 		return emu_strong.add_to_pool(enemy)
-
-
-func _on_debug_timeout() -> void:
-	print("|-------------------------------------------------------------------|")
-	#
-	#print(
-		#"Kanga Weak Pool: " + str(kanga_weak.object_pool)
-		#)
-	#print("Kanga Weak Pool Size: " + str(kanga_weak.object_pool.size()))
-	#
-	#print(
-		#"Kanga Strong Pool: " + str(kanga_strong.object_pool)
-		#)
-	#print("Kanga Strong Pool Size: " + str(kanga_strong.object_pool.size()))
-	#
-	#print(
-		#"Emu Weak Pool: " + str(emu_weak.object_pool)
-		#)
-	#print("Emu Weak Pool Size: " + str(emu_weak.object_pool.size()))
-	#
-	#print(
-		#"Emu Strong Pool: " + str(emu_strong.object_pool)
-		#)
-	#print("Emu Strong Pool Size: " + str(emu_strong.object_pool.size()))

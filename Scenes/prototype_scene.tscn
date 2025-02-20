@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=25 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="2_q44n7"]
@@ -23,7 +23,23 @@ script = ExtResource("4_7a5xy")
 time_start = 0
 time_end = 60
 enemy = 0
-enemy_num = 100
+enemy_num = 50
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_15jc0"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 60
+enemy = 1
+enemy_num = 50
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_k7u46"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 60
+enemy = 2
+enemy_num = 50
 enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
@@ -252,7 +268,7 @@ script = ExtResource("1_miors")
 script = ExtResource("2_q44n7")
 
 [node name="EnemySpawner" parent="EnemyManager" instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw"), SubResource("Resource_15jc0"), SubResource("Resource_k7u46")])
 
 [node name="Coin" parent="EnemyManager/EnemySpawner" instance=ExtResource("9_ar65b")]
 position = Vector2(85, -1)
@@ -274,10 +290,6 @@ scene = ExtResource("9_15ots")
 [node name="EmuStrong" type="Node" parent="EnemyManager/Pools"]
 script = ExtResource("7_b6a0x")
 scene = ExtResource("10_0xe8a")
-
-[node name="Debug" type="Timer" parent="EnemyManager"]
-wait_time = 5.0
-autostart = true
 
 [node name="Stuff" parent="." instance=ExtResource("7_615b2")]
 z_index = -1
@@ -346,6 +358,5 @@ volume_db = -2.0
 autoplay = true
 bus = &"BGMusic"
 
-[connection signal="timeout" from="EnemyManager/Debug" to="EnemyManager" method="_on_debug_timeout"]
 [connection signal="timeout" from="GameManager/CountUp" to="GameManager" method="_on_count_up_timeout"]
 [connection signal="timeout" from="GameManager/GameOverTimer" to="GameManager" method="_on_game_over_timer_timeout"]
