@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var item_select: VBoxContainer = $MarginContainer/ItemSelect
 @onready var game_over: VBoxContainer = $MarginContainer/GameOver
+@onready var go_home_button: Button = $MarginContainer/GameOver/HBoxContainer/GoHome
 @onready var player_items: HBoxContainer = $PlayerItems
 @onready var game_manager: Node2D = $"../GameManager"
 @onready var count_up_time: Label = $XPBar/CountUpTime
@@ -149,6 +150,7 @@ func _on_go_home_pressed() -> void:
 func open_pause_menu():
 	if not pause_menu.visible and not Global.game_paused:
 		$MarginContainer/PauseMenu/ColorRect/PauseLabel.text = "Game Paused\n\nScore: %d" % [Global.score]
+		$MarginContainer/PauseMenu/HBoxContainer/ResumeGame.grab_focus()
 		Global.game_paused = true
 		Engine.time_scale = 0
 		pause_menu.visible = true
@@ -161,3 +163,23 @@ func _on_resume_game_pressed() -> void:
 	pause_menu.visible = false
 	Global.game_paused = false
 	Engine.time_scale = 1
+
+
+func _on_resume_game_mouse_entered() -> void:
+	$MarginContainer/PauseMenu/HBoxContainer/ResumeGame.grab_focus()
+
+
+func _on_go_home_mouse_entered() -> void:
+	$MarginContainer/PauseMenu/HBoxContainer/GoHome.grab_focus()
+
+
+func _on_item_1_button_mouse_entered() -> void:
+	$MarginContainer/ItemSelect/HBoxContainer/Item1Button.grab_focus()
+
+
+func _on_item_2_button_mouse_entered() -> void:
+	$MarginContainer/ItemSelect/HBoxContainer/Item2Button.grab_focus()
+
+
+func _on_item_3_button_mouse_entered() -> void:
+	$MarginContainer/ItemSelect/HBoxContainer/Item3Button.grab_focus()

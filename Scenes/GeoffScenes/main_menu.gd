@@ -15,6 +15,7 @@ func _ready() -> void:
 	starting_menu.visible = true
 	player_count_select.visible = false
 	character_select.visible = false
+	$MarginContainer/StartingMenu/VBoxContainer/StartButton.grab_focus()
 
 func _process(_delta: float) -> void:
 	if player_selecting > players:
@@ -24,6 +25,7 @@ func _process(_delta: float) -> void:
 func _on_start_button_pressed() -> void:
 	starting_menu.visible = false
 	player_count_select.visible = true
+	$"MarginContainer/PlayerCountSelect/Buttons/VBoxContainer/1PButton".grab_focus()
 
 
 func _on_options_button_pressed() -> void:
@@ -47,7 +49,7 @@ func _on_1p_button_pressed() -> void:
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
-
+	$MarginContainer/CharacterSelect/Buttons/VBoxContainer/Tradie.grab_focus()
 
 func _on_2p_button_pressed() -> void:
 	players = 2
@@ -56,6 +58,7 @@ func _on_2p_button_pressed() -> void:
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
+	$MarginContainer/CharacterSelect/Buttons/VBoxContainer/Tradie.grab_focus()
 
 
 func _on_3p_button_pressed() -> void:
@@ -65,6 +68,7 @@ func _on_3p_button_pressed() -> void:
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
+	$MarginContainer/CharacterSelect/Buttons/VBoxContainer/Tradie.grab_focus()
 
 
 func _on_4p_button_pressed() -> void:
@@ -74,8 +78,7 @@ func _on_4p_button_pressed() -> void:
 	player_count_select.visible = false
 	character_select.visible = true
 	player_selecting = 1
-
-
+	$MarginContainer/CharacterSelect/Buttons/VBoxContainer/Tradie.grab_focus()
 
 
 func _on_tradie_pressed() -> void:
@@ -123,3 +126,15 @@ func _on_ranger_pressed() -> void:
 	elif player_selecting == 4:
 		Global.player_characters[3] = 3
 	player_selecting += 1
+
+
+func _on_start_button_mouse_entered() -> void:
+	$MarginContainer/StartingMenu/VBoxContainer/StartButton.grab_focus()
+
+
+func _on_options_button_mouse_entered() -> void:
+	$MarginContainer/StartingMenu/VBoxContainer/OptionsButton.grab_focus()
+
+
+func _on_quit_button_mouse_entered() -> void:
+	$MarginContainer/StartingMenu/VBoxContainer/QuitButton.grab_focus()
