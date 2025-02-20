@@ -88,7 +88,7 @@ libraries = {
 [node name="AttackNode" parent="." instance=ExtResource("5_m7ifr")]
 
 [node name="Timer" parent="AttackNode" index="0"]
-wait_time = 15.0
+wait_time = 4.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 
