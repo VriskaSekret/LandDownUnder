@@ -1,3 +1,4 @@
+class_name Magpie
 extends CharacterBody2D
 
 var bomb = preload("res://Scenes/JeremyScenes/Enemies/Magpie/magpie_bomb.tscn")

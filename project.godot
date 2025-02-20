@@ -32,6 +32,12 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 coins="all spawned coins"
+emu_weak=""
+emu_strong=""
+kanga_weak=""
+kanga_strong=""
+enemy=""
+magpie=""
 
 [input]
 

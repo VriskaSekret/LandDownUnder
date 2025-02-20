@@ -1,15 +1,17 @@
 extends Node2D
 
+const MAGPIE = preload("res://Scenes/JeremyScenes/Enemies/Magpie/magpie.tscn")
+
 var enemy_cap = 300
 var enemies_to_spawn = []
 var spawn_rate = 1
 var rate_counter
 @export var spawns: Array[Spawn_info] = []
-
-#@onready var player = get_tree().get_first_node_in_group("Player")
 @onready var camera: Camera2D = $"../Camera2D"
+var enemy_spawn
 
 var time = 0
+
 
 func _ready() -> void:
 	if (0 < Global.number_players and Global.number_players < 3):
@@ -18,40 +20,33 @@ func _ready() -> void:
 		spawn_rate = 2
 
 func _on_timer_timeout():
+	print("Enemy Cap Array Size: " + str(enemies_to_spawn.size()))
 	time += 1
-	var enemy_spawns = spawns
-	var my_children = get_children()
-	for i in enemy_spawns:
-		if time >= i.time_start and time <= i.time_end: # wait time increments until it's beyond the delay
-			if i.spawn_delay_counter < i.enemy_spawn_delay:
+	enemy_spawn = spawns
+	for i in enemy_spawn: # loop through array holding spawn information
+		if time >= i.time_start and time <= i.time_end: # check if it's within the spawn time
+			if i.spawn_delay_counter < i.enemy_spawn_delay: # check if it's during a delay
 				i.spawn_delay_counter += 1
 			else: # wait time is over, so spawn n number of enemies
-				i.spawn_delay_counter = 0
-				var new_enemy = i.enemy
-				var counter = 0
-				while counter < (i.enemy_num):
-					# checks if mob count minus coins is less than enemy cap
-					if (my_children.size() - get_tree().get_nodes_in_group("coins").size()) <= enemy_cap:
-						rate_counter = spawn_rate
-						while rate_counter > 0:
-							var enemy_spawn = new_enemy.instantiate()
-							enemy_spawn.global_position = get_random_position()
-							add_child(enemy_spawn)
-							rate_counter -= 1
+				i.spawn_delay_counter = 1
+				
+				
+				# check if it's reached enemy cap
+				if get_tree().get_nodes_in_group("enemy").size() >= enemy_cap:
+					if i.is_magpie:
+						print("enemy is magpie")
+						spawn_enemy(i)
 					else:
-						enemies_to_spawn.append(new_enemy)
-					counter += 1
-		if time > i.time_end:
-			spawns.pop_front()
-	if my_children.size() <= enemy_cap and enemies_to_spawn.size() > 0:
-		var spawn_number = clamp(enemies_to_spawn.size(), 1, 50) - 1
-		var counter = 0
-		while counter < spawn_number:
-			var new_enemy = enemies_to_spawn[0].instantiate()
-			new_enemy.global_position = get_random_position()
-			add_child(new_enemy)
-			enemies_to_spawn.remove_at(0)
-			counter += 1
+						enemies_to_spawn.append(i)
+				else: # enemy cap has not been reached
+					spawn_enemy(i)
+	# if there's little to no spawning happening, pull from enemy cap array
+	if (get_tree().get_nodes_in_group("enemy").size() < enemy_cap) and (enemies_to_spawn.size() > 0):
+		spawn_enemy(enemies_to_spawn[0])
+		enemies_to_spawn.pop_at(0)
+	
+
+
 
 func get_random_position():
 	var vpr = (get_viewport_rect().size / camera.zoom) * randf_range(1.1, 1.4)
@@ -80,3 +75,22 @@ func get_random_position():
 	var x_spawn = randf_range(spawn_pos1.x, spawn_pos2.x)
 	var y_spawn = randf_range(spawn_pos1.y, spawn_pos2.y)
 	return Vector2(x_spawn, y_spawn)
+
+func spawn_enemy(enemy_info: Resource):
+	var counter = 0
+	while counter < enemy_info.enemy_num:
+		rate_counter = spawn_rate
+		while rate_counter > 0:
+			var new_enemy = enemy_info.enemy.instantiate()
+			new_enemy.global_position = get_random_position()
+			add_child(new_enemy)
+			rate_counter -= 1
+		counter += 1
+
+func _on_delete_past_spawn_info_timer_timeout() -> void:
+	delete_past_spawn_info()
+
+func delete_past_spawn_info():
+	for i in range(enemy_spawn.size()-1, -1, -1):
+		if time > enemy_spawn[i].time_end:
+			enemy_spawn.pop_at(i)

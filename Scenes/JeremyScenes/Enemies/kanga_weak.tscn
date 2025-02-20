@@ -50,7 +50,7 @@ size = Vector2(26, 76)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtctc"]
 radius = 20.0998
 
-[node name="kanga_weak" type="CharacterBody2D"]
+[node name="kanga_weak" type="CharacterBody2D" groups=["enemy", "kanga_weak"]]
 scale = Vector2(0.8, 0.8)
 collision_layer = 128
 collision_mask = 128

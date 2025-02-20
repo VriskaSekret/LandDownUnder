@@ -1,13 +1,12 @@
-[gd_scene load_steps=26 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=20 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="PackedScene" uid="uid://n5onsju4xm8c" path="res://Scenes/JeremyScenes/Enemies/Spawner/enemy_spawner.tscn" id="3_r4swq"]
 [ext_resource type="Script" path="res://Scenes/JeremyScenes/Enemies/Spawner/spawn_info.gd" id="4_7a5xy"]
 [ext_resource type="PackedScene" uid="uid://b4gcmlhyg7tmb" path="res://Scenes/JeremyScenes/Enemies/kanga_weak.tscn" id="4_ymi4j"]
-[ext_resource type="PackedScene" uid="uid://b4d8e1fbaxncv" path="res://Scenes/JeremyScenes/Enemies/emu_weak.tscn" id="5_iadyt"]
-[ext_resource type="PackedScene" uid="uid://djf3fup248sxt" path="res://Scenes/JeremyScenes/Enemies/kanga_strong.tscn" id="6_3pipe"]
 [ext_resource type="PackedScene" uid="uid://blho5e68w8l3b" path="res://Scenes/GeoffScenes/stuff.tscn" id="7_615b2"]
 [ext_resource type="Texture2D" uid="uid://crmvn1iqsyr1l" path="res://Assets/GeoffAssets/grass_tile_1.png" id="7_d6iib"]
+[ext_resource type="PackedScene" uid="uid://cl43jdlrq6jwr" path="res://Scenes/JeremyScenes/Enemies/Magpie/magpie.tscn" id="7_jcia4"]
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
 [ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
@@ -15,61 +14,23 @@
 [ext_resource type="PackedScene" uid="uid://dvr7hxqjui07j" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
 [ext_resource type="AudioStream" uid="uid://cmiqgg47rifnf" path="res://Assets/Music/Land Down Under Main Theme.mp3" id="12_ha6ae"]
 
-[sub_resource type="Resource" id="Resource_2lap1"]
+[sub_resource type="Resource" id="Resource_pji17"]
 script = ExtResource("4_7a5xy")
 time_start = 0
-time_end = 30
-enemy = ExtResource("4_ymi4j")
-enemy_num = 3
-enemy_spawn_delay = 3
+time_end = 1
+enemy = ExtResource("7_jcia4")
+enemy_num = 1
+enemy_spawn_delay = 0
+is_magpie = true
 
-[sub_resource type="Resource" id="Resource_u8flr"]
+[sub_resource type="Resource" id="Resource_l73lw"]
 script = ExtResource("4_7a5xy")
 time_start = 0
-time_end = 30
-enemy = ExtResource("5_iadyt")
-enemy_num = 2
-enemy_spawn_delay = 5
-
-[sub_resource type="Resource" id="Resource_6vkmm"]
-script = ExtResource("4_7a5xy")
-time_start = 30
-time_end = 60
+time_end = 20
 enemy = ExtResource("4_ymi4j")
-enemy_num = 5
-enemy_spawn_delay = 3
-
-[sub_resource type="Resource" id="Resource_0j5v1"]
-script = ExtResource("4_7a5xy")
-time_start = 30
-time_end = 60
-enemy = ExtResource("5_iadyt")
-enemy_num = 4
-enemy_spawn_delay = 5
-
-[sub_resource type="Resource" id="Resource_tw0gb"]
-script = ExtResource("4_7a5xy")
-time_start = 60
-time_end = 90
-enemy = ExtResource("6_3pipe")
-enemy_num = 2
-enemy_spawn_delay = 3
-
-[sub_resource type="Resource" id="Resource_0dylu"]
-script = ExtResource("4_7a5xy")
-time_start = 60
-time_end = 90
-enemy = ExtResource("5_iadyt")
-enemy_num = 6
-enemy_spawn_delay = 5
-
-[sub_resource type="Resource" id="Resource_0tf1d"]
-script = ExtResource("4_7a5xy")
-time_start = 60
-time_end = 90
-enemy = ExtResource("4_ymi4j")
-enemy_num = 10
-enemy_spawn_delay = 10
+enemy_num = 100
+enemy_spawn_delay = 0
+is_magpie = false
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
 texture = ExtResource("7_u3ckx")
@@ -294,7 +255,7 @@ size = Vector2(1500, 20)
 script = ExtResource("1_miors")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_2lap1"), SubResource("Resource_u8flr"), SubResource("Resource_6vkmm"), SubResource("Resource_0j5v1"), SubResource("Resource_tw0gb"), SubResource("Resource_0dylu"), SubResource("Resource_0tf1d")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_pji17"), SubResource("Resource_l73lw")])
 
 [node name="Coin" parent="EnemySpawner" instance=ExtResource("9_ar65b")]
 position = Vector2(85, -1)

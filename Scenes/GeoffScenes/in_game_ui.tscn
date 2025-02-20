@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvr7hxqjui07j"]
+[gd_scene load_steps=10 format=3 uid="uid://dvr7hxqjui07j"]
 
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/in_game_ui_controller.gd" id="1_jdv0l"]
 [ext_resource type="FontFile" uid="uid://y5ckdq3gkoyw" path="res://Assets/ascii-sector-16x16-tileset.ttf" id="1_xk8la"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/GeoffScenes/xp_bar.gd" id="3_05yks"]
 [ext_resource type="Texture2D" uid="uid://41ma47fy6ps" path="res://Assets/GeoffAssets/load_text.png" id="4_55rt1"]
 [ext_resource type="Texture2D" uid="uid://doetlst640vjn" path="res://Assets/GeoffAssets/frame.png" id="6_s4df1"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/DebugShit/label.gd" id="7_x6qk4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo423"]
 bg_color = Color(0.193154, 0.193154, 0.193153, 1)
@@ -600,6 +601,13 @@ text = "1
 "
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 90.0
+offset_right = 41.0
+offset_bottom = 113.0
+script = ExtResource("7_x6qk4")
 
 [connection signal="pressed" from="MarginContainer/ItemSelect/HBoxContainer/Item1Button" to="." method="_on_item_1_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ItemSelect/HBoxContainer/Item2Button" to="." method="_on_item_2_button_pressed"]

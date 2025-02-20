@@ -53,7 +53,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3dxi"]
 size = Vector2(44, 39.5)
 
-[node name="emu_weak" type="CharacterBody2D"]
+[node name="emu_weak" type="CharacterBody2D" groups=["emu_weak", "enemy"]]
 collision_layer = 128
 collision_mask = 128
 motion_mode = 1
