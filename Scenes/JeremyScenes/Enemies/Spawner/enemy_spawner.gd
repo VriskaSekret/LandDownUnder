@@ -76,8 +76,9 @@ func spawn_enemy(enemy_info: Resource):
 		rate_counter = spawn_rate
 		while rate_counter > 0:
 			var new_enemy = enemy_manager.get_enemy(enemy_info.enemy)
-			new_enemy.set_hp()
 			new_enemy.global_position = get_random_position()
+			new_enemy.set_hp()
+			print(new_enemy.hp)
 			if !(new_enemy.get_parent() == self):
 				add_child(new_enemy)
 			

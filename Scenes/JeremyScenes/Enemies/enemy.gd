@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 
 @export var movement_speed = 20.0
-@export var hp = 10 
+@export var max_hp = 10 
+var hp = max_hp
 @export var knockback_recovery = 3.5
 @export var experience = 1
 @export var enemy_damage = 1
@@ -74,7 +75,8 @@ func get_random_player() -> CharacterBody2D:
 	return player
 
 func set_hp() -> void:
-	hp = hp + (hp * Global.time_seconds * 0.02)
+	max_hp = max_hp + (max_hp * Global.time_seconds * 0.02)
+	hp = max_hp
 
 func death():
 	var coin = coin_drop.instantiate()
