@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://brwnojs0g41hu" path="res://Assets/JeremyAssets/barb.png" id="2_ss4tn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bihxc"]
-size = Vector2(10.7322, 29.7113)
+size = Vector2(7.54921, 24.6637)
 
 [node name="stingray_barb" type="Area2D" groups=["Attack"]]
 rotation = -1.59096
@@ -15,11 +15,13 @@ damage = 5
 speed = 250.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.37464
 texture = ExtResource("2_ss4tn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.22686, -0.702243)
-rotation = -0.720804
+position = Vector2(-1.31426, 0.861461)
+rotation = 1.58177
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bihxc")
 
 [node name="DeleteTimer" type="Timer" parent="."]
