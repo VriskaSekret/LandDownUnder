@@ -65,7 +65,6 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ljrj7")
-disabled = true
 
 [node name="Hitbox" parent="." instance=ExtResource("3_nnokv")]
 collision_layer = 2

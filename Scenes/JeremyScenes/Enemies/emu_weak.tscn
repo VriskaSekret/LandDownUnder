@@ -70,7 +70,6 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, -4)
 shape = SubResource("CircleShape2D_ljrj7")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

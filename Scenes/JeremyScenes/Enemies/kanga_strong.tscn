@@ -87,7 +87,6 @@ shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xtctc")
-disabled = true
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

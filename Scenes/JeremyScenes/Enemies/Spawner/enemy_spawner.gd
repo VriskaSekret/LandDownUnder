@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_cap = 800
+var enemy_cap = 300
 var enemies_to_spawn = []
 var spawn_rate = 1
 var rate_counter
