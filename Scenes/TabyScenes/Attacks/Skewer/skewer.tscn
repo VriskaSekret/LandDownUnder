@@ -25,14 +25,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymtem"]
-radius = 3.54734
-height = 35.3746
+radius = 12.1423
+height = 45.1218
 
 [node name="Skewer" type="Node2D"]
 script = ExtResource("1_uo6ah")
 
 [node name="Attack" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

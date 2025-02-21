@@ -1,9 +1,9 @@
 extends Node2D
 
 var player
-@export var circle_radius: float = 40.0
+@export var circle_radius: float = 20.0
 @export var move_time: float = 0.2 # Time to move to the new point on the circle
-@export var wait_time: float = 3.0 # Time between each movement
+@export var wait_time: float = 4.0 # Time between each movement
 
 var level: int = 1
 var damage_multiplier = 1.0
