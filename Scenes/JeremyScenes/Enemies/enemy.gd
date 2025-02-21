@@ -79,17 +79,22 @@ func set_hp() -> void:
 	hp = max_hp
 
 func death():
-	var coin = coin_drop.instantiate()
+	
 	#var enemy_death = death_anim.instantiate()
 	#enemy_death.scale = sprite.scale
-	coin.scale = sprite.scale
 	#enemy_death.global_position = global_position
-	coin.global_position = global_position
-	
 	#get_parent().call_deferred("add_child", enemy_death)
-	get_parent().call_deferred("add_child", coin)
-	
 	enemy_manager.remove_enemy(self)
+	
+	#var coin = coin_drop.instantiate()
+	#coin.scale = sprite.scale
+	#coin.global_position = global_position
+	#get_parent().call_deferred("add_child", coin)
+	var coin = enemy_manager.get_coin()
+	coin.scale = sprite.scale
+	coin.global_position = global_position
+	if !(coin.get_parent() == enemy_manager.get_node("EnemySpawner")):
+		get_parent().call_deferred("add_child", coin)
 
 func _on_hurtbox_hurt(damage, angle, knockback_amount):
 	hp -= damage

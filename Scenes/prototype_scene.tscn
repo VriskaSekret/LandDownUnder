@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=24 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="2_q44n7"]
@@ -14,14 +14,16 @@
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
 [ext_resource type="PackedScene" uid="uid://b01xgbhjj0y66" path="res://Scenes/JeremyScenes/Enemies/emu_strong.tscn" id="10_0xe8a"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
+[ext_resource type="Script" path="res://Scenes/JeremyScenes/ObjectPooling/coin_pool.gd" id="10_t766e"]
 [ext_resource type="PackedScene" uid="uid://dvr7hxqjui07j" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
+[ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="11_54lof"]
 [ext_resource type="AudioStream" uid="uid://cmiqgg47rifnf" path="res://Assets/Music/Land Down Under Main Theme.mp3" id="12_ha6ae"]
 
 [sub_resource type="Resource" id="Resource_l73lw"]
 script = ExtResource("4_7a5xy")
 time_start = 0
 time_end = 60
-enemy = 3
+enemy = 0
 enemy_num = 50
 enemy_spawn_delay = 0
 
@@ -270,6 +272,10 @@ scene = ExtResource("9_15ots")
 [node name="EmuStrong" type="Node" parent="EnemyManager/Pools"]
 script = ExtResource("7_b6a0x")
 scene = ExtResource("10_0xe8a")
+
+[node name="Coin" type="Node" parent="EnemyManager/Pools"]
+script = ExtResource("10_t766e")
+scene = ExtResource("11_54lof")
 
 [node name="Stuff" parent="." instance=ExtResource("7_615b2")]
 z_index = -1

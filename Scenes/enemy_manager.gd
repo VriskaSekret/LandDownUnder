@@ -41,3 +41,12 @@ func remove_enemy(enemy):
 	elif enemy.is_in_group("emu_strong"):
 		#print("emu strong")
 		return emu_strong.add_to_pool(enemy)
+
+
+
+# EXCEPTION FOR ENEMY MANAGER
+# COIN STUFF
+@onready var coin: Node = $Pools/Coin
+func get_coin():
+	print("Coin Pool: " + str(coin.object_pool.size()))
+	return coin.pull_from_pool()
