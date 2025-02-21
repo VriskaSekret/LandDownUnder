@@ -6,8 +6,10 @@ extends Area2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var disable_timer: Timer = $DisableHitboxTimer
 
-@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var players = get_tree().get_nodes_in_group("Player")
+var player
 var direction
+var player_pos
 
 func temp_disable():
 	collision.call_deferred("set", "disabled", true)
@@ -19,12 +21,31 @@ func _on_disable_hitbox_timer_timeout():
 
 
 func _ready() -> void:
-	var player_pos = player.global_position
-	direction = global_position.direction_to(player_pos)
-	look_at(player_pos)
+	player = get_random_player()
+	if player:
+		player_pos = player.global_position
+		direction = global_position.direction_to(player_pos)
+		look_at(player_pos)
 
 func _physics_process(delta: float) -> void:
-	position += direction * speed * delta
+	if direction:
+		position += direction * speed * delta
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+func get_random_player() -> CharacterBody2D:
+	# SO I DON'T CRASH THE FUCK OUT OF THIS GAME
+	var alive_counter = 0
+	if alive_counter >= 4:
+		return
+	for i in Global.players_alive:
+		if not i:
+			alive_counter += 1
+		if alive_counter >= 4:
+			return
+	
+	player = players.pick_random()
+	while player.dead:
+		player = players.pick_random()
+	return player
