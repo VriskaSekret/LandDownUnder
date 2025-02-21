@@ -9,6 +9,7 @@ gravity_scale = 0.0
 script = ExtResource("1_e1dyi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.745098)
 texture = ExtResource("2_tmagj")
 
 [node name="ConeArea" type="Area2D" parent="Sprite2D" groups=["Attack"]]

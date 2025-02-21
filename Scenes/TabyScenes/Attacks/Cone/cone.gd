@@ -10,8 +10,8 @@ var dir: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sprite_2d.scale = Vector2(0.5 + 0.5 * level, 0.5 + 0.5 * level)
 	cone_area.level = level
+	sprite_2d.scale = Vector2(1 + 1.5 * level, 1 + 1.5 * level)
 	if player.last_dir.x < 0:
 		dir = -1
 	apply_impulse(Vector2(100 * dir, -700))

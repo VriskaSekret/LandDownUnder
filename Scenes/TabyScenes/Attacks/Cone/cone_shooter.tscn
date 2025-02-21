@@ -4,7 +4,6 @@
 
 [node name="ConeShooter" type="Node2D"]
 script = ExtResource("1_pxco8")
-level = 3
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
