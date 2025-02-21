@@ -9,7 +9,7 @@ var knockback_amount: int = 50
 @onready var attack: Timer = $"../Attack"
 
 func _ready():
-	damage = 200 * level * skewer.damage_multiplier
+	damage = 30 * level * skewer.damage_multiplier
 	knockback_amount = 50 * level
 
 func _on_move_timeout() -> void:

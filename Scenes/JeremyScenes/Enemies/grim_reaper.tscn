@@ -17,7 +17,7 @@ scale = Vector2(5, 5)
 collision_layer = 128
 collision_mask = 128
 script = ExtResource("1_qdpqo")
-movement_speed = 130.0
+movement_speed = 300.0
 enemy_damage = 1000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

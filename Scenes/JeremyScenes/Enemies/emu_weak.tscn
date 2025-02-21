@@ -59,6 +59,7 @@ collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_huecr")
 movement_speed = 30.0
+max_hp = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_bkiar")

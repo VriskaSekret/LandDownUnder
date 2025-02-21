@@ -3,7 +3,7 @@ extends Area2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 
 var speed = 100.0
-var damage = 10
+var damage = 20
 var hp = 2
 
 
