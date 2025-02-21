@@ -11,8 +11,8 @@ rotation = -1.59096
 collision_layer = 1048576
 collision_mask = 67108864
 script = ExtResource("1_nvtdf")
-damage = 5
-speed = 250.0
+damage = 2
+speed = 350.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 2.37464
@@ -21,9 +21,12 @@ texture = ExtResource("2_ss4tn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.31426, 0.861461)
 rotation = 1.58177
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bihxc")
 
 [node name="DeleteTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="DisableHitboxTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="DeleteTimer" to="." method="_on_timer_timeout"]

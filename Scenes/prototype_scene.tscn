@@ -19,11 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="11_54lof"]
 [ext_resource type="AudioStream" uid="uid://cmiqgg47rifnf" path="res://Assets/Music/Land Down Under Main Theme.mp3" id="12_ha6ae"]
 
-[sub_resource type="Resource" id="Resource_igv4g"]
+[sub_resource type="Resource" id="Resource_nrhyv"]
 script = ExtResource("4_7a5xy")
 time_start = 0
-time_end = 1
-enemy = 5
+time_end = 60
+enemy = 2
 enemy_num = 1
 enemy_spawn_delay = 0
 
@@ -253,7 +253,7 @@ script = ExtResource("1_miors")
 script = ExtResource("2_q44n7")
 
 [node name="EnemySpawner" parent="EnemyManager" instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_igv4g")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_nrhyv")])
 
 [node name="Pools" type="Node" parent="EnemyManager"]
 
