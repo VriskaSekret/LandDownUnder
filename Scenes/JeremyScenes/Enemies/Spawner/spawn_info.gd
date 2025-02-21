@@ -13,7 +13,9 @@ enum enemies {
 	KANGA_STRONG,
 	EMU_WEAK,
 	EMU_STRONG,
-	MAGPIE
+	MAGPIE,
+	STINGRAY,
+	GRIM_REAPER
 }
 
 var spawn_delay_counter = 1

@@ -8,6 +8,8 @@ extends Node2D
 @onready var enemy_spawner: Node2D = $EnemySpawner
 
 const MAGPIE = preload("res://Scenes/JeremyScenes/Enemies/Magpie/magpie.tscn")
+const STRINGRAY = preload("res://Scenes/JeremyScenes/Enemies/stringray.tscn")
+const GRIM_REAPER = preload("res://Scenes/JeremyScenes/Enemies/grim_reaper.tscn")
 
 var enemy_types = Spawn_info.enemies
 
@@ -27,6 +29,12 @@ func get_enemy(enemy_type):
 	elif enemy_type == enemy_types["MAGPIE"]:
 		#print("magpie")
 		return MAGPIE.instantiate()
+	elif enemy_type == enemy_types["STINGRAY"]:
+		#print("magpie")
+		return STRINGRAY.instantiate()
+	elif enemy_type == enemy_types["GRIM_REAPER"]:
+		#print("magpie")
+		return GRIM_REAPER.instantiate()
 
 func remove_enemy(enemy):
 	if enemy.is_in_group("kanga_weak"):

@@ -15,9 +15,9 @@ func add_to_pool(object: Node2D) -> void:
 func pull_from_pool() -> Node2D:
 	var object: Node2D
 	if object_pool.is_empty():
-		object = scene.instantiate()
+		object = scene.instantiate() #creates explosion
 	else:
-		object = object_pool.pop_back()
+		object = object_pool.pop_back() # doesn't create explosion
 
 	
 	object.set_process(true)

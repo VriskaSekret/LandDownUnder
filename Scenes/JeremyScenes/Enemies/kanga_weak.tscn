@@ -52,8 +52,8 @@ radius = 20.0998
 
 [node name="kanga_weak" type="CharacterBody2D" groups=["active_enemy", "kanga_weak"]]
 scale = Vector2(0.8, 0.8)
-collision_layer = 128
-collision_mask = 128
+collision_layer = 0
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_53iqn")
 movement_speed = 40.0
@@ -87,6 +87,7 @@ shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xtctc")
+disabled = true
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

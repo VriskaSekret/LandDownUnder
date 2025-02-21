@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=30 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="2_q44n7"]
@@ -22,9 +22,57 @@
 [sub_resource type="Resource" id="Resource_l73lw"]
 script = ExtResource("4_7a5xy")
 time_start = 0
-time_end = 60
+time_end = 5
 enemy = 0
+enemy_num = 100
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_v8pcy"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 2
+enemy = 1
 enemy_num = 50
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_7x5jf"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 5
+enemy = 2
+enemy_num = 50
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_ygsxm"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 2
+enemy = 3
+enemy_num = 25
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_p7gjv"]
+script = ExtResource("4_7a5xy")
+time_start = 0
+time_end = 60
+enemy = 4
+enemy_num = 1
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_q2hl1"]
+script = ExtResource("4_7a5xy")
+time_start = 10
+time_end = 11
+enemy = 5
+enemy_num = 1
+enemy_spawn_delay = 0
+
+[sub_resource type="Resource" id="Resource_t3v3a"]
+script = ExtResource("4_7a5xy")
+time_start = 60
+time_end = 61
+enemy = 6
+enemy_num = 1
 enemy_spawn_delay = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4225e"]
@@ -253,7 +301,7 @@ script = ExtResource("1_miors")
 script = ExtResource("2_q44n7")
 
 [node name="EnemySpawner" parent="EnemyManager" instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw"), SubResource("Resource_v8pcy"), SubResource("Resource_7x5jf"), SubResource("Resource_ygsxm"), SubResource("Resource_p7gjv"), SubResource("Resource_q2hl1"), SubResource("Resource_t3v3a")])
 
 [node name="Pools" type="Node" parent="EnemyManager"]
 

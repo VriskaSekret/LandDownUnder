@@ -51,12 +51,11 @@ size = Vector2(26, 76)
 radius = 20.0998
 
 [node name="kanga_strong" type="CharacterBody2D" groups=["active_enemy", "enemy", "kanga_strong"]]
-collision_layer = 128
-collision_mask = 128
+collision_layer = 0
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_0h1mu")
 movement_speed = 60.0
-hp = 20
 knockback_recovery = 5.0
 enemy_damage = 2
 
@@ -88,6 +87,7 @@ shape = SubResource("RectangleShape2D_llwkt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xtctc")
+disabled = true
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

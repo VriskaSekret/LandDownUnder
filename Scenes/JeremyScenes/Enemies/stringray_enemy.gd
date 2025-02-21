@@ -91,3 +91,6 @@ func _on_hurtbox_hurt(damage, angle, knockback_amount):
 		movement_speed = old_movement_speed
 		#sprite.material.set_shader_parameter("solid_color", Color.RED)
 		#snd_hit.play()
+
+func set_hp():
+	pass # this only exists so it doesn't bug out

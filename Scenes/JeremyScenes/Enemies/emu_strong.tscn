@@ -52,8 +52,8 @@ _data = {
 }
 
 [node name="emu_strong" type="CharacterBody2D" groups=["active_enemy", "emu_strong"]]
-collision_layer = 128
-collision_mask = 128
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_28ioi")
 movement_speed = 40.0
 
@@ -65,6 +65,7 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ljrj7")
+disabled = true
 
 [node name="Hitbox" parent="." instance=ExtResource("3_nnokv")]
 collision_layer = 2

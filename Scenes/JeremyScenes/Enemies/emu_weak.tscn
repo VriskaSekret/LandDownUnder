@@ -54,8 +54,8 @@ _data = {
 size = Vector2(44, 39.5)
 
 [node name="emu_weak" type="CharacterBody2D" groups=["active_enemy", "emu_weak"]]
-collision_layer = 128
-collision_mask = 128
+collision_layer = 0
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_huecr")
 movement_speed = 30.0
@@ -70,6 +70,7 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, -4)
 shape = SubResource("CircleShape2D_ljrj7")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
