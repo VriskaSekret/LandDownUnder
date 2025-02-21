@@ -153,7 +153,7 @@ time_start = 180
 time_end = 181
 enemy = 5
 enemy_num = 1
-enemy_spawn_delay = 2
+enemy_spawn_delay = 0
 
 [sub_resource type="Resource" id="Resource_6waui"]
 script = ExtResource("4_7a5xy")
@@ -181,8 +181,8 @@ enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_xb1y6"]
 script = ExtResource("4_7a5xy")
-time_start = 210
-time_end = 300
+time_start = 240
+time_end = 9999
 enemy = 1
 enemy_num = 10
 enemy_spawn_delay = 5
@@ -197,7 +197,7 @@ enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_2wh8p"]
 script = ExtResource("4_7a5xy")
-time_start = 600
+time_start = 300
 time_end = 900
 enemy = 1
 enemy_num = 12
