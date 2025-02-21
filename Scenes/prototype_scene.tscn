@@ -25,7 +25,7 @@ time_start = 0
 time_end = 20
 enemy = 0
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_a1gdt"]
 script = ExtResource("4_7a5xy")
@@ -33,7 +33,7 @@ time_start = 20
 time_end = 40
 enemy = 0
 enemy_num = 4
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_iorgw"]
 script = ExtResource("4_7a5xy")
@@ -41,7 +41,7 @@ time_start = 20
 time_end = 40
 enemy = 2
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_4vkhh"]
 script = ExtResource("4_7a5xy")
@@ -49,7 +49,7 @@ time_start = 40
 time_end = 60
 enemy = 0
 enemy_num = 6
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_bcems"]
 script = ExtResource("4_7a5xy")
@@ -57,7 +57,7 @@ time_start = 40
 time_end = 60
 enemy = 2
 enemy_num = 4
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_5qsmm"]
 script = ExtResource("4_7a5xy")
@@ -65,7 +65,7 @@ time_start = 60
 time_end = 90
 enemy = 1
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_liuvg"]
 script = ExtResource("4_7a5xy")
@@ -73,7 +73,7 @@ time_start = 60
 time_end = 90
 enemy = 0
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_iq08j"]
 script = ExtResource("4_7a5xy")
@@ -81,7 +81,7 @@ time_start = 60
 time_end = 90
 enemy = 3
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_qlmb7"]
 script = ExtResource("4_7a5xy")
@@ -89,7 +89,7 @@ time_start = 60
 time_end = 90
 enemy = 2
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_buf28"]
 script = ExtResource("4_7a5xy")
@@ -97,7 +97,7 @@ time_start = 90
 time_end = 120
 enemy = 1
 enemy_num = 4
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_ye4k0"]
 script = ExtResource("4_7a5xy")
@@ -105,7 +105,7 @@ time_start = 90
 time_end = 120
 enemy = 3
 enemy_num = 4
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_pr3lw"]
 script = ExtResource("4_7a5xy")
@@ -113,7 +113,7 @@ time_start = 120
 time_end = 150
 enemy = 4
 enemy_num = 1
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_tl7ns"]
 script = ExtResource("4_7a5xy")
@@ -121,7 +121,7 @@ time_start = 120
 time_end = 150
 enemy = 0
 enemy_num = 10
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_bleoh"]
 script = ExtResource("4_7a5xy")
@@ -129,7 +129,7 @@ time_start = 120
 time_end = 180
 enemy = 3
 enemy_num = 6
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_pycvv"]
 script = ExtResource("4_7a5xy")
@@ -137,7 +137,7 @@ time_start = 150
 time_end = 180
 enemy = 1
 enemy_num = 8
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_qacqh"]
 script = ExtResource("4_7a5xy")
@@ -145,7 +145,7 @@ time_start = 150
 time_end = 180
 enemy = 3
 enemy_num = 8
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_5kmnj"]
 script = ExtResource("4_7a5xy")
@@ -153,7 +153,7 @@ time_start = 150
 time_end = 210
 enemy = 4
 enemy_num = 2
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_tbdnu"]
 script = ExtResource("4_7a5xy")
@@ -169,7 +169,7 @@ time_start = 210
 time_end = 300
 enemy = 4
 enemy_num = 3
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_q3mxj"]
 script = ExtResource("4_7a5xy")
@@ -177,7 +177,7 @@ time_start = 210
 time_end = 240
 enemy = 0
 enemy_num = 10
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_36j7h"]
 script = ExtResource("4_7a5xy")
@@ -185,7 +185,7 @@ time_start = 210
 time_end = 240
 enemy = 2
 enemy_num = 10
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_xb1y6"]
 script = ExtResource("4_7a5xy")
@@ -193,7 +193,7 @@ time_start = 240
 time_end = 300
 enemy = 1
 enemy_num = 10
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_v0d0r"]
 script = ExtResource("4_7a5xy")
@@ -201,7 +201,7 @@ time_start = 240
 time_end = 300
 enemy = 3
 enemy_num = 10
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_nn4cx"]
 script = ExtResource("4_7a5xy")
@@ -209,7 +209,7 @@ time_start = 300
 time_end = 9999
 enemy = 4
 enemy_num = 6
-enemy_spawn_delay = 1
+enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_qbwce"]
 script = ExtResource("4_7a5xy")
