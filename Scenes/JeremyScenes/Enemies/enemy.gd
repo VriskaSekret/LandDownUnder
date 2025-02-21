@@ -75,7 +75,7 @@ func get_random_player() -> CharacterBody2D:
 	return player
 
 func set_hp() -> void:
-	max_hp = max_hp + (max_hp * Global.time_seconds * 0.02)
+	max_hp = max_hp# + (max_hp * Global.time_seconds * 0.02)
 	hp = max_hp
 
 func death():
