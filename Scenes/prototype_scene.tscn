@@ -255,6 +255,7 @@ script = ExtResource("2_q44n7")
 spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw")])
 
 [node name="Coin" parent="EnemyManager/EnemySpawner" instance=ExtResource("9_ar65b")]
+visible = false
 position = Vector2(85, -1)
 
 [node name="Pools" type="Node" parent="EnemyManager"]

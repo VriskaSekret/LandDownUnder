@@ -219,6 +219,7 @@ collision_mask = 16777216
 script = ExtResource("1_tqnud")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_27csy")
@@ -230,6 +231,7 @@ frame = 55
 frame_progress = 1.0
 
 [node name="Magnet" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="MagentismRange" type="CollisionShape2D" parent="Magnet"]
 shape = SubResource("CircleShape2D_oahlt")
