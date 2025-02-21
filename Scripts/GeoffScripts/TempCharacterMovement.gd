@@ -127,7 +127,7 @@ func set_base_stats():
 		damage_multiplier = 1.0
 		movement_speed = 120.0
 	if char_index == 3:
-		hp = 999999
+		hp = 10
 		damage_multiplier = 1.2
 		movement_speed = 140.0
 	

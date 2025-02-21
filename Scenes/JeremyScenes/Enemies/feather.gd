@@ -57,4 +57,5 @@ func kill_feather() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
+	print("i hit the player")
 	kill_feather()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=24 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="2_q44n7"]
@@ -18,14 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://dvr7hxqjui07j" path="res://Scenes/GeoffScenes/in_game_ui.tscn" id="10_vypcr"]
 [ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="11_54lof"]
 [ext_resource type="AudioStream" uid="uid://cmiqgg47rifnf" path="res://Assets/Music/Land Down Under Main Theme.mp3" id="12_ha6ae"]
-
-[sub_resource type="Resource" id="Resource_r532o"]
-script = ExtResource("4_7a5xy")
-time_start = 0
-time_end = 60
-enemy = 0
-enemy_num = 100
-enemy_spawn_delay = 5
 
 [sub_resource type="Resource" id="Resource_igv4g"]
 script = ExtResource("4_7a5xy")
@@ -261,7 +253,7 @@ script = ExtResource("1_miors")
 script = ExtResource("2_q44n7")
 
 [node name="EnemySpawner" parent="EnemyManager" instance=ExtResource("3_r4swq")]
-spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_r532o"), SubResource("Resource_igv4g")])
+spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_igv4g")])
 
 [node name="Pools" type="Node" parent="EnemyManager"]
 
