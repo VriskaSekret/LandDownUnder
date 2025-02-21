@@ -514,7 +514,7 @@ frame_progress = 0.686915
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_5xlg4")]
 collision_layer = 0
-collision_mask = 1048578
+collision_mask = 68157442
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 visible = true
