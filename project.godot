@@ -37,8 +37,9 @@ emu_weak=""
 emu_strong=""
 kanga_weak=""
 kanga_strong=""
-enemy=""
 magpie=""
+enemy_manager=""
+active_enemy=""
 
 [input]
 

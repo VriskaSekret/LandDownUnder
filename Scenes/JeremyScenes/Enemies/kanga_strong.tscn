@@ -50,7 +50,7 @@ size = Vector2(26, 76)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtctc"]
 radius = 20.0998
 
-[node name="kanga_strong" type="CharacterBody2D" groups=["enemy", "kanga_strong"]]
+[node name="kanga_strong" type="CharacterBody2D" groups=["active_enemy", "enemy", "kanga_strong"]]
 collision_layer = 128
 collision_mask = 128
 motion_mode = 1
@@ -78,7 +78,7 @@ collision_mask = 4
 visible = true
 shape = SubResource("RectangleShape2D_llwkt")
 
-[node name="Hitbox" parent="." instance=ExtResource("4_s3pqk")]
+[node name="Hitbox" parent="." groups=["active_enemy"] instance=ExtResource("4_s3pqk")]
 collision_layer = 2
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]

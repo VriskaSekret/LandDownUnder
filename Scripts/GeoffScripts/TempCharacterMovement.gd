@@ -67,6 +67,7 @@ func _ready():
 		health_bar.add_theme_stylebox_override("fill", PLAYER_3_HP)
 	elif character_player_number == 4:
 		health_bar.add_theme_stylebox_override("fill", PLAYER_4_HP)
+	collision_layer
 
 
 func get_input() -> void:

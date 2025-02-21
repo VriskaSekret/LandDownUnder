@@ -62,3 +62,8 @@ func spawn_bomb() -> void:
 	var new_bomb = bomb.instantiate()
 	new_bomb.global_position = global_position
 	get_parent().get_parent().add_child(new_bomb)
+
+# this function does nothing, it exists because all the other enemies has it
+# and i can't be bothered making an exception for this darn enemy
+func set_hp() -> void:
+	pass

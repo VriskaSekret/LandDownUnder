@@ -685,6 +685,12 @@ text = "1
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 121.0
+offset_right = 45.0
+offset_bottom = 144.0
+
 [connection signal="mouse_entered" from="MarginContainer/ItemSelect/HBoxContainer/Item1Button" to="." method="_on_item_1_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/ItemSelect/HBoxContainer/Item1Button" to="." method="_on_item_1_button_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/ItemSelect/HBoxContainer/Item2Button" to="." method="_on_item_2_button_mouse_entered"]
