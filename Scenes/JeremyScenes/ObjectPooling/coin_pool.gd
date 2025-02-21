@@ -24,4 +24,9 @@ func pull_from_pool() -> Node2D:
 	object.set_process(true)
 	object.set_physics_process(true)
 	object.show()
+	
+	object.get_node("AnimationPlayer").play("spawn_explosion")
+	
+	object.get_node("ExplosionSound").play()
+	
 	return object
