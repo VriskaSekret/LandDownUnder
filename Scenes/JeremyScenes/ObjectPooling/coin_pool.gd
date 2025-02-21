@@ -8,9 +8,10 @@ func add_to_pool(object: Node2D) -> void:
 
 	object.target = null
 	
+	object.global_position = Vector2(9999999, 9999999)
 	object.set_process(false)
 	object.set_physics_process(false)
-	object.hide() 
+	object.hide()
 
 func pull_from_pool() -> Node2D:
 	var object: Node2D

@@ -30,5 +30,6 @@ autostart = true
 [node name="DisableHitboxTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DisableHitboxTimer" to="." method="_on_disable_hitbox_timer_timeout"]

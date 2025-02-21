@@ -6,6 +6,11 @@ var object_pool: Array = []
 func add_to_pool(object: Node2D) -> void:
 	object_pool.push_back(object)
 	
+	#object.global_position = Vector2(9999999, 9999999)
+	
+	if (object.is_in_group("emu_weak") or object.is_in_group("emu_strong")):
+		object.get_node("AttackNode").get_child(0).stop()
+	
 	object.get_node("Hitbox").set_deferred("monitorable", false)
 	object.get_node("Hitbox").set_deferred("monitoring", false)
 	
@@ -28,6 +33,9 @@ func pull_from_pool() -> Node2D:
 		object = scene.instantiate()
 	else:
 		object = object_pool.pop_back()
+		if (object.is_in_group("emu_weak") or object.is_in_group("emu_strong")):
+			object.get_node("AttackNode").get_child(0).start()
+	
 	
 	object.get_node("Hitbox").set_deferred("monitorable", true)
 	object.get_node("Hitbox").set_deferred("monitoring", true)
