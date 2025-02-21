@@ -15,7 +15,7 @@ func level_up():
 		skew.queue_free()
 	skewers = []
 	for i in range(level):
-		await get_tree().create_timer(randf_range(0.0, 1.0)).timeout
+		await get_tree().create_timer(randf_range(1.0, 3.0)).timeout
 		new_skewer()
 
 func new_skewer():
