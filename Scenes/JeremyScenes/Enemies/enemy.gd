@@ -80,13 +80,13 @@ func set_hp() -> void:
 
 func death():
 	var coin = coin_drop.instantiate()
-	var enemy_death = death_anim.instantiate()
-	enemy_death.scale = sprite.scale
+	#var enemy_death = death_anim.instantiate()
+	#enemy_death.scale = sprite.scale
 	coin.scale = sprite.scale
-	enemy_death.global_position = global_position
+	#enemy_death.global_position = global_position
 	coin.global_position = global_position
 	
-	get_parent().call_deferred("add_child", enemy_death)
+	#get_parent().call_deferred("add_child", enemy_death)
 	get_parent().call_deferred("add_child", coin)
 	
 	enemy_manager.remove_enemy(self)

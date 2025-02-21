@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://du2uj2pyd5ptc"]
+[gd_scene load_steps=22 format=4 uid="uid://du2uj2pyd5ptc"]
 
 [ext_resource type="Script" path="res://Scenes/prototype_scene.gd" id="1_miors"]
 [ext_resource type="Script" path="res://Scenes/enemy_manager.gd" id="2_q44n7"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bhlyi5xxwwbmb" path="res://Assets/GeoffAssets/grass_tile_0.png" id="7_u3ckx"]
 [ext_resource type="PackedScene" uid="uid://djf3fup248sxt" path="res://Scenes/JeremyScenes/Enemies/kanga_strong.tscn" id="8_6n7mi"]
 [ext_resource type="PackedScene" uid="uid://b4d8e1fbaxncv" path="res://Scenes/JeremyScenes/Enemies/emu_weak.tscn" id="9_15ots"]
-[ext_resource type="PackedScene" uid="uid://cnjggvt3olkh4" path="res://Scenes/GeoffScenes/coin.tscn" id="9_ar65b"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="9_pld26"]
 [ext_resource type="PackedScene" uid="uid://b01xgbhjj0y66" path="res://Scenes/JeremyScenes/Enemies/emu_strong.tscn" id="10_0xe8a"]
 [ext_resource type="Script" path="res://Scenes/game_manager.gd" id="10_kh3fb"]
@@ -253,10 +252,6 @@ script = ExtResource("2_q44n7")
 
 [node name="EnemySpawner" parent="EnemyManager" instance=ExtResource("3_r4swq")]
 spawns = Array[ExtResource("4_7a5xy")]([SubResource("Resource_l73lw")])
-
-[node name="Coin" parent="EnemyManager/EnemySpawner" instance=ExtResource("9_ar65b")]
-visible = false
-position = Vector2(85, -1)
 
 [node name="Pools" type="Node" parent="EnemyManager"]
 
